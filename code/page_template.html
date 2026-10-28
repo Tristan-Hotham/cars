@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>What Britain Drives</title>
+<meta name="description" content="The most popular car makes, models and colours by county, postcode area and nation, from {{facts.GB.cars|m}} cars in the 2025 MOT record, with electric cars from DfT licensing statistics including Northern Ireland.">
+<meta property="og:title" content="What Britain drives: makes, models and colours, place by place">
+<meta property="og:description" content="The average British car is a {{facts.GB.top_model_colour}} {{facts.GB.top_model}}, {{facts.GB.age|f1}} years old. Map every county and postcode area by make, model, colour, fuel and age.">
+<meta property="og:image" content="https://maps.tristanhotham.com/cars/header.png">
+<meta property="og:url" content="https://maps.tristanhotham.com/cars/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+/* Paper, tarmac and tail-light red, with a road-sign blue. */
+:root{
+  --bg:#F5F2EB; --panel:#ECE7DC; --fg:#1C1B1F; --muted:#625D66; --rule:#DCD5C7; --card:#FBF9F4; --border:#CDC4B3;
+  --red:#C2362B; --blue:#1F4E9C; --green:#2E7D4F; --sea:#E3E7EA; --ctx:#E9E5DC; --na:#D9D3C7;
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#161618; --panel:#212124; --fg:#EDEBE7; --muted:#A6A1AA; --rule:#343338; --card:#1F1F22; --border:#47454C;
+  --red:#EE6A5E; --blue:#7FA7E8; --green:#6CC08E; --sea:#1C2126; --ctx:#2A2A2E; --na:#3A383D; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#161618; --panel:#212124; --fg:#EDEBE7; --muted:#A6A1AA; --rule:#343338; --card:#1F1F22; --border:#47454C;
+  --red:#EE6A5E; --blue:#7FA7E8; --green:#6CC08E; --sea:#1C2126; --ctx:#2A2A2E; --na:#3A383D; color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 18px/1.62 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));overflow-x:hidden}
+.wrap{max-width:680px;margin:0 auto;padding-block:28px 64px}
+.wrap .bleed{width:min(1120px,calc(100vw - 32px));margin-left:calc((100% - min(1120px,100vw - 32px))/2);margin-right:0}
+a{color:inherit;text-decoration-color:var(--red);text-underline-offset:3px}
+.kicker{font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.kicker b{background:var(--red);color:#fff;padding:5px 8px;font-weight:500}
+header.hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 24px;align-items:end;border-bottom:6px double var(--fg);padding-bottom:22px;margin-top:18px}
+h1{font:900 clamp(46px,11vw,96px)/.9 var(--display);letter-spacing:-.02em;margin:0;text-wrap:balance}
+h1 .r{color:var(--red)}
+.mark{width:clamp(84px,18vw,140px);height:auto;display:block}
+.dek{grid-column:1/-1;font-size:21px;line-height:1.42;margin:8px 0 0;max-width:50ch}
+.byline{font:400 13px/1.4 var(--mono);color:var(--muted);margin-top:14px}
+h2{font:800 34px/1.04 var(--display);letter-spacing:-.01em;margin:52px 0 10px;text-wrap:balance}
+h2 .n{font:500 13px/1 var(--mono);color:var(--red);display:block;letter-spacing:.1em;margin-bottom:10px}
+h3{font:600 20px/1.25 var(--display);margin:28px 0 6px}
+p{margin:0 0 16px}
+.lede::first-letter{font:900 72px/.8 var(--display);float:left;margin:6px 10px 0 0;color:var(--red)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:26px 0 8px}
+.stats div{background:var(--card);padding:14px 12px}
+.stats b{display:block;font:900 clamp(24px,5.4vw,36px)/1 var(--display);color:var(--fg)}
+.stats b.r{color:var(--red)} .stats b.b{color:var(--blue)}
+.stats span{font:400 12px/1.35 var(--mono);color:var(--muted);display:block;margin-top:6px}
+@media (max-width:600px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.figure{margin:26px 0 30px}
+.fig-h{font:600 19px/1.25 var(--display);margin:0 0 4px}
+.fig-sub{font:400 13px/1.45 var(--mono);color:var(--muted);margin:0 0 12px}
+.src{font:400 12px/1.45 var(--mono);color:var(--muted);margin-top:10px}
+.chart{width:100%;position:relative}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+svg text{font-family:var(--mono);fill:var(--fg)}
+.lab{font-size:12px}.lab.m{fill:var(--muted)}.lab.b{font-weight:500}.lab.s{font-size:11px}
+.tip{position:absolute;pointer-events:none;background:var(--fg);color:var(--bg);font:400 12px/1.45 var(--mono);padding:8px 10px;border-radius:3px;max-width:290px;z-index:1000;transform:translate(-50%,calc(-100% - 12px));display:none}
+.controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 10px}
+.controls label.l{font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:2px}
+.btn{font:500 12px/1 var(--mono);background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:3px;padding:8px 10px;cursor:pointer;min-height:36px}
+.btn[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.btn:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.seg{display:inline-flex;border:1px solid var(--border);border-radius:3px;overflow:hidden;max-width:100%;flex-wrap:wrap}
+.seg .btn{border:0;border-radius:0;border-right:1px solid var(--border)}
+.seg .btn:last-child{border-right:0}
+select{font:500 12px/1 var(--mono);background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:3px;padding:8px 8px;min-height:36px;max-width:100%}
+.searchbox{position:relative;flex:1 1 240px;min-width:0}
+input[type=search]{font:400 15px/1 var(--mono);background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:3px;padding:10px 11px;min-height:40px;width:100%}
+.suggest{position:absolute;left:0;right:0;top:100%;margin:2px 0 0;padding:0;list-style:none;background:var(--card);border:1px solid var(--border);z-index:1001;font:400 13px/1.3 var(--mono);display:none;max-height:340px;overflow:auto}
+.suggest li{padding:8px 10px;cursor:pointer;border-bottom:1px solid var(--rule)}
+.suggest li span{color:var(--muted)}
+.suggest li[aria-selected="true"],.suggest li:hover{background:var(--panel)}
+.mapgrid{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:18px;align-items:start}
+@media (max-width:900px){.mapgrid{grid-template-columns:1fr}}
+#lmap{height:800px;border:1px solid var(--border);background:var(--sea);border-radius:2px}
+@media (max-width:900px){#lmap{height:640px}}
+@media (max-width:600px){#lmap{height:560px}}
+.leaflet-container{font:400 12px/1.4 var(--mono);background:var(--sea)}
+.leaflet-bar a,.leaflet-bar a:hover{background:var(--card);color:var(--fg);border-bottom-color:var(--border)}
+.leaflet-control-attribution{background:color-mix(in srgb,var(--card) 85%,transparent)!important;color:var(--muted)}
+@media (max-width:600px){.leaflet-control-attribution{font-size:10px;line-height:1.25}}
+.leaflet-control-attribution a{color:var(--fg)}
+.cityL{font:600 11px/1 var(--mono);color:var(--fg);white-space:nowrap;text-shadow:0 0 3px var(--bg),0 0 3px var(--bg),0 0 2px var(--bg),0 0 1px var(--bg);pointer-events:none}
+.cityL.s{font-weight:500;font-size:10px}
+.cityL i{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--fg);margin-right:4px;vertical-align:1px}
+.lyrBtn{background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:3px;font:600 12px/1 var(--mono);padding:8px 10px;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.lyrBtn[aria-expanded="true"]{background:var(--fg);color:var(--bg)}
+.lyrPanel{background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:3px;padding:10px 12px 8px;margin-top:6px;width:240px;box-shadow:0 2px 10px rgba(0,0,0,.15);font:400 12px/1.3 var(--mono)}
+.lyrPanel[hidden]{display:none}
+.lyrPanel .row{display:grid;grid-template-columns:1fr;gap:4px 8px;align-items:center;margin:0 0 9px}
+.lyrPanel label{display:flex;gap:6px;align-items:center;cursor:pointer;font-weight:600}
+.lyrPanel input[type=range]{width:100%;accent-color:var(--fg)}
+.lyrPanel select{font:400 12px var(--mono);background:var(--bg);color:var(--fg);border:1px solid var(--border);border-radius:2px;padding:2px 4px;width:100%;min-height:0}
+.lyrPanel .sub{display:flex;gap:6px;align-items:center;color:var(--muted);font-size:11px}
+.lyrPanel .sub span{flex:0 0 58px}
+.lyrPanel .reset{font:400 11px var(--mono);color:var(--muted);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline}
+.pin{width:18px;height:18px;border:3px solid var(--fg);border-radius:50%;background:transparent;box-shadow:0 0 0 2px var(--bg)}
+.side{background:var(--card);border:1px solid var(--border);padding:14px 14px 10px}
+.side h4{font:500 11px/1.2 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+#legend{font:400 12px/1.35 var(--mono);margin:0 0 6px}
+#legend .li{display:flex;align-items:center;gap:8px;margin:3px 0;cursor:default}
+#legend .sw,.sw{display:inline-block;width:14px;height:14px;border:1px solid var(--border);flex:0 0 14px;vertical-align:-2px}
+#legend .cnt{color:var(--muted);margin-left:auto}
+#card{font:400 12.5px/1.45 var(--mono);border-top:1px solid var(--rule);padding-top:10px;margin-top:10px;min-height:120px}
+#card .nm{font:700 20px/1.15 var(--display);margin:0 0 2px}
+#card .avg{font:600 17px/1.3 var(--display);margin:8px 0}
+.kv{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:8px 0}
+.kv div{background:var(--bg);padding:6px 8px;font:400 11px/1.3 var(--mono);color:var(--muted)}
+.kv b{display:block;font:800 17px/1.1 var(--display);color:var(--fg)}
+.bars{margin:6px 0}
+.bars .br{display:grid;grid-template-columns:110px minmax(0,1fr) 46px;gap:6px;align-items:center;font:400 11.5px/1.2 var(--mono);margin:3px 0}
+.bars .br i{display:block;height:10px;background:var(--fg);opacity:.75}
+.bars .br span:last-child{text-align:right;color:var(--muted)}
+.finder{background:var(--card);border:1px solid var(--border);border-top:6px solid var(--red);padding:16px 16px 10px;margin:20px 0 14px}
+#answer .big{font:800 clamp(22px,4.6vw,30px)/1.15 var(--display);margin:10px 0 8px;text-wrap:balance}
+#answer .pn{font:400 12px/1.45 var(--mono);color:var(--muted);margin:8px 0 6px}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:start}
+@media (max-width:700px){.two{grid-template-columns:1fr}}
+.pc{background:var(--bg);border:1px solid var(--rule);padding:10px 12px;font:400 12.5px/1.45 var(--mono)}
+.pc .t{font:500 11px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.pc .nm{font:700 19px/1.15 var(--display);margin:2px 0 6px}
+.pull{font:600 26px/1.25 var(--display);border-left:6px solid var(--red);padding:4px 0 4px 18px;margin:30px 0}
+.note{background:var(--panel);border:1px solid var(--rule);padding:14px 16px;font-size:16px;margin:22px 0}
+.note h3{margin-top:0}
+table.t{width:100%;border-collapse:collapse;font:400 13px/1.35 var(--mono)}
+table.t th{text-align:left;font-weight:500;color:var(--muted);border-bottom:2px solid var(--fg);padding:6px 8px 6px 0}
+table.t td{border-bottom:1px solid var(--rule);padding:7px 8px 7px 0;vertical-align:top}
+table.t td.num,table.t th.num{text-align:right;white-space:nowrap}
+table.t td small{color:var(--muted);display:block}
+.tablewrap{overflow-x:auto}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0}
+@media (max-width:600px){.cards{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-left:10px solid var(--red);padding:12px 14px;font:400 13px/1.5 var(--mono)}
+.card b{font:600 19px/1.2 var(--display);display:block;margin-bottom:2px}
+.card .big{font:900 28px/1.05 var(--display);margin:6px 0 2px}
+.card .big span{color:var(--muted);font:400 13px/1 var(--mono)}
+.nat{background:var(--card);border:1px solid var(--border);padding:12px 14px;font:400 12.5px/1.45 var(--mono)}
+.nat h3{margin:0 0 4px;font-size:22px}
+.nat .avg{font:600 16px/1.3 var(--display);margin:4px 0 8px}
+details{margin:14px 0}
+summary{font:500 13px/1.4 var(--mono);cursor:pointer;color:var(--fg);padding:8px 0}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.cta a{font:500 13px/1 var(--mono);text-decoration:none;border:1px solid var(--fg);padding:11px 14px;border-radius:3px}
+.cta a.p{background:var(--red);border-color:var(--red);color:#fff}
+footer{border-top:6px double var(--fg);margin-top:56px;padding-top:16px;font:400 13px/1.55 var(--mono);color:var(--muted)}
+footer p{margin:0 0 10px}
+.theme{position:fixed;right:12px;bottom:12px;z-index:1002}
+.loading{font:400 12px/1.4 var(--mono);color:var(--muted)}
+@media print{.theme,.controls{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="kicker"><b>Data study</b><span>Transport</span><span>Great Britain and Northern Ireland, 2025</span></div>
+<header class="hero">
+  <h1>What Britain <span class="r">drives</span></h1>
+  <svg class="mark" viewBox="0 0 140 90" aria-hidden="true"><g id="heroMark"></g></svg>
+  <p class="dek">The most popular car makes, models and colours in every county, postcode area and nation, from the MOT test record of {{facts.GB.cars|m}} cars. Which places stand out, where electric cars have taken hold, and what is the average car where you live?</p>
+</header>
+<div class="byline">Dr Tristan Hotham, Independent researcher · 2026 · Data: DVSA anonymised MOT tests; DfT vehicle licensing statistics; ONS Postcode Directory (all Open Government Licence v3)</div>
+
+<div class="stats">
+  <div><b>{{facts.GB.cars|m}}</b><span>cars that had an MOT test in Great Britain in 2025, each counted once</span></div>
+  <div><b class="b">{{facts.GB.top_make_share|pct1}}</b><span>are Fords, the most common make in {{facts.areas_ford|int}} of {{facts.areas_n|int}} postcode areas</span></div>
+  <div><b>{{facts.GB.top_colour_share|pct1}}</b><span>are black, the most common colour; grey is next at {{facts.GB.colour2_share|pct1}}</span></div>
+  <div><b class="r">{{facts.GB.age|f1}}</b><span>years: the average age of a tested car at its test (cars under three are not tested)</span></div>
+</div>
+
+<p class="lede">Every car in Great Britain over three years old must pass an MOT test each year, and the Driver and Vehicle Standards Agency publishes every test, stripped of anything personal, as open data. Each record carries the car's make, model, colour, fuel, engine size, the date it was first used and the postcode area of the garage that tested it. I streamed the whole 2025 file, {{meta.rows|int}} test records, and kept each vehicle once, at its last test of the year. That leaves {{meta.vehicles|int}} vehicles. MOT class 4 also covers light vans and pick-ups, so I set aside {{meta.vans|int}} of those ({{meta.van_share|pct1}}) by model, which leaves {{meta.cars|int}} cars, {{facts.GB.cars|int}} of them tested in a known postcode area.</p>
+<p>Put them together and the average British car is a <b>{{facts.GB.top_model_colour}} {{facts.GB.top_model}}</b>, {{facts.GB.age|f1}} years old, with a {{facts.GB.cc|int}} cc engine: Ford is the most common make ({{facts.GB.top_make_share|pct1}} of cars), black the most common colour ({{facts.GB.top_colour_share|pct1}}) and the Fiesta, which Ford stopped making in 2023, still the most common model ({{facts.GB.fiesta_n|int}} cars, {{facts.GB.top_model_share|pct1}}). Blue is the Fiesta's own most common colour. The map shows how that picture changes from place to place.</p>
+
+<h2><span class="n">01 · The map</span>Make, model and colour, place by place</h2>
+<div class="figure bleed">
+  <div class="controls">
+    <label class="l" for="view">Show</label>
+    <select id="view" aria-label="What to show on the map">
+      <option value="make">Most common make</option>
+      <option value="model">Most common model</option>
+      <option value="colour">Most common colour</option>
+      <option value="makeShare">Share of one make</option>
+      <option value="colourShare">Share of one colour</option>
+      <option value="fuelShare">Share by fuel (MOT)</option>
+      <option value="bev">Battery electric cars (DfT, includes Northern Ireland)</option>
+      <option value="age">Average age at test</option>
+      <option value="cc">Average engine size</option>
+    </select>
+    <select id="pickMake" aria-label="Make" hidden></select>
+    <select id="pickColour" aria-label="Colour" hidden></select>
+    <select id="pickFuel" aria-label="Fuel" hidden><option>Electric</option><option>Hybrid</option><option>Diesel</option><option>Petrol</option></select>
+  </div>
+  <div class="controls">
+    <label class="l">Areas</label>
+    <div class="seg" role="group" aria-label="Map units" id="unitBtns"><button class="btn" data-u="county" aria-pressed="true">Counties and unitary authorities</button><button class="btn" data-u="area" aria-pressed="false">Postcode areas</button></div>
+    <span class="loading" id="loadMsg">Loading the map data...</span>
+  </div>
+  <div class="mapgrid">
+    <div id="lmap" role="region" aria-label="Map of Great Britain and Northern Ireland coloured by the chosen car measure"></div>
+    <div class="side">
+      <h4 id="legTitle">Key</h4>
+      <div id="legend"></div>
+      <div id="card">Hover over or tap a place to see its average car.</div>
+    </div>
+  </div>
+  <div class="src">Cars tested in 2025 (DVSA anonymised MOT data, MOT class 4 without vans and pick-ups), placed by the postcode area of the testing garage. County figures share out each postcode area's cars by the share of its live postcodes in each county or unitary authority (ONS Postcode Directory, August 2026), so neighbouring counties that share a postcode area look alike. Postcode area outlines are my approximation, drawn around the centres of their postcodes. Northern Ireland's MOT tests are run by the DVA and are not in this data; there, only the DfT electric car view has values. Base map tiles © Esri.</div>
+</div>
+
+<p>Ford leads in {{facts.areas_ford|int}} of the {{facts.areas_n|int}} postcode areas, and in {{facts.counties_ford|int}} of the {{facts.counties_n_gb|int}} counties and unitary authorities of Great Britain. The exceptions cluster. Volkswagen takes {{facts.areas_volkswagen|int}} areas, mostly in the prosperous south of England around London. Vauxhall takes {{facts.areas_vauxhall|int}}: Luton, where Vauxhall built vehicles for more than a century, has the strongest showing of any make anywhere ({{facts.a_LU.top_make_share|pct1}} of cars), and the others are around Glasgow, Dundee and Falkirk, Teesside, Sunderland and the Wirral and Chester. Toyota leads in {{facts.areas_toyota|int}} areas, three in and around London, where the hybrid Toyota Prius is the most common model of all in east London, and the fourth in Shetland. Mercedes-Benz leads in north-west London and Southall, and Nissan in south-east London.</p>
+<p>Colour is less varied. Black is the most common colour in {{facts.areas_col_black|int}} postcode areas, white in {{facts.areas_col_white|int}} and blue in {{facts.areas_col_blue|int}}. The Ford Fiesta is the most common model in {{facts.areas_mod_fiesta|int}} areas, the Vauxhall Corsa in {{facts.areas_mod_corsa|int}}, the Volkswagen Golf in {{facts.areas_mod_golf|int}} and the Toyota Prius in {{facts.areas_mod_prius|int}}.</p>
+
+<h2><span class="n">02 · Your place</span>What is the average car where you live?</h2>
+<p>Type a town, village, county, postcode area (such as LS or BT) or a full postcode. You get the average car for the county and the postcode area: the most common make, model and colour, with the average age and engine size, and how many cars in a hundred are battery electric.</p>
+<div class="finder">
+  <div class="controls">
+    <div class="searchbox">
+      <input type="search" id="q" placeholder="Town, county, postcode area or postcode" aria-label="Find a place, county or postcode" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="sug">
+      <ul class="suggest" id="sug" role="listbox"></ul>
+    </div>
+  </div>
+  <div id="answer"><div class="pn">Try Clitheroe, Lerwick, Luton, Cardiff, Camden or BT1 1AA. Place names come from OS Open Names and are looked up on this page; full postcodes are looked up with postcodes.io, a free service built on ONS and Ordnance Survey open data.</div></div>
+</div>
+
+<h2><span class="n">03 · Four nations</span>England, Scotland, Wales and Northern Ireland</h2>
+<p>England's average car is a {{facts.England.top_model_colour}} {{facts.England.top_model}}, {{facts.England.age|f1}} years old. Wales is similar but even more of a Ford country ({{facts.Wales.top_make_share|pct1}} of cars are Fords) and more diesel ({{facts.Wales.diesel|pct1}} of tested cars, against {{facts.England.diesel|pct1}} in England). Scotland is different on three counts: its most common colour is white ({{facts.Scotland.top_colour_share|pct1}}, just ahead of black at {{facts.Scotland.colour2_share|pct1}}), its most common model is the Vauxhall Corsa, and Vauxhall runs Ford close ({{facts.Scotland.make2_share|pct1}} against {{facts.Scotland.top_make_share|pct1}}). Scotland's tested cars are also younger: {{facts.Scotland.age|f1}} years on average, against {{facts.England.age|f1}} in England and {{facts.Wales.age|f1}} in Wales. Against Great Britain as a whole, the make most over-represented in both Scotland and Wales is the budget brand Dacia ({{facts.Scotland.sig_lq|x1}} and {{facts.Wales.sig_lq|x1}} times its British share).</p>
+<div class="figure"><div class="cards" id="natCards"></div>
+<div class="src">England, Scotland and Wales: cars tested in 2025 (DVSA). Northern Ireland: licensed cars at the end of 2025, from DfT table VEH0120 (United Kingdom minus Great Britain); no colours are published.</div></div>
+<p>Northern Ireland needs a different source, because its MOTs are run by the Driver and Vehicle Agency, which publishes test totals and pass rates but, as far as I could find, no open data on makes or colours. The Department for Transport's licensing tables do cover the whole United Kingdom, so subtracting Great Britain from the UK gives Northern Ireland's {{facts.NI.cars|int}} licensed cars by make and model. They tell a distinct story: Volkswagen, not Ford, is the most common make ({{facts.NI.m1s|pct1}}), Audi is second ({{facts.NI.m2s|pct1}}, against {{facts.NI.gb_audi|pct1}} in Great Britain) and Ford only third. The Volkswagen Golf is the most common model ({{facts.NI.mod1s|pct1}}). Diesel still powers {{facts.NI.diesel|pct1}} of Northern Ireland's licensed cars, against {{facts.GB.dft_diesel|pct1}} in Great Britain.</p>
+
+<h2><span class="n">04 · Colours</span>The great greying</h2>
+<div class="figure"><p class="fig-h">Colours of Britain's tested cars</p><p class="fig-sub">Share of {{facts.GB.cars|m}} cars, 2025</p><div class="chart" id="colBars"></div></div>
+<p>Britain's cars are dressed almost entirely in six colours: black, grey, white, blue, silver and red cover more than nine cars in ten. Vans are another matter: {{facts.van_white|pct}} of the vans and pick-ups I set aside are white. But the mix has moved a long way. Sort the cars by the year they were first used and grey rises from {{facts.grey2000|pct1}} of cars first used in 2000 to {{facts.grey2022|pct1}} of those from 2022, while silver, the colour of the millennium, falls from {{facts.silver2000|pct1}} to {{facts.silver2022|pct1}}.</p>
+<div class="figure"><p class="fig-h">Colour by year of first use</p><p class="fig-sub">Share of each year's surviving cars, tested in 2025</p><div class="chart" id="colTrend"></div>
+<div class="src">These are the cars that survive to be tested in 2025, not the cars sold in each year, so older years are a selection of survivors.</div></div>
+
+<h2><span class="n">05 · Odd ones out</span>The most unusual places</h2>
+<p>To find the places whose cars look least like their nation's, I compared each place's mix of makes with its nation's and measured how much of the mix would have to change to match (the dissimilarity index, from 0 for identical to 1 for nothing in common). The most unusual postcode area in Britain is Shetland (ZE): {{facts.a_ZE.top_make_share|pct1}} of its cars are Toyotas, {{facts.unusual_area.0.lq|x1}} times Scotland's share, and the Yaris is its most common model. Next come London's postcode areas, where Toyota, Lexus and Mercedes-Benz stand out, perhaps reflecting the capital's large private hire trade, in which hybrid Toyotas are a familiar sight. In east London the Prius is the most common car of all ({{facts.a_E.top_model_share|pct1}} of cars).</p>
+<div class="cards" id="oddCards"></div>
+<div class="src">Counties with at least 15,000 tested cars. "Stands out" is the make with the highest ratio of local share to national share, among makes with at least 1% of the local cars. County mixes are blended from postcode areas, so these are differences of whole postcode areas.</div>
+
+<h2><span class="n">06 · Electric</span>Where the electric cars are</h2>
+<p>The MOT record is a poor guide to electric cars, because most are less than three years old and so have not yet had a test. For them I used the Department for Transport's licensing statistics, which count every licensed car by the keeper's neighbourhood across the whole United Kingdom. I counted privately kept cars only, because company and lease cars are registered at head-office addresses and pile up in a few places. At the end of 2025 there were {{facts.uk_bev|f1}} battery electric cars for every 100 privately kept cars in the UK. The highest rates are in central London: the City of London ({{facts.bev_top.0.bev|f1}} per 100), Camden ({{facts.bev_top.1.bev|f1}}) and Westminster ({{facts.bev_top.2.bev|f1}}). The lowest are in Northern Ireland, where Fermanagh and Omagh has {{facts.bev_low.0.bev|f1}} per 100, and the lowest in Great Britain is {{facts.bev_low_gb.0.name}}, the Western Isles ({{facts.bev_low_gb.0.bev|f1}}). Islands are not all alike: Orkney ({{facts.bev_scot.1.bev|f1}}) is second only to {{facts.bev_scot.0.name}} ({{facts.bev_scot.0.bev|f1}}) in Scotland, while Shetland has {{facts.bev_scot_shet|f1}}.</p>
+<div class="figure two"><div><p class="fig-h">Most electric</p><div class="tablewrap"><table class="t" id="bevTop"></table></div></div><div><p class="fig-h">Least electric</p><div class="tablewrap"><table class="t" id="bevLow"></table></div></div></div>
+<div class="src">Battery electric vehicles (DfT VEH0145, which counts all body types, nearly all of them cars) per 100 licensed cars (VEH0125), private keepers, end of 2025, summed from neighbourhoods (LSOAs, data zones and super data zones) to counties.</div>
+<div class="figure"><p class="fig-h">Fuel by year of first use</p><p class="fig-sub">Share of each year's surviving cars, tested in 2025</p><div class="chart" id="fuelTrend"></div>
+<div class="src">Hybrid includes plug-in hybrids. The newest years are thin: cars first used in 2022 and 2023 are only just reaching their first test.</div></div>
+<p>The MOT record does show the rise and fall of diesel. Of the cars first used in {{facts.diesel_peak_year}} and still on the road, {{facts.diesel_peak_share|pct1}} are diesels; of those from 2022, only {{facts.diesel2022|pct1}} are, while hybrids make up {{facts.hy2022|pct1}} and fully electric cars {{facts.ev2022|pct1}}.</p>
+
+<h2><span class="n">07 · Old timers</span>Where the old cars are</h2>
+<p>The oldest cars are in the south-west of England. The average tested car in Torbay is {{ranks.oldest_counties.0.age|f1}} years old, followed by {{ranks.oldest_counties.1.name}} ({{ranks.oldest_counties.1.age|f1}}) and {{ranks.oldest_counties.2.name}} ({{ranks.oldest_counties.2.age|f1}}). The youngest are in west central Scotland, around Glasgow: the Motherwell postcode area averages {{ranks.youngest_areas.0.age|f1}} years. Across Britain, {{facts.GB.old20|pct1}} of tested cars were first used in 2005 or before, and {{facts.pre1980|int}} were first used before 1980.</p>
+<div class="figure two"><div><p class="fig-h">Oldest cars</p><div class="tablewrap"><table class="t" id="oldT"></table></div></div><div><p class="fig-h">Youngest cars</p><div class="tablewrap"><table class="t" id="youngT"></table></div></div></div>
+<div class="src">Average age at the latest 2025 test, counties and unitary authorities with at least 15,000 tested cars. Cars less than three years old are not tested, so these are the ages of cars aged three and over.</div>
+
+<div class="note" id="method">
+  <h3>How I did this</h3>
+  <p><b>MOT data.</b> The DVSA publishes every MOT test as anonymised open data. I used the 2025 results file (twelve monthly files, {{meta.rows|int}} records), read straight from the publisher's server in the browser in pieces, so the 4.8 GB file was never stored. I kept MOT class 4 (cars, taxis, light vans and similar), and counted each vehicle once, at its latest test of 2025 ({{meta.retests|int}} earlier tests and retests of the same vehicles were dropped). Model names in the data mix short families ("FIESTA") with long trim names for newer cars, so I grouped them into families by rule. I set aside vans and pick-ups by family (Transit, Transporter, Berlingo, Ranger, Hilux and others) and by van-only makes; some car-derived vans will remain.</p>
+  <p><b>Places.</b> Each test carries the postcode area (the letters at the start of a postcode) of the garage, not the owner's address, so people who drive to a garage over a boundary are counted where the garage is. To get counties and unitary authorities, I shared each postcode area's cars out by the share of its live residential postcodes in each county (ONS Postcode Directory, August 2026, {{meta.postcodes|int}} postcodes). Nations are the sums of their counties. Postcode area outlines on the map are approximate: I drew them around the centres of postcodes grouped by neighbourhood (Voronoi cells, clipped to the coast).</p>
+  <p><b>Electric cars and Northern Ireland.</b> DfT vehicle licensing statistics count licensed cars (VEH0125) and plug-in vehicles (VEH0145) by neighbourhood for the whole UK; I used the end of 2025 and private keepers. Northern Ireland's makes and models are the UK total minus Great Britain in DfT table VEH0120.</p>
+  <p><b>Limits.</b> Cars under three years old have not had an MOT, so the MOT figures describe cars aged three and over: that is why the MOT count ({{facts.GB.cars|m}}) is below the {{meta.gb_licensed_cars|int}} cars licensed in Great Britain, and why the newest makes and electric cars are under-counted. Colour is the colour recorded when the car was registered. County figures are blends of postcode areas and should be read as broad patterns. "Average car" means the most common make, model and colour together with the mean age and engine size; few cars match all of these at once.</p>
+</div>
+<div class="cta">
+  <a class="p" href="https://github.com/Tristan-Hotham/cars">Data and code</a>
+  <a href="https://doi.org/10.5281/zenodo.23748250">Paper (Zenodo)</a>
+  <a href="https://blog.tristanhotham.com/">Blog</a>
+</div>
+<footer>
+  <p>Dr Tristan Hotham, Independent researcher. ORCID 0000-0003-4931-9349. Cite as: Hotham, T. (2026) What Britain drives: car makes, models, colours and ages by county and postcode area from the 2025 MOT record. https://doi.org/10.5281/zenodo.23748250</p>
+  <p>I wrote the text, with drafting and editing assistance from Claude (Anthropic), which also helped prepare the analysis code. I reviewed and checked all text and results.</p>
+  <p>MOT data: Driver and Vehicle Standards Agency, anonymised MOT tests and results, 2025, Open Government Licence v3.0. Licensing data: Department for Transport, vehicle licensing statistics tables VEH0120, VEH0125 and VEH0145, Open Government Licence v3.0. Postcodes and boundaries: Office for National Statistics, ONS Postcode Directory (August 2026) and Counties and Unitary Authorities (December 2025) boundaries, Open Government Licence v3.0; contains OS data © Crown copyright and database right 2026; contains Royal Mail data © Royal Mail copyright and database right 2026; Northern Ireland postcodes © Crown copyright (LPS). Place names: OS Open Names (OGL v3). Postcode lookups: postcodes.io. Map library: Leaflet. Base map tiles © Esri.</p>
+  <p>Data files: Open Government Licence v3 (derived from DVSA, DfT, ONS and OS data). Text and figures: CC BY 4.0. Code: MIT. Other studies: <a href="https://maps.tristanhotham.com/sun-and-rain-uk/">Sun and rain</a>, <a href="https://maps.tristanhotham.com/beeching-cuts/">The Beeching cuts</a>, <a href="https://blog.tristanhotham.com/">all posts</a>.</p>
+</footer>
+</div>
+<div class="tip" id="tip"></div>
+<button class="btn theme" id="theme" aria-label="Toggle dark mode">◐</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+const R = /*RESULTS*/;
+const NS = "http://www.w3.org/2000/svg";
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const el = (t, a = {}, p) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; };
+const fmt = n => n == null || isNaN(n) ? "n/a" : Math.round(n).toLocaleString("en-GB");
+const pc = (x, d = 1) => x == null ? "n/a" : (x * 100).toFixed(d) + "%";
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const tip = document.getElementById("tip");
+function showTip(h, x, y) { tip.innerHTML = h; tip.style.display = "block"; const w = tip.offsetWidth; x = Math.max(w / 2 + 8, Math.min(innerWidth - w / 2 - 8, x)); tip.style.left = x + scrollX + "px"; tip.style.top = y + scrollY + "px"; }
+function hideTip() { tip.style.display = "none"; }
+function hover(node, h) { node.style.cursor = "pointer"; node.setAttribute("tabindex", "0"); const s = () => { const r = node.getBoundingClientRect(); showTip(h, r.left + r.width / 2, r.top); }; node.addEventListener("pointerenter", s); node.addEventListener("pointerleave", hideTip); node.addEventListener("focus", s); node.addEventListener("blur", hideTip); }
+const redraws = [];
+function resp(box, render) { let last = 0; const go = (force) => { const w = Math.max(280, Math.round(box.clientWidth)); if (!force && Math.abs(w - last) < 4) return; last = w; box.innerHTML = ""; render(w, w < 560); }; new ResizeObserver(() => go()).observe(box); go(); redraws.push(() => go(true)); }
+const isDark = () => document.documentElement.dataset.theme === "dark" || (!document.documentElement.dataset.theme && matchMedia("(prefers-color-scheme: dark)").matches);
+document.getElementById("theme").onclick = () => { document.documentElement.dataset.theme = isDark() ? "light" : "dark"; redraws.forEach(f => f()); if (window.setTiles) setTiles(); if (window.restyle) restyle(); };
+
+/* hero mark: a little car in three of the commonest colours */
+(function () {
+  const g = document.getElementById("heroMark");
+  [["#1d1d1f", 0], ["#8a8d91", 1], ["#2f5fa8", 2]].forEach(([c, i]) => {
+    const y = 8 + i * 27;
+    el("path", { d: `M${8 + i * 4} ${y + 16} l6 -9 h44 l12 9 h14 q4 0 4 4 v4 h-${84} z`, fill: c, stroke: "var(--fg)", "stroke-width": 1.2 }, g);
+    el("circle", { cx: 26 + i * 4, cy: y + 24, r: 4.5, fill: "var(--bg)", stroke: "var(--fg)", "stroke-width": 2 }, g);
+    el("circle", { cx: 72 + i * 4, cy: y + 24, r: 4.5, fill: "var(--bg)", stroke: "var(--fg)", "stroke-width": 2 }, g);
+  });
+})();
+
+/* ===== data ===== */
+let U = null, PL = null, GEO = { area: null, county: null };
+const S = { unit: "county", view: "make", make: "FORD", colour: "BLACK", fuel: "Electric", sel: null };
+const MAKEPAL = { FORD: "#1F4E9C", VAUXHALL: "#C8322B", VOLKSWAGEN: "#2C9C9C", TOYOTA: "#E08A1E", "MERCEDES-BENZ": "#5D5A6E", NISSAN: "#8E3E8F", BMW: "#6FA8DC", AUDI: "#9C6B30" };
+const MODPAL = { "FORD|FIESTA": "#1F4E9C", "VAUXHALL|CORSA": "#C8322B", "VOLKSWAGEN|GOLF": "#2C9C9C", "TOYOTA|PRIUS": "#E08A1E", "NISSAN|QASHQAI": "#8E3E8F", "TOYOTA|YARIS": "#D9B92E", "FORD|FOCUS": "#6FA8DC" };
+const SEQ = { warm: ["#F3E9D2", "#EDC48E", "#DD8A55", "#B84A3A", "#7A1F2B"], green: ["#E8F1DE", "#B5D9A3", "#6DB37E", "#2E7D4F", "#11492C"], blue: ["#E6EEF7", "#AFC8E6", "#6F9BD1", "#2F64AD", "#163C73"], grey: ["#EFEDE8", "#CFCAC0", "#A59E92", "#746D63", "#45403A"] };
+const mkName = m => (U && U.make_names[m]) || m;
+const mdName = k => (U && U.model_names[k]) || k;
+const colName = c => c ? c.charAt(0) + c.slice(1).toLowerCase().replace("-colour", " colour") : "";
+const colHex = c => (U && U.colour_hex[c]) || "#999";
+
+function val(d) {
+  if (!d) return null;
+  const v = S.view;
+  if (v === "bev") return d.bev;
+  if (d.ni) return null;
+  if (v === "make") return d.mk; if (v === "model") return d.md; if (v === "colour") return d.co;
+  if (v === "makeShare") return d.ms[U.makes.indexOf(S.make)];
+  if (v === "colourShare") return d.cs[U.colours.indexOf(S.colour)];
+  if (v === "fuelShare") return d.fu[U.fuels.indexOf(S.fuel)];
+  if (v === "age") return d.age; if (v === "cc") return d.cc;
+}
+const CAT = () => ["make", "model", "colour"].includes(S.view);
+let BR = [];
+function breaks() {
+  if (CAT()) return;
+  const vals = Object.values(U[S.unit]).map(val).filter(x => x != null).sort((a, b) => a - b);
+  BR = [1, 2, 3, 4].map(k => vals[Math.floor(vals.length * k / 5)]);
+}
+const ramp = () => S.view === "bev" ? SEQ.green : S.view === "age" ? SEQ.grey : S.view === "cc" ? SEQ.blue : S.view === "colourShare" ? SEQ.blue : SEQ.warm;
+function fill(d) {
+  const x = val(d); if (x == null) return null;
+  if (S.view === "make") return MAKEPAL[x] || "#A39C8F";
+  if (S.view === "model") return MODPAL[x] || "#A39C8F";
+  if (S.view === "colour") return colHex(x);
+  let k = 0; while (k < 4 && x >= BR[k]) k++; return ramp()[k];
+}
+const fmtV = x => S.view === "age" ? x.toFixed(1) + " years" : S.view === "cc" ? fmt(x) + " cc" : S.view === "bev" ? x.toFixed(2) + " per 100" : pc(x, 1);
+
+/* ===== map ===== */
+let lmap, base, labels, hills, layers = {}, pin = null, cityL;
+const LY = { base: "plain", hills: true, hillK: 40, labels: true, labelK: 85, names: true, nameLvl: 1, colour: 85, lines: true };
+const LYDEF = { ...LY };
+try { Object.assign(LY, JSON.parse(localStorage.getItem("cars_layers") || "{}")); } catch (e) {}
+const saveLY = () => { try { localStorage.setItem("cars_layers", JSON.stringify(LY)); } catch (e) {} };
+const ESRI = "https://server.arcgisonline.com/ArcGIS/rest/services/";
+const ESRI_ATT = 'Tiles &copy; Esri';
+window.setTiles = function () {
+  if (!lmap) return;
+  [base, labels, hills].forEach(l => { if (l) lmap.removeLayer(l); });
+  const t = isDark() ? "Dark" : "Light";
+  const url = LY.base === "relief" ? ESRI + "World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}" : LY.base === "satellite" ? ESRI + "World_Imagery/MapServer/tile/{z}/{y}/{x}" : `${ESRI}Canvas/World_${t}_Gray_Base/MapServer/tile/{z}/{y}/{x}`;
+  base = L.tileLayer(url, { maxZoom: 16, maxNativeZoom: LY.base === "relief" ? 13 : 16, attribution: ESRI_ATT }).addTo(lmap);
+  hills = L.tileLayer(ESRI + "Elevation/World_Hillshade/MapServer/tile/{z}/{y}/{x}", { maxZoom: 16, maxNativeZoom: 16, pane: "hills" });
+  labels = L.tileLayer(`${ESRI}Canvas/World_${t}_Gray_Reference/MapServer/tile/{z}/{y}/{x}`, { maxZoom: 16, pane: "labels" });
+  applyLayers();
+};
+function applyLayers() {
+  if (!lmap) return;
+  lmap.getPane("overlayPane").style.opacity = LY.colour / 100;
+  if (LY.hills) { hills.addTo(lmap); hills.setOpacity(Math.min(1, .15 + LY.hillK / 100 * .7)); } else lmap.removeLayer(hills);
+  if (LY.labels) { labels.addTo(lmap); labels.setOpacity(LY.labelK / 100); } else lmap.removeLayer(labels);
+  if (LY.names) cityL.addTo(lmap); else lmap.removeLayer(cityL);
+  restyle(); cityNames();
+}
+function cityNames() {
+  if (!cityL) return; cityL.clearLayers(); if (!LY.names || !PL) return;
+  const z = lmap.getZoom(), bb = lmap.getBounds().pad(.05), lvl = LY.nameLvl;
+  const minR = lvl === 0 ? (z >= 8 ? 2 : 3) : lvl === 1 ? (z >= 9 ? 1 : z >= 7 ? 2 : 3) : (z >= 8 ? 0 : z >= 7 ? 1 : 2);
+  const boxes = [], out = [];
+  for (const p of PL) {
+    if (p[3] < minR) break;
+    if (!bb.contains([p[1], p[2]])) continue;
+    const pt = lmap.latLngToContainerPoint([p[1], p[2]]), big = p[3] >= 3;
+    const bx = [pt.x - 4, pt.y - 8, pt.x + 10 + p[0].length * (big ? 7 : 6.2), pt.y + 7];
+    if (boxes.some(o => bx[0] < o[2] && bx[2] > o[0] && bx[1] < o[3] && bx[3] > o[1])) continue;
+    boxes.push(bx); out.push(p); if (out.length >= 220) break;
+  }
+  for (const p of out) L.marker([p[1], p[2]], { interactive: false, keyboard: false, icon: L.divIcon({ className: "cityL" + (p[3] >= 3 ? "" : " s"), html: `<i></i>${esc(p[0])}`, iconSize: null, iconAnchor: [3, 6] }) }).addTo(cityL);
+}
+function styleOf(f) {
+  const d = U[S.unit][f.properties.id], c = fill(d), on = S.sel && S.sel[S.unit] === f.properties.id;
+  const line = isDark() ? "#16161888" : "#ffffffcc";
+  if (!c) return { fillColor: css("--na"), fillOpacity: .7, color: isDark() ? "#555" : "#9a9387", weight: .6, dashArray: "3 3" };
+  const white = S.view === "colour" && (d.co === "WHITE" || d.co === "SILVER");
+  return { fillColor: c, fillOpacity: 1, color: on ? css("--red") : white ? "#8a8578" : (LY.lines ? line : c), weight: on ? 3 : (LY.lines ? .7 : 0), opacity: 1 };
+}
+window.restyle = function () { for (const u in layers) if (layers[u]) layers[u].setStyle(styleOf); };
+function draw() {
+  breaks();
+  for (const u of ["area", "county"]) { if (layers[u]) { if (u === S.unit) layers[u].addTo(lmap); else lmap.removeLayer(layers[u]); } }
+  restyle(); legend(); if (S.sel) card(S.sel[S.unit], S.unit);
+}
+function initMap() {
+  if (!window.L) { document.getElementById("lmap").innerHTML = '<p style="padding:16px">The map library did not load.</p>'; return; }
+  lmap = L.map("lmap", { zoomSnap: .25, zoomDelta: .5, minZoom: 4.5, maxZoom: 13, scrollWheelZoom: false, maxBounds: [[47, -16], [63, 8]] });
+  lmap.fitBounds([[49.9, -8.2], [60.8, 1.8]], { paddingTopLeft: [4, 4], paddingBottomRight: [4, 24] });
+  lmap.attributionControl.setPrefix('<a href="https://leafletjs.com">Leaflet</a>');
+  lmap.createPane("hills"); lmap.getPane("hills").style.zIndex = 420; lmap.getPane("hills").style.pointerEvents = "none";
+  lmap.createPane("labels"); lmap.getPane("labels").style.zIndex = 450; lmap.getPane("labels").style.pointerEvents = "none";
+  cityL = L.layerGroup();
+  for (const u of ["area", "county"]) {
+    layers[u] = L.geoJSON(GEO[u], { style: styleOf, attribution: "DVSA, DfT, ONS (OGL v3)", onEachFeature: (f, l) => {
+      l.on("mouseover", () => { card(f.properties.id, u); });
+      l.on("click", () => { S.sel = Object.assign({}, S.sel || {}, { [u]: f.properties.id }); card(f.properties.id, u); restyle(); });
+    } });
+  }
+  const Ctl = L.Control.extend({ options: { position: "topright" }, onAdd() {
+    const d = L.DomUtil.create("div"); L.DomEvent.disableClickPropagation(d); L.DomEvent.disableScrollPropagation(d);
+    d.innerHTML = `<button class="lyrBtn" aria-expanded="false" aria-controls="lyrPanel">Map layers</button>
+<div class="lyrPanel" id="lyrPanel" hidden>
+ <div class="row"><label for="lyBase" style="font-weight:600">Base map</label><div class="sub"><select id="lyBase" aria-label="Base map"><option value="plain">Plain grey</option><option value="relief">Shaded relief</option><option value="satellite">Satellite</option></select></div></div>
+ <div class="row"><label><input type="checkbox" id="lyHills"> Hills and mountains</label><div class="sub"><span>strength</span><input type="range" id="lyHillK" min="10" max="100" step="5" aria-label="Hill shading strength"></div></div>
+ <div class="row"><label><input type="checkbox" id="lyLabels"> Map labels and roads</label><div class="sub"><span>strength</span><input type="range" id="lyLabelK" min="20" max="100" step="5" aria-label="Map label strength"></div></div>
+ <div class="row"><label><input type="checkbox" id="lyNames"> Place names</label><div class="sub"><span>how many</span><select id="lyNameLvl" aria-label="How many place names"><option value="0">Cities only</option><option value="1">Cities and towns</option><option value="2">Down to villages</option></select></div></div>
+ <div class="row"><label><input type="checkbox" id="lyLines"> Borders</label></div>
+ <div class="row"><label style="font-weight:600">Colour</label><div class="sub"><span>strength</span><input type="range" id="lyColour" min="25" max="100" step="5" aria-label="Colour strength"></div></div>
+ <button class="reset" id="lyReset">Reset layers</button>
+</div>`;
+    return d; } });
+  lmap.addControl(new Ctl());
+  const q = id => document.getElementById(id), btn = lmap.getContainer().querySelector(".lyrBtn"), pan = q("lyrPanel");
+  btn.onclick = () => { const o = pan.hidden; pan.hidden = !o; btn.setAttribute("aria-expanded", o); };
+  const sync = () => { q("lyBase").value = LY.base; q("lyHills").checked = LY.hills; q("lyHillK").value = LY.hillK; q("lyLabels").checked = LY.labels; q("lyLabelK").value = LY.labelK; q("lyNames").checked = LY.names; q("lyNameLvl").value = LY.nameLvl; q("lyColour").value = LY.colour; q("lyLines").checked = LY.lines; };
+  const on = (id, ev, f, retile) => q(id).addEventListener(ev, e => { f(e.target); saveLY(); retile ? setTiles() : applyLayers(); });
+  on("lyBase", "change", t => LY.base = t.value, true);
+  on("lyHills", "change", t => LY.hills = t.checked); on("lyHillK", "input", t => { LY.hillK = +t.value; LY.hills = q("lyHills").checked = true; });
+  on("lyLabels", "change", t => LY.labels = t.checked); on("lyLabelK", "input", t => { LY.labelK = +t.value; LY.labels = q("lyLabels").checked = true; });
+  on("lyNames", "change", t => LY.names = t.checked); on("lyNameLvl", "change", t => { LY.nameLvl = +t.value; LY.names = q("lyNames").checked = true; });
+  on("lyLines", "change", t => LY.lines = t.checked);
+  on("lyColour", "input", t => LY.colour = +t.value);
+  q("lyReset").onclick = () => { Object.assign(LY, LYDEF); saveLY(); sync(); setTiles(); };
+  sync();
+  lmap.on("zoomend moveend", cityNames);
+  lmap.on("click", () => lmap.scrollWheelZoom.enable());
+  setTiles(); draw();
+}
+
+/* ===== legend and place card ===== */
+function legend() {
+  const box = document.getElementById("legend"), t = document.getElementById("legTitle");
+  const uName = S.unit === "area" ? "postcode areas" : "counties";
+  const ds = Object.values(U[S.unit]);
+  if (CAT()) {
+    const cnt = {}; ds.forEach(d => { const x = val(d); if (x != null) cnt[x] = (cnt[x] || 0) + 1; });
+    const keys = Object.keys(cnt).sort((a, b) => cnt[b] - cnt[a]);
+    t.textContent = { make: "Most common make", model: "Most common model", colour: "Most common colour" }[S.view] + ": number of " + uName;
+    box.innerHTML = keys.map(k => `<div class="li"><span class="sw" style="background:${fill(S.view === "make" ? { mk: k, ms: [] } : S.view === "model" ? { md: k } : { co: k }) || "#A39C8F"}"></span>${esc(S.view === "make" ? mkName(k) : S.view === "model" ? mdName(k) : colName(k))}<span class="cnt">${cnt[k]}</span></div>`).join("") + naNote();
+  } else {
+    const lab = { makeShare: "Share of cars that are " + mkName(S.make), colourShare: "Share of cars that are " + colName(S.colour).toLowerCase(), fuelShare: "Share of tested cars: " + S.fuel.toLowerCase(), bev: "Battery electric cars per 100 private cars (DfT, end of 2025)", age: "Average age at test", cc: "Average engine size (not electric)" }[S.view];
+    t.textContent = lab;
+    const r = ramp(), lo = Math.min(...ds.map(val).filter(x => x != null)), hi = Math.max(...ds.map(val).filter(x => x != null));
+    const edges = [lo, ...BR, hi];
+    box.innerHTML = r.map((c, k) => `<div class="li"><span class="sw" style="background:${c}"></span>${fmtV(edges[k])} to ${fmtV(edges[k + 1])}</div>`).join("") + `<div class="li" style="color:var(--muted)">Classes hold equal numbers of ${uName}.</div>` + naNote();
+  }
+  function naNote() { return S.view === "bev" ? "" : `<div class="li"><span class="sw" style="background:var(--na)"></span>No MOT data (Northern Ireland)</div>`; }
+}
+function avgLine(d) {
+  return `<span class="sw" style="background:${colHex(d.mdc)}"></span>${colName(d.mdc)} ${esc(mdName(d.md))}`;
+}
+function placeHTML(d, kindLabel) {
+  if (!d) return "";
+  if (d.ni) return `<div class="nm">${esc(d.n)}</div><div>${kindLabel}, Northern Ireland</div><p style="margin:8px 0">No MOT data: tests in Northern Ireland are run by the DVA. From DfT licensing statistics:</p><div class="kv"><div><b>${fmt(d.dft)}</b>licensed cars</div><div><b>${d.bev == null ? "n/a" : d.bev.toFixed(2)}</b>battery electric per 100 private cars</div></div>`;
+  const bars = d.mods.map(([k, s]) => `<div class="br"><span>${esc(mdName(k))}</span><i style="width:${Math.min(100, s / d.mods[0][1] * 100)}%"></i><span>${pc(s)}</span></div>`).join("");
+  return `<div class="nm">${esc(d.n)}</div><div>${kindLabel}${d.nat ? ", " + esc(d.nat) : ""}</div>
+<div class="avg">Average car: ${avgLine(d)}</div>
+<div class="kv"><div><b>${mkName(d.mk)}</b>top make, ${pc(d.mks)}</div><div><b>${colName(d.co)}</b>top colour, ${pc(d.cos)}</div><div><b>${d.age.toFixed(1)} yrs</b>average age</div><div><b>${fmt(d.cc)} cc</b>average engine</div><div><b>${pc(d.fu[1])}</b>diesel (tested cars)</div><div><b>${d.bev == null ? "n/a" : d.bev.toFixed(2)}</b>electric per 100 (DfT)</div></div>
+<div style="color:var(--muted)">Most common models</div><div class="bars">${bars}</div>
+<div style="color:var(--muted)">${fmt(d.c)} cars tested in 2025${d.sig ? `. Stands out: ${esc(mkName(d.sig))} (${d.sigq.toFixed(1)} times its national share)` : ""}${(() => { const x = val(d); return x != null && !CAT() ? `. Map value: ${fmtV(x)}` : ""; })()}</div>`;
+}
+function card(id, u) {
+  const d = U[u][id];
+  document.getElementById("card").innerHTML = placeHTML(d, u === "area" ? `Postcode area ${id}` : "County or unitary authority");
+}
+
+/* ===== controls ===== */
+function initControls() {
+  const v = document.getElementById("view"), pm = document.getElementById("pickMake"), pcl = document.getElementById("pickColour"), pf = document.getElementById("pickFuel");
+  pm.innerHTML = U.makes.map(m => `<option value="${esc(m)}">${esc(mkName(m))}</option>`).join("");
+  pcl.innerHTML = U.colours.map(c => `<option value="${c}">${colName(c)}</option>`).join("");
+  const showPick = () => { pm.hidden = S.view !== "makeShare"; pcl.hidden = S.view !== "colourShare"; pf.hidden = S.view !== "fuelShare"; };
+  v.onchange = () => { S.view = v.value; showPick(); draw(); };
+  pm.onchange = () => { S.make = pm.value; draw(); }; pcl.onchange = () => { S.colour = pcl.value; draw(); }; pf.onchange = () => { S.fuel = pf.value; draw(); };
+  document.querySelectorAll("#unitBtns .btn").forEach(b => b.onclick = () => { S.unit = b.dataset.u; document.querySelectorAll("#unitBtns .btn").forEach(x => x.setAttribute("aria-pressed", x === b)); draw(); });
+  showPick();
+}
+
+/* ===== nations ===== */
+function nations() {
+  const box = document.getElementById("natCards"); const out = [];
+  for (const k of ["England", "Scotland", "Wales"]) {
+    const d = U.nation[k];
+    const bars = U.makes.map((m, i) => [m, d.ms[i]]).sort((a, b) => b[1] - a[1]).slice(0, 5).map(([m, s]) => `<div class="br"><span>${esc(mkName(m))}</span><i style="width:${s / d.mks * 100}%;background:${MAKEPAL[m] || "#8a8578"}"></i><span>${pc(s)}</span></div>`).join("");
+    out.push(`<div class="nat"><h3>${k}</h3><div class="avg">${avgLine(d)}, ${d.age.toFixed(1)} years old</div><div class="bars">${bars}</div><div style="color:var(--muted)">${fmt(d.c)} cars tested · top colour ${colName(d.co).toLowerCase()} (${pc(d.cos)}) · ${d.bev.toFixed(2)} electric per 100</div></div>`);
+  }
+  const n = R.ni, top = n.top_makes[0][1];
+  const bars = n.top_makes.slice(0, 5).map(([m, s]) => `<div class="br"><span>${esc(mkName(m))}</span><i style="width:${s / top * 100}%;background:${MAKEPAL[m] || "#8a8578"}"></i><span>${pc(s)}</span></div>`).join("");
+  out.push(`<div class="nat"><h3>Northern Ireland</h3><div class="avg">${esc(mdName(n.top_models[0][0]))} (colour not published)</div><div class="bars">${bars}</div><div style="color:var(--muted)">${fmt(n.dft_cars)} licensed cars (DfT) · diesel ${pc(n.fuels.Diesel)} · ${n.bev_per100.toFixed(2)} electric per 100</div></div>`);
+  box.innerHTML = out.join("");
+}
+
+/* ===== charts ===== */
+function colBars() {
+  resp(document.getElementById("colBars"), (w, sm) => {
+    const rows = R.gb_colours.slice(0, 10), h = rows.length * 26 + 10, lx = sm ? 70 : 90, max = rows[0][1];
+    const svg = el("svg", { viewBox: `0 0 ${w} ${h}` }, document.getElementById("colBars"));
+    rows.forEach(([c, s], i) => {
+      const y = 4 + i * 26, bw = (w - lx - 60) * s / max;
+      el("text", { x: lx - 8, y: y + 15, "text-anchor": "end", class: "lab" }, svg).textContent = colName(c);
+      const r = el("rect", { x: lx, y: y + 3, width: Math.max(1, bw), height: 17, fill: colHex(c), stroke: "#8a8578", "stroke-width": .6 }, svg);
+      el("text", { x: lx + bw + 6, y: y + 15, class: "lab m" }, svg).textContent = pc(s);
+      hover(r, `<b>${colName(c)}</b>: ${pc(s)} of tested cars`);
+    });
+  });
+}
+function lineChart(id, data, keys, colours, labels, stacked) {
+  resp(document.getElementById(id), (w, sm) => {
+    const years = Object.keys(data).map(Number).sort((a, b) => a - b), h = sm ? 260 : 300, m = { l: 40, r: sm ? 70 : 90, t: 10, b: 26 };
+    const svg = el("svg", { viewBox: `0 0 ${w} ${h}` }, document.getElementById(id));
+    const X = y => m.l + (y - years[0]) / (years[years.length - 1] - years[0]) * (w - m.l - m.r);
+    let ymax = stacked ? 1 : Math.max(...years.flatMap(y => keys.map(k => data[y][k] || 0))) * 1.08;
+    const Y = v => h - m.b - v / ymax * (h - m.t - m.b);
+    for (let t = 0; t <= ymax + 1e-9; t += (stacked ? .25 : .1)) { el("line", { x1: m.l, x2: w - m.r, y1: Y(t), y2: Y(t), stroke: "var(--rule)" }, svg); el("text", { x: m.l - 6, y: Y(t) + 4, "text-anchor": "end", class: "lab s m" }, svg).textContent = Math.round(t * 100) + "%"; }
+    years.filter(y => y % 5 === 0).forEach(y => { el("text", { x: X(y), y: h - 8, "text-anchor": "middle", class: "lab s m" }, svg).textContent = y; });
+    const base = years.map(() => 0), ends = [];
+    keys.forEach((k, i) => {
+      const top = years.map((y, j) => (stacked ? base[j] : 0) + (data[y][k] || 0));
+      let d;
+      if (stacked) { d = "M" + years.map((y, j) => `${X(y)},${Y(top[j])}`).join("L") + "L" + years.slice().reverse().map((y, jj) => { const j = years.length - 1 - jj; return `${X(y)},${Y(base[j])}`; }).join("L") + "Z"; el("path", { d, fill: colours[i], stroke: "var(--bg)", "stroke-width": .8 }, svg); }
+      else { d = "M" + years.map((y, j) => `${X(y)},${Y(top[j])}`).join("L"); el("path", { d, fill: "none", stroke: colours[i], "stroke-width": 3 }, svg); if (k === "WHITE" || k === "SILVER") el("path", { d, fill: "none", stroke: "#8a8578", "stroke-width": .6 }, svg); }
+      const yl = stacked ? (top[top.length - 1] + base[base.length - 1]) / 2 : top[top.length - 1];
+      ends.push([Y(yl) + 4, labels[i]]);
+      years.forEach((y, j) => base[j] = top[j]);
+    });
+    ends.sort((a, b) => a[0] - b[0]); for (let i = 1; i < ends.length; i++) if (ends[i][0] - ends[i - 1][0] < 13) ends[i][0] = ends[i - 1][0] + 13;
+    ends.forEach(([y, t]) => { el("text", { x: w - m.r + 6, y, class: "lab s b" }, svg).textContent = t; });
+    const hit = el("rect", { x: m.l, y: m.t, width: w - m.l - m.r, height: h - m.t - m.b, fill: "transparent" }, svg);
+    hit.addEventListener("pointermove", e => { const r = svg.getBoundingClientRect(), x = (e.clientX - r.left) / r.width * w; const y = Math.round(years[0] + (x - m.l) / (w - m.l - m.r) * (years[years.length - 1] - years[0])); if (!data[y]) return; showTip(`<b>First used ${y}</b><br>` + keys.map((k, i) => `${labels[i]}: ${pc(data[y][k] || 0)}`).join("<br>"), e.clientX, e.clientY - 10); });
+    hit.addEventListener("pointerleave", hideTip);
+  });
+}
+function tables() {
+  const T = (id, rows, f) => { document.getElementById(id).innerHTML = `<tr><th>Place</th><th class="num">${f[0]}</th></tr>` + rows.map(r => `<tr><td>${esc(r.name)}<small>${esc(r.nation)}</small></td><td class="num">${f[1](r)}</td></tr>`).join(""); };
+  T("bevTop", R.ranks.bev_counties.slice(0, 8), ["Per 100", r => r.bev.toFixed(2)]);
+  T("bevLow", R.ranks.bev_low_counties.slice(0, 8), ["Per 100", r => r.bev.toFixed(2)]);
+  T("oldT", R.ranks.oldest_counties.slice(0, 8), ["Years", r => r.age.toFixed(1)]);
+  T("youngT", R.ranks.youngest_counties.slice(0, 8), ["Years", r => r.age.toFixed(1)]);
+  const odd = [];
+  const ua = R.ranks.unusual_areas[0];
+  odd.push(`<div class="card" style="border-left-color:${MAKEPAL[ua.sig_make] || "#E08A1E"}"><b>Shetland (ZE)</b>The most unusual postcode area<div class="big">${(ua.sig_lq).toFixed(1)}× <span>Scotland's share of ${esc(mkName(ua.sig_make))} cars</span></div>${pc(ua.sig_share)} of its cars, against ${pc(ua.sig_share / ua.sig_lq)} in Scotland.</div>`);
+  for (const nat of ["England", "Scotland", "Wales"]) {
+    const x = R.ranks.unusual[nat][0];
+    odd.push(`<div class="card" style="border-left-color:${MAKEPAL[x.sig_make] || "#8a8578"}"><b>${esc(x.name)}</b>The most unusual county in ${nat}<div class="big">${x.sig_lq.toFixed(1)}× <span>${nat}'s share of ${esc(mkName(x.sig_make))} cars</span></div>${pc(x.sig_share)} of its cars, against ${pc(x.sig_nat_share)} across ${nat}. Dissimilarity ${x.dissim.toFixed(2)}.</div>`);
+  }
+  document.getElementById("oddCards").innerHTML = odd.join("");
+}
+
+/* ===== search ===== */
+const qi = document.getElementById("q"), sug = document.getElementById("sug"); let sugItems = [], sugIdx = -1;
+function showSug(items) { sugItems = items; sugIdx = -1; sug.innerHTML = items.map((p, k) => `<li role="option" data-k="${k}">${esc(p.label)} <span>${esc(p.sub || "")}</span></li>`).join(""); sug.style.display = items.length ? "block" : "none"; qi.setAttribute("aria-expanded", items.length > 0); }
+sug.addEventListener("click", e => { const li = e.target.closest("li"); if (li) pick(sugItems[+li.dataset.k]); });
+const norm = s => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9 ]/g, "");
+qi.addEventListener("input", () => {
+  const raw = qi.value.trim(), q = norm(raw); if (!q || !U) return showSug([]);
+  const out = [];
+  if (/^[a-z]{1,2}$/i.test(raw) && U.area[raw.toUpperCase()]) out.push({ label: raw.toUpperCase() + " postcode area", sub: U.area[raw.toUpperCase()].n, area: raw.toUpperCase() });
+  if (/^[a-z]{1,2}\d[a-z\d]?\s*\d[a-z]{2}$/i.test(raw)) out.push({ label: raw.toUpperCase(), sub: "postcode", pcd: raw });
+  for (const [c, d] of Object.entries(U.county)) if (norm(d.n).startsWith(q)) out.push({ label: d.n, sub: "county or unitary authority", county: c });
+  if (PL) for (const p of PL) { if (out.length >= 9) break; if (norm(p[0]).startsWith(q) || (p[7] && norm(p[7]).startsWith(q))) out.push({ label: p[0], sub: p[6] || "", area: p[4], county: p[5], lat: p[1], lon: p[2] }); }
+  showSug(out.slice(0, 9));
+});
+qi.addEventListener("keydown", e => {
+  if (e.key === "ArrowDown" || e.key === "ArrowUp") { e.preventDefault(); if (!sugItems.length) return; sugIdx = (sugIdx + (e.key === "ArrowDown" ? 1 : -1) + sugItems.length) % sugItems.length; sug.querySelectorAll("li").forEach((li, k) => li.setAttribute("aria-selected", k === sugIdx)); }
+  else if (e.key === "Enter") { e.preventDefault(); if (sugItems.length) pick(sugItems[Math.max(0, sugIdx)]); }
+  else if (e.key === "Escape") showSug([]);
+});
+async function pick(p) {
+  showSug([]); qi.value = p.label;
+  if (p.pcd) {
+    try {
+      const j = await fetch("https://api.postcodes.io/postcodes/" + encodeURIComponent(p.pcd.replace(/\s+/g, ""))).then(r => r.json());
+      if (!j.result) throw 0;
+      const r = j.result, cc = r.codes.admin_county && !/99999999$/.test(r.codes.admin_county) ? r.codes.admin_county : r.codes.admin_district;
+      p = { label: r.postcode, area: r.postcode.match(/^[A-Z]+/)[0], county: cc, lat: r.latitude, lon: r.longitude };
+    } catch (e) { document.getElementById("answer").innerHTML = `<div class="pn">I could not look up that postcode. Try the postcode area letters instead.</div>`; return; }
+  }
+  if (p.county && !p.area) { const f = GEO.county.features.find(f => f.properties.id === p.county); if (f) { p.lat = f.properties.lat; p.lon = f.properties.lon; } }
+  if (p.area && !p.county && !p.lat) { const f = GEO.area.features.find(f => f.properties.id === p.area); if (f) { p.lat = f.properties.lat; p.lon = f.properties.lon; } }
+  S.sel = { area: p.area, county: p.county };
+  const dc = p.county && U.county[p.county], da = p.area && U.area[p.area];
+  const lead = dc && !dc.ni ? dc : da && !da.ni ? da : null;
+  document.getElementById("answer").innerHTML = (lead ? `<div class="big">The average car in ${esc(p.label)} is a ${colName(lead.mdc).toLowerCase()} ${esc(mdName(lead.md))}</div>` : `<div class="big">${esc(p.label)}</div>`) +
+    `<div class="two">${dc ? `<div class="pc">${placeHTML(dc, "County or unitary authority")}</div>` : ""}${da ? `<div class="pc">${placeHTML(da, "Postcode area " + p.area)}</div>` : ""}</div>`;
+  if (lmap && p.lat) { if (pin) pin.remove(); pin = L.marker([p.lat, p.lon], { icon: L.divIcon({ className: "", html: '<div class="pin"></div>', iconSize: [18, 18], iconAnchor: [9, 9] }), interactive: false }).addTo(lmap); restyle(); }
+  card(S.unit === "area" ? p.area : p.county, S.unit);
+}
+
+/* ===== load ===== */
+Promise.all([fetch("data/units.json").then(r => r.json()), fetch("data/postcode_areas.geojson").then(r => r.json()), fetch("data/counties.geojson").then(r => r.json())]).then(([u, a, c]) => {
+  U = u; GEO.area = a; GEO.county = c;
+  document.getElementById("loadMsg").textContent = "";
+  initControls(); initMap(); nations(); colBars(); tables();
+  const CK = ["BLACK", "GREY", "WHITE", "BLUE", "SILVER", "RED"];
+  lineChart("colTrend", R.colour_trend, CK, CK.map(colHex), CK.map(colName), false);
+  lineChart("fuelTrend", R.fuel_trend, ["Petrol", "Diesel", "Hybrid", "Electric", "Other"], ["#D9B36A", "#5D5A6E", "#6DB37E", "#1F4E9C", "#BBB4A8"], ["Petrol", "Diesel", "Hybrid", "Electric", "Other"], true);
+  fetch("data/places.json").then(r => r.json()).then(j => { PL = j.places; cityNames(); });
+}).catch(e => { document.getElementById("loadMsg").textContent = "The map data did not load."; console.error(e); });
+</script>
+</body>
+</html>

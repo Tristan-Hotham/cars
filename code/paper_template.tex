@@ -1,0 +1,171 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Pagella}
+\newfontfamily\headfont{Inter}[UprightFont=*-ExtraBold,BoldFont=*-ExtraBold,Extension=.otf,Path=/usr/share/fonts/opentype/inter/]
+\usepackage[a4paper,margin=2.3cm]{geometry}
+\usepackage{graphicx,booktabs,float,caption,array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage{setspace}
+\setstretch{1.05}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.75}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\titleformat{\section}{\headfont\Large}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\headfont\large}{\thesubsection}{0.8em}{}
+\captionsetup{font=small,labelfont=bf}
+\urlstyle{same}
+\hypersetup{pdftitle={What Britain Drives: Car Makes, Models, Colours and Ages by County and Postcode Area from the 2025 MOT Record},pdfauthor={Tristan Hotham}}
+
+\begin{document}
+\begin{center}
+{\Large\bfseries What Britain Drives\\[2pt] Car Makes, Models, Colours and Ages by County and Postcode Area\\[2pt] from the 2025 MOT Record\par}
+\vspace{1.2em}
+{\large Tristan Hotham\par}
+\vspace{0.3em}
+{\small Independent researcher\\
+ORCID: 0000-0003-4931-9349\\
+DOI: \href{https://doi.org/10.5281/zenodo.23748250}{https://doi.org/10.5281/zenodo.23748250}\par}
+\vspace{0.8em}
+2026
+\end{center}
+
+\begin{quote}
+\small
+\begin{center}\textbf{Abstract}\end{center}
+Which cars do people drive in different parts of the United Kingdom? I answer with the Driver and Vehicle Standards Agency's anonymised MOT test data for 2025, read in full ({{meta.rows|int}} test records) and reduced to one record per vehicle: {{meta.vehicles|int}} class 4 vehicles, of which {{meta.cars|int}} are cars once light vans and pick-ups are set aside. Each car is placed by the postcode area of its testing garage, and postcode areas are shared out to counties and unitary authorities by their live postcodes. Ford is the most common make in Great Britain ({{facts.GB.top_make_share|pct1}} of cars) and in {{facts.areas_ford|int}} of {{facts.areas_n|int}} postcode areas; black is the most common colour ({{facts.GB.top_colour_share|pct1}}); and the Ford Fiesta, out of production since 2023, is the most common model ({{facts.GB.top_model_share|pct1}}). Scotland differs: white is its leading colour and the Vauxhall Corsa its leading model, and its tested cars are younger ({{facts.Scotland.age|f1}} years against {{facts.England.age|f1}} in England). The most unusual postcode area is Shetland, where {{facts.a_ZE.top_make_share|pct1}} of cars are Toyotas, followed by London's areas. Grey has risen from {{facts.grey2000|pct1}} of surviving cars first used in 2000 to {{facts.grey2022|pct1}} of those from 2022. For electric cars and for Northern Ireland, which the MOT data do not cover, I use Department for Transport licensing statistics: privately kept battery electric cars number {{facts.uk_bev|f1}} per 100 private cars in the UK, from {{facts.bev_top.0.bev|f1}} in the City of London to {{facts.bev_low.0.bev|f1}} in Fermanagh and Omagh, and Volkswagen, not Ford, leads in Northern Ireland.
+
+\textbf{Keywords:} cars; MOT test; vehicle licensing; car colour; electric vehicles; postcode areas; counties; Great Britain; Northern Ireland; open data
+\end{quote}
+
+\section{Introduction}
+
+Cars are among the most visible possessions people own, and the mix of cars on a street says something about a place: how prosperous it is, how rural, how old its cars are allowed to get, how fast it is moving to electric power. Yet the everyday questions are rarely answered with complete data. What is the most popular car where I live? Is my county a Ford county or a Volkswagen county? Does Scotland drive different cars from England? Where are the electric cars?
+
+Great Britain has an unusually complete record with which to answer them. Every car over three years old must pass an annual MOT test, and the Driver and Vehicle Standards Agency (DVSA) publishes every test, anonymised, as open data (DVSA 2026). Each record carries the vehicle's make, model, colour, fuel, engine size and date of first use, and the postcode area of the testing garage. In this note I reduce one full year of tests to one record per vehicle and summarise the cars of every postcode area, county, unitary authority and nation. I add the Department for Transport's (DfT) vehicle licensing statistics, which reach the newest cars and Northern Ireland, neither of which the MOT data cover (DfT 2026).
+
+I ask five questions. What are the most common makes, models and colours, nationally and place by place? How do England, Scotland, Wales and Northern Ireland differ? Which places look least like their nation? Where have electric cars taken hold? And where are cars oldest? An interactive map with a search for every place is at \url{https://maps.tristanhotham.com/cars/}.
+
+\section{Data}
+
+\subsection{MOT tests}
+
+The DVSA's anonymised MOT data are published as yearly archives of test results (DVSA 2026). I used the 2025 results extract, twelve monthly comma-separated files inside one uncompressed archive of 4.8 GB, with {{meta.rows|int}} test records. Each record holds a test identifier, a vehicle identifier that is stable across tests, the test date, class, type and result, the odometer reading, the postcode area of the testing station, and the vehicle's make, model, colour, fuel type, cylinder capacity and date of first use. Test class 4 covers cars, taxis, light goods vehicles up to 3,000 kg, motor caravans and similar; I kept class 4 only ({{meta.cls4|int}} records).
+
+The archive was never stored. I read it in a web browser with HTTP range requests, parsed each monthly file as it arrived, and kept running counts only. Each vehicle was counted once, at its last test of the year: I read the months from December back to January and skipped any vehicle already seen, which dropped {{meta.retests|int}} earlier tests and retests. That left {{meta.vehicles|int}} vehicles.
+
+Two cleaning steps matter. First, model names mix short family names (``FIESTA'') with long trim descriptions for newer vehicles (``TRANSIT CUSTOM 300 LIMITED''), so I reduced them to model families with simple rules: the first word, with exceptions for two-word families (Transit Custom, Range Rover Evoque), BMW and Mercedes-Benz series and classes, and Mini's hatchback names. Second, class 4 includes light vans and pick-ups. I set aside {{meta.vans|int}} vehicles ({{meta.van_share|pct1}}) whose family is a van or pick-up (for example the Ford Transit, Volkswagen Transporter, Citroen Berlingo, Ford Ranger and Toyota Hilux) or whose make builds only vans. That leaves {{meta.cars|int}} cars. Some car-derived vans and passenger versions of vans will be misclassified either way; the effect on the shares of the big car makes is small.
+
+\subsection{Postcodes and places}
+
+The MOT record gives only the postcode area of the garage, the one or two letters at the start of a postcode (LS for Leeds, BT for Northern Ireland). There are {{meta.areas|int}} areas with tests in 2025 (the central London areas EC and WC have no testing stations). To describe counties and unitary authorities, I used the ONS Postcode Directory for August 2026 (ONS 2026a): I counted live, small-user postcodes ({{meta.postcodes|int}} in all) by postcode area and by neighbourhood (lower layer super output area in England and Wales, data zone in Scotland, super data zone in Northern Ireland), each with its local authority, and linked local authorities to counties and unitary authorities with the ONS lookup for May 2026. Each postcode area's cars were then shared out to counties in proportion to its postcodes. Nations are the sums of their counties. County boundaries are the ONS ultra generalised boundaries for December 2025 (ONS 2026b).
+
+There is no open boundary set for postcode areas, so for the map I drew my own: a Voronoi tessellation (Okabe et al. 2000) of the mean positions of postcodes grouped by area and neighbourhood, merged by area and clipped to the coast. These outlines are approximate at their edges but place each area correctly.
+
+\subsection{Vehicle licensing statistics}
+
+The DfT publishes the number of licensed vehicles by neighbourhood for the whole United Kingdom (table VEH0125, by body type and keepership) and the number of plug-in vehicles by fuel (VEH0145) (DfT 2026). I used the end of 2025 to match the MOT year. Licensing counts are by the keeper's address, not the garage. Company cars are registered at company addresses, which concentrates leased cars in a few places (the City of London and Westminster have more battery electric cars than all other cars kept privately would suggest), so I use privately kept cars throughout. I summed neighbourhoods to counties, and shared them between postcode areas by their postcodes. Table VEH0120 gives licensed cars by make and model for both the UK and Great Britain; the difference is Northern Ireland.
+
+\section{Methods}
+
+\textbf{Average car.} For each place I report the most common make, the most common model family (excluding vans), the most common colour, the most common colour of that most common model, the mean age at test and the mean engine size of cars that are not fully electric. I call the combination the place's average car. It is a description of the typical choice on each attribute, not of a car that is common in itself.
+
+\textbf{Unusual places.} To find the places whose cars look least like their nation's, I compared shares of makes with the dissimilarity index (Duncan and Duncan 1955): half the sum, over all makes, of the absolute difference between the local and national shares. It is the share of the local cars that would have to change make to match the nation. Postcode areas in Northern Ireland have no MOT data; English, Scottish and Welsh places are compared with their own nation. For counties, I required at least 15,000 tested cars. I also report each place's most over-represented make: the highest ratio of local to national share among makes with at least one per cent of local cars.
+
+\textbf{Trends.} Sorting the 2025 cars by year of first use gives the colour and fuel of each year's surviving cars. These are survivors, not sales: older years show only the cars that have lasted, and the most recent years are thin because cars reach their first MOT at three years old.
+
+\section{Results}
+
+\subsection{Britain's cars}
+
+Table~\ref{tab:nat} summarises the nations. Across Great Britain, Ford is the most common make ({{facts.GB.top_make_share|pct1}} of tested cars), ahead of Volkswagen ({{facts.GB.make2_share|pct1}}); black the most common colour ({{facts.GB.top_colour_share|pct1}}), ahead of grey ({{facts.GB.colour2_share|pct1}}); and the Ford Fiesta the most common model, with {{facts.GB.fiesta_n|int}} cars ({{facts.GB.top_model_share|pct1}}). The Fiesta's own most common colour is blue, so the average British car is a blue Ford Fiesta, {{facts.GB.age|f1}} years old at its test, with a {{facts.GB.cc|int}} cc engine. Petrol cars are {{facts.GB.petrol|pct1}} of tested cars and diesels {{facts.GB.diesel|pct1}}.
+
+{{TABLE_NAT}}
+
+Ford leads in {{facts.areas_ford|int}} of the {{facts.areas_n|int}} postcode areas (Figure~\ref{fig:make}) and in {{facts.counties_ford|int}} of the {{facts.counties_n_gb|int}} counties and unitary authorities of Great Britain. Volkswagen leads in {{facts.areas_volkswagen|int}} areas, most of them in the south of England around London; Vauxhall in {{facts.areas_vauxhall|int}}, including Luton, where Vauxhall's share of {{facts.a_LU.top_make_share|pct1}} is the highest for any make in any area, and a group around Glasgow, Dundee and Falkirk; Toyota in {{facts.areas_toyota|int}}; Mercedes-Benz in {{facts.areas_mercedesbenz|int}} and Nissan in {{facts.areas_nissan|int}}. Black is the leading colour in {{facts.areas_col_black|int}} areas, white in {{facts.areas_col_white|int}} and blue in {{facts.areas_col_blue|int}} (Figure~\ref{fig:colour}). The Fiesta is the most common model in {{facts.areas_mod_fiesta|int}} areas, the Vauxhall Corsa in {{facts.areas_mod_corsa|int}}, the Volkswagen Golf in {{facts.areas_mod_golf|int}} and the Toyota Prius in {{facts.areas_mod_prius|int}} (Figure~\ref{fig:model}).
+
+\begin{figure}[tbp]\centering\includegraphics[width=0.92\textwidth]{fig1_make_area.png}\caption{The most common make of tested car in each postcode area, 2025, with the number of areas. Northern Ireland has no MOT data in this source.}\label{fig:make}\end{figure}
+
+\begin{figure}[tbp]\centering\includegraphics[width=0.92\textwidth]{fig2_colour_area.png}\caption{The most common colour of tested car in each postcode area, 2025.}\label{fig:colour}\end{figure}
+
+\begin{figure}[tbp]\centering\includegraphics[width=0.92\textwidth]{fig3_model_area.png}\caption{The most common car model family in each postcode area, 2025, vans and pick-ups excluded.}\label{fig:model}\end{figure}
+
+\subsection{Four nations}
+
+England's figures dominate the British totals: its average car is a {{facts.England.top_model_colour}} {{facts.England.top_model}}, {{facts.England.age|f1}} years old. Wales is more of a Ford country ({{facts.Wales.top_make_share|pct1}}) and more diesel ({{facts.Wales.diesel|pct1}} against {{facts.England.diesel|pct1}} in England). Scotland differs on three counts. Its most common colour is white ({{facts.Scotland.top_colour_share|pct1}}, ahead of black at {{facts.Scotland.colour2_share|pct1}}); its most common model is the Vauxhall Corsa ({{facts.Scotland.top_model_share|pct1}}); and Vauxhall ({{facts.Scotland.make2_share|pct1}}) runs Ford ({{facts.Scotland.top_make_share|pct1}}) close. Its tested cars are younger, {{facts.Scotland.age|f1}} years on average. Against Great Britain as a whole, the make most over-represented in both Scotland and Wales is Dacia ({{facts.Scotland.sig_lq|x1}} and {{facts.Wales.sig_lq|x1}} times its British share).
+
+Northern Ireland's MOT tests are carried out by the Driver and Vehicle Agency (DVA). The DVA publishes summary statistics on tests and pass rates through the Department for Infrastructure, but I found no open data on the makes, models or colours of tested vehicles, so Northern Ireland is described from DfT licensing data. Of its {{facts.NI.cars|int}} licensed cars at the end of 2025, {{facts.NI.m1s|pct1}} are Volkswagens, {{facts.NI.m2s|pct1}} Audis and {{facts.NI.m3s|pct1}} Fords; in Great Britain's licensed cars the figures are {{facts.NI.gb_vw|pct1}}, {{facts.NI.gb_audi|pct1}} and {{facts.NI.gb_dft_m1s|pct1}}. The Volkswagen Golf is the most common model ({{facts.NI.mod1s|pct1}}). Diesel powers {{facts.NI.diesel|pct1}} of Northern Ireland's licensed cars against {{facts.GB.dft_diesel|pct1}} in Great Britain (Figure~\ref{fig:nations}).
+
+\begin{figure}[tbp]\centering\includegraphics[width=\textwidth]{fig8_nations.png}\caption{The six most common makes in each nation. England, Scotland and Wales: cars tested in 2025 (DVSA). Northern Ireland: licensed cars at the end of 2025 (DfT VEH0120, UK minus Great Britain).}\label{fig:nations}\end{figure}
+
+\subsection{Unusual places}
+
+The most unusual postcode area is Shetland (ZE, dissimilarity {{facts.unusual_area.0.dissim|f2}}): {{facts.a_ZE.top_make_share|pct1}} of its cars are Toyotas, {{facts.unusual_area.0.lq|x1}} times Scotland's share, and the Toyota Yaris is its most common model. London's postcode areas follow, with Toyota, Lexus and Mercedes-Benz over-represented; in east London (E) the Toyota Prius is the most common model ({{facts.a_E.top_model_share|pct1}} of cars). That may reflect the capital's large private hire trade, in which hybrid Toyotas are common, but the MOT data do not record how a car is used. Table~\ref{tab:odd} lists the most unusual counties in each nation. In England they are all London boroughs; in Scotland the Scottish Borders, with more Mitsubishis; in Wales Flintshire, with more Vauxhalls, as across the border on the Wirral and in Chester.
+
+{{TABLE_ODD}}
+
+\subsection{Colour}
+
+Six colours (black, grey, white, blue, silver and red) cover {{facts.six_colours|pct1}} of tested cars. Vans are different: {{facts.van_white|pct1}} of the vans and pick-ups set aside are white. The colours of surviving cars by year of first use show a long turn (Figure~\ref{fig:ctrend}): silver made up {{facts.silver2000|pct1}} of the cars first used in 2000 that were tested in 2025, but only {{facts.silver2022|pct1}} of those from 2022, while grey rose from {{facts.grey2000|pct1}} to {{facts.grey2022|pct1}}.
+
+\begin{figure}[tbp]\centering\includegraphics[width=0.9\textwidth]{fig4_colour_trend.png}\caption{Colour of cars tested in 2025, by year of first use. Shares of each year's survivors.}\label{fig:ctrend}\end{figure}
+
+\subsection{Fuel and electric cars}
+
+Of the surviving cars first used in {{facts.diesel_peak_year}}, {{facts.diesel_peak_share|pct1}} are diesels, the peak; of those first used in 2022, {{facts.diesel2022|pct1}} are diesels, {{facts.hy2022|pct1}} hybrids and {{facts.ev2022|pct1}} fully electric (Figure~\ref{fig:ftrend}). Because most electric cars are under three years old, the MOT data under-count them, and I turn to the licensing data. At the end of 2025 there were {{facts.uk_bev|f2}} battery electric vehicles for every 100 privately kept cars in the UK ({{facts.GB.bev|f2}} in Great Britain and {{ni.bev_per100|f2}} in Northern Ireland). The highest rates are in central London and the lowest in Northern Ireland and the Western Isles (Table~\ref{tab:bev}, Figure~\ref{fig:bev}). Island groups differ: Orkney ({{facts.bev_scot.1.bev|f2}}) has the second highest rate in Scotland after {{facts.bev_scot.0.name}} ({{facts.bev_scot.0.bev|f2}}), while Shetland has {{facts.bev_scot_shet|f2}}.
+
+\begin{figure}[tbp]\centering\includegraphics[width=0.9\textwidth]{fig7_fuel_trend.png}\caption{Fuel of cars tested in 2025, by year of first use. Hybrid includes plug-in hybrids.}\label{fig:ftrend}\end{figure}
+
+{{TABLE_BEV}}
+
+\begin{figure}[tbp]\centering\includegraphics[width=0.92\textwidth]{fig5_bev_county.png}\caption{Battery electric vehicles per 100 privately kept licensed cars, counties and unitary authorities, end of 2025 (DfT VEH0145 and VEH0125). Classes hold equal numbers of places.}\label{fig:bev}\end{figure}
+
+\subsection{Age}
+
+The oldest tested cars are in south-west England: Torbay ({{ranks.oldest_counties.0.age|f1}} years on average), {{ranks.oldest_counties.1.name}} ({{ranks.oldest_counties.1.age|f1}}) and {{ranks.oldest_counties.2.name}} ({{ranks.oldest_counties.2.age|f1}}). The youngest are in west central Scotland: {{ranks.youngest_counties.0.name}} ({{ranks.youngest_counties.0.age|f1}}) and the Motherwell postcode area ({{ranks.youngest_areas.0.age|f1}}) (Figure~\ref{fig:age}). Across Great Britain, {{facts.GB.old20|pct1}} of tested cars were first used in 2005 or earlier, and {{facts.pre1980|int}} before 1980.
+
+\begin{figure}[tbp]\centering\includegraphics[width=0.92\textwidth]{fig6_age_county.png}\caption{Average age of tested cars at their latest 2025 test, counties and unitary authorities. Cars under three years old are not tested.}\label{fig:age}\end{figure}
+
+\section{Discussion}
+
+Three patterns stand out. The first is how national Britain's car market is. Ford leads almost everywhere, a handful of colours cover nearly every car, and the dissimilarity between a typical county and its nation is small: the median county would need only {{facts.dissim_median|pct1}} of its cars to change make to match its nation, and {{facts.dissim_lt10|pct}} of the {{facts.dissim_n|int}} counties of Great Britain need less than a tenth. The exceptions are London, the islands and a few towns around London and in the north of England, such as Southend-on-Sea, Thurrock, Luton and Bradford. The places that do stand out tend to have an obvious local story, such as the long presence of a manufacturer (Vauxhall in Luton and around Ellesmere Port), a distinctive trade (London's private hire cars), or remoteness (Shetland's Toyotas), but the MOT data cannot test these explanations, and I offer them as possibilities only.
+
+The second is the north to south and urban to rural gradient in age and in electric cars. South-west England keeps its cars longest; west central Scotland has the youngest tested cars. Electric cars are concentrated in prosperous and urban places, and are rarest in Northern Ireland, the Western Isles and Shetland, and in former industrial places such as Blaenau Gwent and Merthyr Tydfil in the South Wales valleys. Orkney's high rate is a reminder that islands are not uniformly behind.
+
+The third is how much changes when one nation is measured with a different instrument. Northern Ireland, seen through licensing data, is a Volkswagen and Audi country that still runs on diesel. That contrast is real in the licensing data for both parts of the UK, so it is not an artefact of mixing sources.
+
+\section{Limitations}
+
+The MOT data describe cars aged three and over: {{meta.cars|int}} cars against {{meta.gb_licensed_cars|int}} cars licensed in Great Britain, a ratio of {{meta.mot_vs_licensed|f2}}. New makes and electric cars are under-counted. Cars are placed by the testing garage, not the owner, so people who use a garage over a boundary are counted where the garage is. Postcode areas are large, and county figures are blends of them: neighbouring counties in one postcode area get similar values, and differences between counties are muted. Postcode counts stand in for the number of cars in each part of an area. The model families and the van list are my own rules; colour is the colour recorded at registration; and engine size excludes electric cars. In the licensing data, the plug-in table counts all body types, not only cars, though nearly all are cars; and privately kept cars exclude company cars that may be driven locally. Northern Ireland has no colours and no age data in these sources.
+
+\section{Conclusion}
+
+One year of MOT tests, read in full and reduced to one record per car, gives a complete and current picture of what Great Britain drives. The average car is a blue Ford Fiesta about eleven years old; Scotland prefers white and the Vauxhall Corsa; Shetland and London are the most distinctive places; grey has displaced silver; and electric cars cluster in central London. Licensing statistics fill the gaps for new cars and Northern Ireland, where Volkswagen leads.
+
+\section*{Data and code availability}
+
+Data and code: \url{https://github.com/Tristan-Hotham/cars}. Interactive page: \url{https://maps.tristanhotham.com/cars/}. Archived release: \url{https://doi.org/10.5281/zenodo.23748250}. Only aggregates are published: counts by postcode area and make, model family, colour, fuel code and year of first use, and the derived county and nation tables. The source data are available from their publishers under the Open Government Licence v3.0.
+
+\section*{AI statement}
+
+I wrote the text, with drafting and editing assistance from Claude (Anthropic), which also helped prepare the analysis code. I reviewed and checked all text and results.
+
+\section*{References}
+\small
+Department for Transport (2026) Vehicle licensing statistics data files: tables VEH0120, VEH0125 and VEH0145. \url{https://www.gov.uk/government/statistical-data-sets/vehicle-licensing-statistics-data-files}. Open Government Licence v3.0.
+
+Driver and Vehicle Standards Agency (2026) Anonymised MOT tests and results: MOT testing data results extracts (2025). \url{https://open.data.dvsa.gov.uk/mot-anonymised/index.html}. Open Government Licence v3.0.
+
+Duncan, O.D. and Duncan, B. (1955) A methodological analysis of segregation indexes. American Sociological Review 20(2): 210 to 217.
+
+Office for National Statistics (2026a) ONS Postcode Directory (August 2026) for the United Kingdom, and Ward to Local Authority District to County and Unitary Authority to Region to Country (May 2026) Lookup. ONS Open Geography Portal. Open Government Licence v3.0.
+
+Office for National Statistics (2026b) Counties and Unitary Authorities (December 2025) Boundaries UK BUC. ONS Open Geography Portal. Open Government Licence v3.0.
+
+Okabe, A., Boots, B., Sugihara, K. and Chiu, S.N. (2000) Spatial Tessellations: Concepts and Applications of Voronoi Diagrams. Second edition. Chichester: Wiley.
+
+Ordnance Survey (2026) OS Open Names. Open Government Licence v3.0.
+\end{document}
