@@ -1,0 +1,5062 @@
+{
+ "meta": {
+  "year": 2025,
+  "rows": 42728066,
+  "cls4": 40213008,
+  "vehicles": 31731781,
+  "cars": 28852427,
+  "vans": 2879354,
+  "van_share": 0.09074038422236684,
+  "areas": 118,
+  "counties": 218,
+  "retests": 8481227,
+  "postcodes": 1721096,
+  "gb_licensed_cars": 32728149,
+  "uk_licensed_cars": 33783630,
+  "mot_vs_licensed": 0.8815783318512758
+ },
+ "gb": {
+  "code": null,
+  "name": "Great Britain",
+  "kind": "gb",
+  "nation": null,
+  "cars": 28850439,
+  "vans": 2879242,
+  "top_make": "FORD",
+  "top_make_share": 0.11977743755320822,
+  "make2": "VOLKSWAGEN",
+  "make2_share": 0.08659502099073929,
+  "top_colour": "BLACK",
+  "top_colour_share": 0.2004857965939918,
+  "colour2": "GREY",
+  "colour2_share": 0.17318718686481926,
+  "top_model": "FORD|FIESTA",
+  "top_model_name": "Ford Fiesta",
+  "top_model_share": 0.0455248462626348,
+  "top_model_colour": "BLUE",
+  "models": [
+   [
+    "FORD|FIESTA",
+    0.04552
+   ],
+   [
+    "FORD|FOCUS",
+    0.03
+   ],
+   [
+    "VAUXHALL|CORSA",
+    0.02991
+   ],
+   [
+    "VOLKSWAGEN|GOLF",
+    0.02931
+   ],
+   [
+    "MINI|HATCH",
+    0.02245
+   ]
+  ],
+  "age": 10.716936813281652,
+  "cc": 1665.6539557913725,
+  "old20": 0.06089032119439096,
+  "pre2000": 0.012174626685824084,
+  "fuel": {
+   "Petrol": 0.5835393345248634,
+   "Diesel": 0.33637230009432245,
+   "Hybrid": 0.057489636271755885,
+   "Electric": 0.021953643733105085,
+   "Other": 0.0006450853759531798
+  },
+  "make_shares": {
+   "FORD": 0.11978,
+   "VOLKSWAGEN": 0.0866,
+   "VAUXHALL": 0.08413,
+   "BMW": 0.06227,
+   "AUDI": 0.05864,
+   "TOYOTA": 0.0536,
+   "MERCEDES-BENZ": 0.05272,
+   "NISSAN": 0.0517,
+   "PEUGEOT": 0.03699,
+   "KIA": 0.03379,
+   "HYUNDAI": 0.0316,
+   "HONDA": 0.03014,
+   "MINI": 0.0272,
+   "SKODA": 0.02708,
+   "LAND ROVER": 0.02706,
+   "RENAULT": 0.02586,
+   "CITROEN": 0.02414,
+   "FIAT": 0.02147,
+   "VOLVO": 0.02018,
+   "SEAT": 0.01867,
+   "MAZDA": 0.01781,
+   "SUZUKI": 0.01457,
+   "JAGUAR": 0.01147,
+   "DACIA": 0.00727,
+   "PORSCHE": 0.00635,
+   "MITSUBISHI": 0.00632,
+   "LEXUS": 0.00565,
+   "MG": 0.00549,
+   "TESLA": 0.00445,
+   "SMART (MCC)": 0.00239,
+   "JEEP": 0.00233,
+   "ALFA ROMEO": 0.00223,
+   "SUBARU": 0.0019,
+   "CHEVROLET": 0.00163,
+   "DS": 0.00155,
+   "SAAB": 0.0014,
+   "ABARTH": 0.00099,
+   "ROVER": 0.00091,
+   "BENTLEY": 0.00077,
+   "ASTON MARTIN": 0.00077
+  },
+  "colour_shares": {
+   "BLACK": 0.20049,
+   "GREY": 0.17319,
+   "WHITE": 0.16484,
+   "BLUE": 0.16296,
+   "SILVER": 0.14018,
+   "RED": 0.10628,
+   "GREEN": 0.01506,
+   "ORANGE": 0.00814,
+   "BROWN": 0.00595,
+   "BEIGE": 0.00512,
+   "YELLOW": 0.00505,
+   "PURPLE": 0.00325,
+   "BRONZE": 0.0032,
+   "GOLD": 0.00237,
+   "TURQUOISE": 0.00128,
+   "CREAM": 0.00092,
+   "PINK": 0.00079,
+   "MAROON": 0.00075,
+   "MULTI-COLOUR": 0.00017
+  },
+  "top_fuel": "Petrol",
+  "dft_cars": 32728149,
+  "dft_private_cars": 29499087,
+  "bev_per100": 2.5926260022894945,
+  "piv_per100": 4.341941159060279,
+  "bev_all_per100": 5.496445888216899,
+  "grey_rise": {
+   "y2000": 0.030133611295366246,
+   "y2010": 0.13846624445375103,
+   "y2022": 0.26094857532311727,
+   "silver2000": 0.2760623248636136,
+   "silver2022": 0.061356435636961644
+  },
+  "diesel_peak": [
+   2014,
+   0.4675742000889732
+  ]
+ },
+ "nations": {
+  "England": {
+   "code": null,
+   "name": "England",
+   "kind": "nation",
+   "nation": "England",
+   "cars": 25147238,
+   "vans": 2437051,
+   "top_make": "FORD",
+   "top_make_share": 0.12023273341076689,
+   "make2": "VOLKSWAGEN",
+   "make2_share": 0.08642137754501476,
+   "top_colour": "BLACK",
+   "top_colour_share": 0.20303373279879888,
+   "colour2": "GREY",
+   "colour2_share": 0.17398090551894702,
+   "top_model": "FORD|FIESTA",
+   "top_model_name": "Ford Fiesta",
+   "top_model_share": 0.045410642423457735,
+   "top_model_colour": "BLUE",
+   "models": [
+    [
+     "FORD|FIESTA",
+     0.04541
+    ],
+    [
+     "FORD|FOCUS",
+     0.03039
+    ],
+    [
+     "VOLKSWAGEN|GOLF",
+     0.0295
+    ],
+    [
+     "VAUXHALL|CORSA",
+     0.02871
+    ],
+    [
+     "MINI|HATCH",
+     0.02286
+    ]
+   ],
+   "age": 10.852865408342772,
+   "cc": 1673.0982167685263,
+   "old20": 0.06411067609263695,
+   "pre2000": 0.012656034045390627,
+   "fuel": {
+    "Petrol": 0.5854203950023208,
+    "Diesel": 0.33244840351510807,
+    "Hybrid": 0.05901349696824335,
+    "Electric": 0.022484828152230487,
+    "Other": 0.0006328763620972071
+   },
+   "make_shares": {
+    "FORD": 0.12023,
+    "VOLKSWAGEN": 0.08642,
+    "VAUXHALL": 0.08215,
+    "BMW": 0.06354,
+    "AUDI": 0.05838,
+    "TOYOTA": 0.05531,
+    "MERCEDES-BENZ": 0.05424,
+    "NISSAN": 0.05261,
+    "PEUGEOT": 0.03686,
+    "KIA": 0.03336,
+    "HYUNDAI": 0.03116,
+    "HONDA": 0.03058,
+    "MINI": 0.02769,
+    "SKODA": 0.02672,
+    "LAND ROVER": 0.02723,
+    "RENAULT": 0.0243,
+    "CITROEN": 0.02383,
+    "FIAT": 0.02148,
+    "VOLVO": 0.01989,
+    "SEAT": 0.01839,
+    "MAZDA": 0.01771,
+    "SUZUKI": 0.01391,
+    "JAGUAR": 0.01172,
+    "DACIA": 0.0062,
+    "PORSCHE": 0.00663,
+    "MITSUBISHI": 0.00619,
+    "LEXUS": 0.00601,
+    "MG": 0.00518,
+    "TESLA": 0.00465,
+    "SMART (MCC)": 0.00255,
+    "JEEP": 0.00231,
+    "ALFA ROMEO": 0.00231,
+    "SUBARU": 0.00178,
+    "CHEVROLET": 0.00164,
+    "DS": 0.00148,
+    "SAAB": 0.00141,
+    "ABARTH": 0.00103,
+    "ROVER": 0.00095,
+    "BENTLEY": 0.00082,
+    "ASTON MARTIN": 0.00082
+   },
+   "colour_shares": {
+    "BLACK": 0.20303,
+    "GREY": 0.17398,
+    "WHITE": 0.16201,
+    "BLUE": 0.16343,
+    "SILVER": 0.14193,
+    "RED": 0.10386,
+    "GREEN": 0.01529,
+    "ORANGE": 0.00772,
+    "BROWN": 0.00596,
+    "BEIGE": 0.00515,
+    "YELLOW": 0.00493,
+    "PURPLE": 0.00328,
+    "BRONZE": 0.00317,
+    "GOLD": 0.00238,
+    "TURQUOISE": 0.00126,
+    "CREAM": 0.00088,
+    "PINK": 0.00079,
+    "MAROON": 0.00076,
+    "MULTI-COLOUR": 0.00017
+   },
+   "top_fuel": "Petrol",
+   "dft_cars": 28450386,
+   "dft_private_cars": 25526239,
+   "bev_per100": 2.6505314786091283,
+   "piv_per100": 4.450671326864878,
+   "bev_all_per100": 5.79616740525067,
+   "dissim_vs_gb": 0.008866755580860796,
+   "sig_make": "LEXUS",
+   "sig_lq": 1.064325856359618
+  },
+  "Scotland": {
+   "code": null,
+   "name": "Scotland",
+   "kind": "nation",
+   "nation": "Scotland",
+   "cars": 2220398,
+   "vans": 247396,
+   "top_make": "FORD",
+   "top_make_share": 0.10719945395085662,
+   "make2": "VAUXHALL",
+   "make2_share": 0.1042177024888336,
+   "top_colour": "WHITE",
+   "top_colour_share": 0.18950707062110264,
+   "colour2": "BLACK",
+   "colour2_share": 0.18125894100095222,
+   "top_model": "VAUXHALL|CORSA",
+   "top_model_name": "Vauxhall Corsa",
+   "top_model_share": 0.043002039060697585,
+   "top_model_colour": "WHITE",
+   "models": [
+    [
+     "VAUXHALL|CORSA",
+     0.043
+    ],
+    [
+     "FORD|FIESTA",
+     0.04143
+    ],
+    [
+     "VOLKSWAGEN|GOLF",
+     0.02791
+    ],
+    [
+     "FORD|FOCUS",
+     0.02627
+    ],
+    [
+     "VOLKSWAGEN|POLO",
+     0.02141
+    ]
+   ],
+   "age": 9.190950960371524,
+   "cc": 1611.5999471127916,
+   "old20": 0.029683741080383574,
+   "pre2000": 0.007692550319597949,
+   "fuel": {
+    "Petrol": 0.587727609823875,
+    "Diesel": 0.33836975463174995,
+    "Hybrid": 0.052177342202925685,
+    "Electric": 0.02108499001220348,
+    "Other": 0.0006403033292459181
+   },
+   "make_shares": {
+    "FORD": 0.1072,
+    "VOLKSWAGEN": 0.08873,
+    "VAUXHALL": 0.10422,
+    "BMW": 0.05396,
+    "AUDI": 0.06355,
+    "TOYOTA": 0.04024,
+    "MERCEDES-BENZ": 0.04206,
+    "NISSAN": 0.04415,
+    "PEUGEOT": 0.03549,
+    "KIA": 0.03862,
+    "HYUNDAI": 0.03478,
+    "HONDA": 0.03006,
+    "MINI": 0.02537,
+    "SKODA": 0.03139,
+    "LAND ROVER": 0.0252,
+    "RENAULT": 0.03753,
+    "CITROEN": 0.02182,
+    "FIAT": 0.01934,
+    "VOLVO": 0.02346,
+    "SEAT": 0.02122,
+    "MAZDA": 0.01983,
+    "SUZUKI": 0.01712,
+    "JAGUAR": 0.00983,
+    "DACIA": 0.01563,
+    "PORSCHE": 0.00479,
+    "MITSUBISHI": 0.00697,
+    "LEXUS": 0.00332,
+    "MG": 0.00677,
+    "TESLA": 0.00349,
+    "SMART (MCC)": 0.00113,
+    "JEEP": 0.00252,
+    "ALFA ROMEO": 0.00159,
+    "SUBARU": 0.00322,
+    "CHEVROLET": 0.00133,
+    "DS": 0.00193,
+    "SAAB": 0.00132,
+    "ABARTH": 0.00074,
+    "ROVER": 0.00052,
+    "BENTLEY": 0.00048,
+    "ASTON MARTIN": 0.00045
+   },
+   "colour_shares": {
+    "BLACK": 0.18126,
+    "GREY": 0.16993,
+    "WHITE": 0.18951,
+    "BLUE": 0.15968,
+    "SILVER": 0.1222,
+    "RED": 0.12634,
+    "GREEN": 0.01248,
+    "ORANGE": 0.01124,
+    "BROWN": 0.00542,
+    "BEIGE": 0.00438,
+    "YELLOW": 0.00547,
+    "PURPLE": 0.00269,
+    "BRONZE": 0.00334,
+    "GOLD": 0.00215,
+    "TURQUOISE": 0.00135,
+    "CREAM": 0.00112,
+    "PINK": 0.00069,
+    "MAROON": 0.00061,
+    "MULTI-COLOUR": 0.00015
+   },
+   "top_fuel": "Petrol",
+   "dft_cars": 2619573,
+   "dft_private_cars": 2415775,
+   "bev_per100": 2.459210812265215,
+   "piv_per100": 4.076828347010793,
+   "bev_all_per100": 3.967249624270826,
+   "dissim_vs_gb": 0.07503383454529043,
+   "sig_make": "DACIA",
+   "sig_lq": 2.1488558461759437
+  },
+  "Wales": {
+   "code": null,
+   "name": "Wales",
+   "kind": "nation",
+   "nation": "Wales",
+   "cars": 1482804,
+   "vans": 194795,
+   "top_make": "FORD",
+   "top_make_share": 0.13089063610755536,
+   "make2": "VAUXHALL",
+   "make2_share": 0.08778657202377912,
+   "top_colour": "BLACK",
+   "top_colour_share": 0.18606562149329123,
+   "colour2": "WHITE",
+   "colour2_share": 0.17590572638466753,
+   "top_model": "FORD|FIESTA",
+   "top_model_name": "Ford Fiesta",
+   "top_model_share": 0.053591408672487656,
+   "top_model_colour": "BLUE",
+   "models": [
+    [
+     "FORD|FIESTA",
+     0.05359
+    ],
+    [
+     "VAUXHALL|CORSA",
+     0.03069
+    ],
+    [
+     "FORD|FOCUS",
+     0.02898
+    ],
+    [
+     "VOLKSWAGEN|GOLF",
+     0.02834
+    ],
+    [
+     "VOLKSWAGEN|POLO",
+     0.02026
+    ]
+   ],
+   "age": 10.696751926109117,
+   "cc": 1620.8541785942343,
+   "old20": 0.05300525905722381,
+   "pre2000": 0.01072192490880423,
+   "fuel": {
+    "Petrol": 0.5453663062626,
+    "Diesel": 0.39992758329690253,
+    "Hybrid": 0.039600903369458415,
+    "Electric": 0.014245905211525791,
+    "Other": 0.0008593018595133823
+   },
+   "make_shares": {
+    "FORD": 0.13089,
+    "VOLKSWAGEN": 0.08635,
+    "VAUXHALL": 0.08779,
+    "BMW": 0.0532,
+    "AUDI": 0.05571,
+    "TOYOTA": 0.04461,
+    "MERCEDES-BENZ": 0.04305,
+    "NISSAN": 0.04743,
+    "PEUGEOT": 0.04158,
+    "KIA": 0.03378,
+    "HYUNDAI": 0.0342,
+    "HONDA": 0.02283,
+    "MINI": 0.02158,
+    "SKODA": 0.02669,
+    "LAND ROVER": 0.02701,
+    "RENAULT": 0.03495,
+    "CITROEN": 0.0328,
+    "FIAT": 0.02447,
+    "VOLVO": 0.02006,
+    "SEAT": 0.01964,
+    "MAZDA": 0.01647,
+    "SUZUKI": 0.02198,
+    "JAGUAR": 0.0097,
+    "DACIA": 0.0129,
+    "PORSCHE": 0.00404,
+    "MITSUBISHI": 0.00764,
+    "LEXUS": 0.00297,
+    "MG": 0.00883,
+    "TESLA": 0.00247,
+    "SMART (MCC)": 0.00159,
+    "JEEP": 0.00246,
+    "ALFA ROMEO": 0.00186,
+    "SUBARU": 0.00189,
+    "CHEVROLET": 0.00196,
+    "DS": 0.00224,
+    "SAAB": 0.0013,
+    "ABARTH": 0.00085,
+    "ROVER": 0.00076,
+    "BENTLEY": 0.00039,
+    "ASTON MARTIN": 0.00028
+   },
+   "colour_shares": {
+    "BLACK": 0.18607,
+    "GREY": 0.1646,
+    "WHITE": 0.17591,
+    "BLUE": 0.16001,
+    "SILVER": 0.13744,
+    "RED": 0.11712,
+    "GREEN": 0.01504,
+    "ORANGE": 0.01055,
+    "BROWN": 0.00663,
+    "BEIGE": 0.00577,
+    "YELLOW": 0.00651,
+    "PURPLE": 0.00366,
+    "BRONZE": 0.00351,
+    "GOLD": 0.00257,
+    "TURQUOISE": 0.00145,
+    "CREAM": 0.00134,
+    "PINK": 0.00099,
+    "MAROON": 0.00068,
+    "MULTI-COLOUR": 0.00016
+   },
+   "top_fuel": "Petrol",
+   "dft_cars": 1658190,
+   "dft_private_cars": 1557073,
+   "bev_per100": 1.8503307166716012,
+   "piv_per100": 2.970766303185528,
+   "bev_all_per100": 2.7697670351407258,
+   "dissim_vs_gb": 0.0642190941992868,
+   "sig_make": "DACIA",
+   "sig_lq": 1.774627804485445
+  }
+ },
+ "ni": {
+  "name": "Northern Ireland",
+  "kind": "nation",
+  "nation": "Northern Ireland",
+  "dft_cars": 1055481,
+  "dft_private_cars": 958156,
+  "bev_per100": 1.0626662046681334,
+  "piv_per100": 1.7765374323179106,
+  "bev_all_per100": 2.535242226056177,
+  "top_makes": [
+   [
+    "VOLKSWAGEN",
+    0.1306508221023133
+   ],
+   [
+    "AUDI",
+    0.09087077960714714
+   ],
+   [
+    "FORD",
+    0.08287114348012947
+   ],
+   [
+    "BMW",
+    0.06303542470567595
+   ],
+   [
+    "VAUXHALL",
+    0.05859004788828357
+   ],
+   [
+    "TOYOTA",
+    0.051851899983198724
+   ],
+   [
+    "HYUNDAI",
+    0.049986122701311336
+   ],
+   [
+    "MERCEDES",
+    0.049886800229091456
+   ],
+   [
+    "PEUGEOT",
+    0.04688206338258923
+   ],
+   [
+    "SEAT",
+    0.039307564566568795
+   ]
+  ],
+  "top_models": [
+   [
+    "VOLKSWAGEN|GOLF",
+    0.04859746458504092
+   ],
+   [
+    "FORD|FIESTA",
+    0.02386524075488792
+   ],
+   [
+    "VOLKSWAGEN|TIGUAN",
+    0.019598087439048954
+   ],
+   [
+    "VOLKSWAGEN|POLO",
+    0.019502477956444775
+   ],
+   [
+    "FORD|FOCUS",
+    0.0191757348702635
+   ],
+   [
+    "SEAT|LEON",
+    0.018001501904299548
+   ],
+   [
+    "AUDI|A4",
+    0.017889183968424736
+   ],
+   [
+    "AUDI|A3",
+    0.017056546047104843
+   ],
+   [
+    "KIA|SPORTAGE",
+    0.016295383175887104
+   ],
+   [
+    "VAUXHALL|CORSA",
+    0.01620348668289862
+   ]
+  ],
+  "fuels": {
+   "Diesel": 0.5055588095783993,
+   "Petrol": 0.3858659480794097,
+   "Hybrid electric (petrol)": 0.06147504081967959,
+   "Battery electric": 0.02652466956713039,
+   "Plug-in hybrid electric (petrol)": 0.013287861587173107,
+   "Hybrid electric (diesel)": 0.00645410419948408,
+   "Gas": 0.000558804937162292,
+   "Plug-in hybrid electric (diesel)": 0.00015037607943569985,
+   "Range extended electric": 0.00011788742029835728,
+   "Other fuel types": 5.569484423544439e-06,
+   "Fuel cell electric": 9.282474039240731e-07
+  }
+ },
+ "gb_veh": {
+  "top_makes": [
+   [
+    "FORD",
+    0.1097554207873922
+   ],
+   [
+    "VOLKSWAGEN",
+    0.08717470591161666
+   ],
+   [
+    "VAUXHALL",
+    0.0761372208712879
+   ],
+   [
+    "BMW",
+    0.06112654413650033
+   ],
+   [
+    "AUDI",
+    0.05916723204760131
+   ],
+   [
+    "TOYOTA",
+    0.052980209562012916
+   ],
+   [
+    "MERCEDES",
+    0.05117337521851701
+   ],
+   [
+    "NISSAN",
+    0.05099775940927476
+   ],
+   [
+    "KIA",
+    0.03758914664964727
+   ],
+   [
+    "PEUGEOT",
+    0.03687327351280768
+   ]
+  ],
+  "top_models": [
+   [
+    "FORD|FIESTA",
+    0.038038767421869527
+   ],
+   [
+    "VAUXHALL|CORSA",
+    0.02724996418539019
+   ],
+   [
+    "VOLKSWAGEN|GOLF",
+    0.027145349006712553
+   ],
+   [
+    "FORD|FOCUS",
+    0.0261874990159588
+   ],
+   [
+    "NISSAN|QASHQAI",
+    0.020253289062304967
+   ],
+   [
+    "VOLKSWAGEN|POLO",
+    0.019884007958057184
+   ],
+   [
+    "TOYOTA|YARIS",
+    0.016940983928654063
+   ],
+   [
+    "VAUXHALL|ASTRA",
+    0.01623765264013091
+   ],
+   [
+    "MINI|COOPER",
+    0.01520107935326208
+   ],
+   [
+    "BMW|3 SERIES",
+    0.013951174913765064
+   ]
+  ],
+  "fuels": {
+   "Petrol": 0.5508536927841029,
+   "Diesel": 0.2871502867234149,
+   "Hybrid electric (petrol)": 0.08058382992367671,
+   "Battery electric": 0.05114017972977495,
+   "Plug-in hybrid electric (petrol)": 0.025572918515641422,
+   "Hybrid electric (diesel)": 0.0033686386862321095,
+   "Gas": 0.0007371852991338582,
+   "Plug-in hybrid electric (diesel)": 0.00030223160489502055,
+   "Range extended electric": 0.00028169769571823695,
+   "Other fuel types": 6.1362265032662385e-06,
+   "Fuel cell electric": 3.202810906582866e-06
+  },
+  "cars": 33408154.0
+ },
+ "uk": {
+  "dft_cars": 33783630,
+  "dft_private_cars": 30457243,
+  "bev_per100": 2.5444949170218725,
+  "piv_per100": 4.261235989088047,
+  "bev_all_per100": 5.403930838693178
+ },
+ "ranks": {
+  "oldest_areas": [
+   {
+    "code": "DT",
+    "name": "Dorchester",
+    "nation": "England",
+    "cars": 109116,
+    "age": 12.61364016883619,
+    "old20": 0.11020482976675984
+   },
+   {
+    "code": "TQ",
+    "name": "Torquay",
+    "nation": "England",
+    "cars": 140129,
+    "age": 12.39301661654726,
+    "old20": 0.10544644896094998
+   },
+   {
+    "code": "TA",
+    "name": "Taunton",
+    "nation": "England",
+    "cars": 181095,
+    "age": 12.103778142317788,
+    "old20": 0.09543110207958298
+   },
+   {
+    "code": "TR",
+    "name": "Truro",
+    "nation": "England",
+    "cars": 162039,
+    "age": 11.880810746693815,
+    "old20": 0.08900381392019156
+   },
+   {
+    "code": "EX",
+    "name": "Exeter",
+    "nation": "England",
+    "cars": 308251,
+    "age": 11.857505680672261,
+    "old20": 0.09274260261929401
+   },
+   {
+    "code": "BH",
+    "name": "Bournemouth",
+    "nation": "England",
+    "cars": 300416,
+    "age": 11.779148419553145,
+    "old20": 0.09413613123135918
+   },
+   {
+    "code": "PL",
+    "name": "Plymouth",
+    "nation": "England",
+    "cars": 279064,
+    "age": 11.761257855352484,
+    "old20": 0.0770832288165354
+   },
+   {
+    "code": "PO",
+    "name": "Portsmouth",
+    "nation": "England",
+    "cars": 405217,
+    "age": 11.629435395493163,
+    "old20": 0.08730877529817357
+   },
+   {
+    "code": "HR",
+    "name": "Hereford",
+    "nation": "England",
+    "cars": 102517,
+    "age": 11.614949436575884,
+    "old20": 0.08420066915731049
+   },
+   {
+    "code": "SM",
+    "name": "Sutton",
+    "nation": "England",
+    "cars": 66261,
+    "age": 11.613216897098093,
+    "old20": 0.08966058465764175
+   }
+  ],
+  "youngest_areas": [
+   {
+    "code": "ML",
+    "name": "Motherwell",
+    "nation": "Scotland",
+    "cars": 142394,
+    "age": 8.673308291902853
+   },
+   {
+    "code": "G",
+    "name": "Glasgow",
+    "nation": "Scotland",
+    "cars": 467104,
+    "age": 8.847524294372374
+   },
+   {
+    "code": "FK",
+    "name": "Falkirk",
+    "nation": "Scotland",
+    "cars": 124656,
+    "age": 8.847886314005452
+   },
+   {
+    "code": "PA",
+    "name": "Paisley",
+    "nation": "Scotland",
+    "cars": 130778,
+    "age": 8.963332220946638
+   },
+   {
+    "code": "ZE",
+    "name": "Lerwick",
+    "nation": "Scotland",
+    "cars": 9022,
+    "age": 9.050506549432512
+   },
+   {
+    "code": "KA",
+    "name": "Kilmarnock",
+    "nation": "Scotland",
+    "cars": 152272,
+    "age": 9.061877509873293
+   },
+   {
+    "code": "AB",
+    "name": "Aberdeen",
+    "nation": "Scotland",
+    "cars": 215298,
+    "age": 9.17555413015586
+   },
+   {
+    "code": "DD",
+    "name": "Dundee",
+    "nation": "Scotland",
+    "cars": 116743,
+    "age": 9.304737247215852
+   },
+   {
+    "code": "PH",
+    "name": "Perth",
+    "nation": "Scotland",
+    "cars": 79567,
+    "age": 9.312942165315064
+   },
+   {
+    "code": "EH",
+    "name": "Edinburgh",
+    "nation": "Scotland",
+    "cars": 366696,
+    "age": 9.313367864732573
+   }
+  ],
+  "oldest_counties": [
+   {
+    "code": "E06000027",
+    "name": "Torbay",
+    "nation": "England",
+    "cars": 51818,
+    "age": 12.39301661654726,
+    "old20": 0.10544644896094998
+   },
+   {
+    "code": "E06000059",
+    "name": "Dorset",
+    "nation": "England",
+    "cars": 211071,
+    "age": 12.176197568883206,
+    "old20": 0.10113793496682066
+   },
+   {
+    "code": "E10000008",
+    "name": "Devon",
+    "nation": "England",
+    "cars": 432035,
+    "age": 11.960164172924642,
+    "old20": 0.09381832578611252
+   },
+   {
+    "code": "E06000066",
+    "name": "Somerset",
+    "nation": "England",
+    "cars": 313141,
+    "age": 11.862671191303308,
+    "old20": 0.089891284724942
+   },
+   {
+    "code": "E06000052",
+    "name": "Cornwall",
+    "nation": "England",
+    "cars": 309492,
+    "age": 11.826633989861943,
+    "old20": 0.08380468985993406
+   },
+   {
+    "code": "E06000058",
+    "name": "Bournemouth, Christchurch and Poole",
+    "nation": "England",
+    "cars": 184579,
+    "age": 11.779148419553147,
+    "old20": 0.0941361312313592
+   },
+   {
+    "code": "E06000026",
+    "name": "Plymouth",
+    "nation": "England",
+    "cars": 97218,
+    "age": 11.761257855352484,
+    "old20": 0.07708322881653538
+   },
+   {
+    "code": "E06000044",
+    "name": "Portsmouth",
+    "nation": "England",
+    "cars": 71861,
+    "age": 11.629435395493163,
+    "old20": 0.08730877529817357
+   },
+   {
+    "code": "E06000046",
+    "name": "Isle of Wight",
+    "nation": "England",
+    "cars": 85278,
+    "age": 11.62943539549316,
+    "old20": 0.08730877529817357
+   },
+   {
+    "code": "E06000019",
+    "name": "Herefordshire, County of",
+    "nation": "England",
+    "cars": 107732,
+    "age": 11.5700794988022,
+    "old20": 0.08337455832187916
+   }
+  ],
+  "youngest_counties": [
+   {
+    "code": "S12000050",
+    "name": "North Lanarkshire",
+    "nation": "Scotland",
+    "cars": 115856,
+    "age": 8.728015640548907
+   },
+   {
+    "code": "S12000029",
+    "name": "South Lanarkshire",
+    "nation": "Scotland",
+    "cars": 126932,
+    "age": 8.764048420970203
+   },
+   {
+    "code": "S12000011",
+    "name": "East Renfrewshire",
+    "nation": "Scotland",
+    "cars": 36677,
+    "age": 8.847524294372374
+   },
+   {
+    "code": "S12000039",
+    "name": "West Dunbartonshire",
+    "nation": "Scotland",
+    "cars": 35173,
+    "age": 8.847524294372374
+   },
+   {
+    "code": "S12000045",
+    "name": "East Dunbartonshire",
+    "nation": "Scotland",
+    "cars": 47542,
+    "age": 8.847524294372374
+   },
+   {
+    "code": "S12000049",
+    "name": "Glasgow City",
+    "nation": "Scotland",
+    "cars": 225088,
+    "age": 8.847524294372374
+   },
+   {
+    "code": "S12000030",
+    "name": "Stirling",
+    "nation": "Scotland",
+    "cars": 45944,
+    "age": 8.84783879773827
+   },
+   {
+    "code": "S12000005",
+    "name": "Clackmannanshire",
+    "nation": "Scotland",
+    "cars": 21744,
+    "age": 8.850424527038413
+   },
+   {
+    "code": "S12000014",
+    "name": "Falkirk",
+    "nation": "Scotland",
+    "cars": 66568,
+    "age": 8.897476390515639
+   },
+   {
+    "code": "S12000035",
+    "name": "Argyll and Bute",
+    "nation": "Scotland",
+    "cars": 47027,
+    "age": 8.927035714013424
+   }
+  ],
+  "bev_counties": [
+   {
+    "code": "E09000001",
+    "name": "City of London",
+    "nation": "England",
+    "dft_cars": 1433,
+    "bev": 7.6923076923076925
+   },
+   {
+    "code": "E09000007",
+    "name": "Camden",
+    "nation": "England",
+    "dft_cars": 36143,
+    "bev": 7.649599012954966
+   },
+   {
+    "code": "E09000033",
+    "name": "Westminster",
+    "nation": "England",
+    "dft_cars": 86392,
+    "bev": 7.622957417692989
+   },
+   {
+    "code": "E09000020",
+    "name": "Kensington and Chelsea",
+    "nation": "England",
+    "dft_cars": 37330,
+    "bev": 6.829608532651341
+   },
+   {
+    "code": "E06000053",
+    "name": "Isles of Scilly",
+    "nation": "England",
+    "dft_cars": 573,
+    "bev": 5.194805194805195
+   },
+   {
+    "code": "E09000013",
+    "name": "Hammersmith and Fulham",
+    "nation": "England",
+    "dft_cars": 46794,
+    "bev": 5.087862152294397
+   },
+   {
+    "code": "E09000003",
+    "name": "Barnet",
+    "nation": "England",
+    "dft_cars": 139837,
+    "bev": 5.037967289719626
+   },
+   {
+    "code": "E09000027",
+    "name": "Richmond upon Thames",
+    "nation": "England",
+    "dft_cars": 74522,
+    "bev": 4.449456051515538
+   },
+   {
+    "code": "E09000019",
+    "name": "Islington",
+    "nation": "England",
+    "dft_cars": 29706,
+    "bev": 4.436464295066023
+   },
+   {
+    "code": "E06000041",
+    "name": "Wokingham",
+    "nation": "England",
+    "dft_cars": 105135,
+    "bev": 4.329773450076564
+   }
+  ],
+  "bev_low_counties": [
+   {
+    "code": "N09000006",
+    "name": "Fermanagh and Omagh",
+    "nation": "Northern Ireland",
+    "dft_cars": 70280,
+    "bev": 0.41079278459906016
+   },
+   {
+    "code": "N09000005",
+    "name": "Derry City and Strabane",
+    "nation": "Northern Ireland",
+    "dft_cars": 81073,
+    "bev": 0.575118007704411
+   },
+   {
+    "code": "N09000009",
+    "name": "Mid Ulster",
+    "nation": "Northern Ireland",
+    "dft_cars": 86804,
+    "bev": 0.6145361921012934
+   },
+   {
+    "code": "S12000013",
+    "name": "Na h-Eileanan Siar",
+    "nation": "Scotland",
+    "dft_cars": 13588,
+    "bev": 0.6748466257668712
+   },
+   {
+    "code": "N09000004",
+    "name": "Causeway Coast and Glens",
+    "nation": "Northern Ireland",
+    "dft_cars": 80583,
+    "bev": 0.7535496152930912
+   },
+   {
+    "code": "N09000010",
+    "name": "Newry, Mourne and Down",
+    "nation": "Northern Ireland",
+    "dft_cars": 105063,
+    "bev": 0.8950674113627529
+   },
+   {
+    "code": "N09000002",
+    "name": "Armagh City, Banbridge and Craigavon",
+    "nation": "Northern Ireland",
+    "dft_cars": 126380,
+    "bev": 0.9801589997961541
+   },
+   {
+    "code": "W06000019",
+    "name": "Blaenau Gwent",
+    "nation": "Wales",
+    "dft_cars": 35668,
+    "bev": 1.0293421675343115
+   },
+   {
+    "code": "N09000008",
+    "name": "Mid and East Antrim",
+    "nation": "Northern Ireland",
+    "dft_cars": 82621,
+    "bev": 1.0670126294050677
+   },
+   {
+    "code": "S12000027",
+    "name": "Shetland Islands",
+    "nation": "Scotland",
+    "dft_cars": 11946,
+    "bev": 1.1557512383048982
+   }
+  ],
+  "bev_areas": [
+   {
+    "code": "NW",
+    "name": "London NW",
+    "nation": "England",
+    "dft_cars": 152111,
+    "bev": 5.7255979773575865
+   },
+   {
+    "code": "W",
+    "name": "London W",
+    "nation": "England",
+    "dft_cars": 178433,
+    "bev": 5.425657768473468
+   },
+   {
+    "code": "SW",
+    "name": "London SW",
+    "nation": "England",
+    "dft_cars": 218871,
+    "bev": 4.740017909599431
+   },
+   {
+    "code": "KT",
+    "name": "Kingston upon Thames",
+    "nation": "England",
+    "dft_cars": 294715,
+    "bev": 3.8621731677435087
+   },
+   {
+    "code": "AL",
+    "name": "St Albans",
+    "nation": "England",
+    "dft_cars": 136282,
+    "bev": 3.8213576237082663
+   },
+   {
+    "code": "HA",
+    "name": "Harrow",
+    "nation": "England",
+    "dft_cars": 191138,
+    "bev": 3.7948380838496525
+   },
+   {
+    "code": "CB",
+    "name": "Cambridge",
+    "nation": "England",
+    "dft_cars": 230705,
+    "bev": 3.7683897950095924
+   },
+   {
+    "code": "N",
+    "name": "London N",
+    "nation": "England",
+    "dft_cars": 218125,
+    "bev": 3.7242614361616564
+   },
+   {
+    "code": "MK",
+    "name": "Milton Keynes",
+    "nation": "England",
+    "dft_cars": 527966,
+    "bev": 3.6204327743552143
+   },
+   {
+    "code": "CW",
+    "name": "Crewe",
+    "nation": "England",
+    "dft_cars": 200070,
+    "bev": 3.4763726550635545
+   }
+  ],
+  "mot_ev_areas": [
+   {
+    "code": "NW",
+    "name": "London NW",
+    "nation": "England",
+    "cars": 193906,
+    "ev": 0.06525326704691964
+   },
+   {
+    "code": "W",
+    "name": "London W",
+    "nation": "England",
+    "cars": 79503,
+    "ev": 0.06452586694841704
+   },
+   {
+    "code": "SW",
+    "name": "London SW",
+    "nation": "England",
+    "cars": 129095,
+    "ev": 0.03916495604012549
+   },
+   {
+    "code": "WD",
+    "name": "Watford",
+    "nation": "England",
+    "cars": 118476,
+    "ev": 0.0387589047570816
+   },
+   {
+    "code": "MK",
+    "name": "Milton Keynes",
+    "nation": "England",
+    "cars": 310100,
+    "ev": 0.037726539825862625
+   },
+   {
+    "code": "E",
+    "name": "London E",
+    "nation": "England",
+    "cars": 224962,
+    "ev": 0.03603275219814902
+   },
+   {
+    "code": "SE",
+    "name": "London SE",
+    "nation": "England",
+    "cars": 232199,
+    "ev": 0.03593469394786369
+   },
+   {
+    "code": "KT",
+    "name": "Kingston upon Thames",
+    "nation": "England",
+    "cars": 252162,
+    "ev": 0.033918671330335264
+   },
+   {
+    "code": "HA",
+    "name": "Harrow",
+    "nation": "England",
+    "cars": 177426,
+    "ev": 0.03364783064488858
+   },
+   {
+    "code": "TW",
+    "name": "Twickenham",
+    "nation": "England",
+    "cars": 219196,
+    "ev": 0.03314385299001807
+   }
+  ],
+  "cc_areas": [
+   {
+    "code": "W",
+    "name": "London W",
+    "nation": "England",
+    "cars": 79503,
+    "cc": 1828.7135112593828
+   },
+   {
+    "code": "NW",
+    "name": "London NW",
+    "nation": "England",
+    "cars": 193906,
+    "cc": 1782.5893684076898
+   },
+   {
+    "code": "SW",
+    "name": "London SW",
+    "nation": "England",
+    "cars": 129095,
+    "cc": 1776.1136589103521
+   },
+   {
+    "code": "SL",
+    "name": "Slough",
+    "nation": "England",
+    "cars": 212331,
+    "cc": 1756.4592453343437
+   },
+   {
+    "code": "IG",
+    "name": "Ilford",
+    "nation": "England",
+    "cars": 129521,
+    "cc": 1755.2732636266053
+   },
+   {
+    "code": "HP",
+    "name": "Hemel Hempstead",
+    "nation": "England",
+    "cars": 286841,
+    "cc": 1746.503292601963
+   },
+   {
+    "code": "RG",
+    "name": "Reading",
+    "nation": "England",
+    "cars": 448868,
+    "cc": 1734.2660952961644
+   },
+   {
+    "code": "KT",
+    "name": "Kingston upon Thames",
+    "nation": "England",
+    "cars": 252162,
+    "cc": 1732.6286522574605
+   },
+   {
+    "code": "HG",
+    "name": "Harrogate",
+    "nation": "England",
+    "cars": 81480,
+    "cc": 1730.3553047746768
+   },
+   {
+    "code": "GU",
+    "name": "Guildford",
+    "nation": "England",
+    "cars": 400726,
+    "cc": 1729.7106770846701
+   }
+  ],
+  "cc_low_areas": [
+   {
+    "code": "PA",
+    "name": "Paisley",
+    "nation": "Scotland",
+    "cars": 130778,
+    "cc": 1571.9644487881158
+   },
+   {
+    "code": "G",
+    "name": "Glasgow",
+    "nation": "Scotland",
+    "cars": 467104,
+    "cc": 1581.5916707732404
+   },
+   {
+    "code": "SR",
+    "name": "Sunderland",
+    "nation": "England",
+    "cars": 98495,
+    "cc": 1584.4236687734954
+   },
+   {
+    "code": "CF",
+    "name": "Cardiff",
+    "nation": "Wales",
+    "cars": 465621,
+    "cc": 1586.7975974441454
+   },
+   {
+    "code": "L",
+    "name": "Liverpool",
+    "nation": "England",
+    "cars": 318291,
+    "cc": 1592.4609785672465
+   },
+   {
+    "code": "FK",
+    "name": "Falkirk",
+    "nation": "Scotland",
+    "cars": 124656,
+    "cc": 1596.720763349984
+   },
+   {
+    "code": "KY",
+    "name": "Kirkcaldy",
+    "nation": "Scotland",
+    "cars": 160586,
+    "cc": 1598.0434479170633
+   },
+   {
+    "code": "DD",
+    "name": "Dundee",
+    "nation": "Scotland",
+    "cars": 116743,
+    "cc": 1599.7097512830635
+   },
+   {
+    "code": "KA",
+    "name": "Kilmarnock",
+    "nation": "Scotland",
+    "cars": 152272,
+    "cc": 1600.5703487982862
+   },
+   {
+    "code": "EH",
+    "name": "Edinburgh",
+    "nation": "Scotland",
+    "cars": 366696,
+    "cc": 1600.868610480912
+   }
+  ],
+  "diesel_areas": [
+   {
+    "code": "LD",
+    "name": "Llandrindod Wells",
+    "nation": "Wales",
+    "cars": 22243,
+    "diesel": 0.48163467158207074
+   },
+   {
+    "code": "LL",
+    "name": "Llandudno",
+    "nation": "Wales",
+    "cars": 262971,
+    "diesel": 0.4544493499283191
+   },
+   {
+    "code": "KW",
+    "name": "Kirkwall",
+    "nation": "Scotland",
+    "cars": 21114,
+    "diesel": 0.45225916453537934
+   },
+   {
+    "code": "DG",
+    "name": "Dumfries",
+    "nation": "Scotland",
+    "cars": 63011,
+    "diesel": 0.4505879925727254
+   },
+   {
+    "code": "DN",
+    "name": "Doncaster",
+    "nation": "England",
+    "cars": 373991,
+    "diesel": 0.43728592399282334
+   },
+   {
+    "code": "CA",
+    "name": "Carlisle",
+    "nation": "England",
+    "cars": 162980,
+    "diesel": 0.4314823904773592
+   },
+   {
+    "code": "SY",
+    "name": "Shrewsbury",
+    "nation": "England",
+    "cars": 185370,
+    "diesel": 0.43103522684361006
+   },
+   {
+    "code": "PL",
+    "name": "Plymouth",
+    "nation": "England",
+    "cars": 279064,
+    "diesel": 0.43028480921939055
+   },
+   {
+    "code": "PE",
+    "name": "Peterborough",
+    "nation": "England",
+    "cars": 537631,
+    "diesel": 0.42550745771728193
+   },
+   {
+    "code": "BB",
+    "name": "Blackburn",
+    "nation": "England",
+    "cars": 251600,
+    "diesel": 0.42349364069952306
+   }
+  ],
+  "unusual": {
+   "England": [
+    {
+     "code": "E09000007",
+     "name": "Camden",
+     "nation": "England",
+     "cars": 67320,
+     "dissim": 0.21976758535172214,
+     "sig_make": "LEXUS",
+     "sig_lq": 5.123217490429373,
+     "sig_share": 0.030790970901133616,
+     "sig_nat_share": 0.00601008467016165,
+     "sig_colour": "BLACK",
+     "sig_colour_lq": 1.3397543306524402,
+     "top_make": "MERCEDES-BENZ",
+     "top_colour": "BLACK"
+    },
+    {
+     "code": "E09000033",
+     "name": "Westminster",
+     "nation": "England",
+     "cars": 70261,
+     "dissim": 0.2039930300966555,
+     "sig_make": "PORSCHE",
+     "sig_lq": 4.154056104790716,
+     "sig_share": 0.027525111061803057,
+     "sig_nat_share": 0.00662608071904936,
+     "sig_colour": "BLACK",
+     "sig_colour_lq": 1.3099861952700975,
+     "top_make": "VOLKSWAGEN",
+     "top_colour": "BLACK"
+    },
+    {
+     "code": "E09000005",
+     "name": "Brent",
+     "nation": "England",
+     "cars": 94846,
+     "dissim": 0.20079501500022556,
+     "sig_make": "LEXUS",
+     "sig_lq": 4.396734023788369,
+     "sig_share": 0.02642474375514862,
+     "sig_nat_share": 0.00601008467016165,
+     "sig_colour": "BLACK",
+     "sig_colour_lq": 1.2925189141736861,
+     "top_make": "MERCEDES-BENZ",
+     "top_colour": "BLACK"
+    },
+    {
+     "code": "E09000013",
+     "name": "Hammersmith and Fulham",
+     "nation": "England",
+     "cars": 20169,
+     "dissim": 0.19585648682176854,
+     "sig_make": "PORSCHE",
+     "sig_lq": 3.862859745971454,
+     "sig_share": 0.025595620483173362,
+     "sig_nat_share": 0.00662608071904936,
+     "sig_colour": "BLACK",
+     "sig_colour_lq": 1.288517511013499,
+     "top_make": "VOLKSWAGEN",
+     "top_colour": "BLACK"
+    },
+    {
+     "code": "E09000020",
+     "name": "Kensington and Chelsea",
+     "nation": "England",
+     "cars": 23356,
+     "dissim": 0.1935106001830164,
+     "sig_make": "PORSCHE",
+     "sig_lq": 3.6586714049876483,
+     "sig_share": 0.02424265205392589,
+     "sig_nat_share": 0.00662608071904936,
+     "sig_colour": "BLACK",
+     "sig_colour_lq": 1.2795555024199268,
+     "top_make": "VOLKSWAGEN",
+     "top_colour": "BLACK"
+    },
+    {
+     "code": "E09000030",
+     "name": "Tower Hamlets",
+     "nation": "England",
+     "cars": 76809,
+     "dissim": 0.19084230841518993,
+     "sig_make": "LEXUS",
+     "sig_lq": 2.6530267069922973,
+     "sig_share": 0.01594491514122385,
+     "sig_nat_share": 0.00601008467016165,
+     "sig_colour": "BLACK",
+     "sig_colour_lq": 1.3674038637184187,
+     "top_make": "TOYOTA",
+     "top_colour": "BLACK"
+    }
+   ],
+   "Scotland": [
+    {
+     "code": "S12000026",
+     "name": "Scottish Borders",
+     "nation": "Scotland",
+     "cars": 53989,
+     "dissim": 0.0985103277172533,
+     "sig_make": "MITSUBISHI",
+     "sig_lq": 2.168938785425122,
+     "sig_share": 0.01511220957077252,
+     "sig_nat_share": 0.006967559283979726,
+     "sig_colour": "GREEN",
+     "sig_colour_lq": 1.2142379344826157,
+     "top_make": "FORD",
+     "top_colour": "WHITE"
+    },
+    {
+     "code": "S12000006",
+     "name": "Dumfries and Galloway",
+     "nation": "Scotland",
+     "cars": 63300,
+     "dissim": 0.08664968199232935,
+     "sig_make": "SKODA",
+     "sig_lq": 1.5888266752090525,
+     "sig_share": 0.04987309404042583,
+     "sig_nat_share": 0.03138988967054175,
+     "sig_colour": "GREEN",
+     "sig_colour_lq": 1.1871513528624433,
+     "top_make": "FORD",
+     "top_colour": "WHITE"
+    },
+    {
+     "code": "S12000048",
+     "name": "Perth and Kinross",
+     "nation": "Scotland",
+     "cars": 72294,
+     "dissim": 0.08335969600951025,
+     "sig_make": "VOLVO",
+     "sig_lq": 1.670889150836356,
+     "sig_share": 0.03920724589763352,
+     "sig_nat_share": 0.023464899438726088,
+     "sig_colour": "GREEN",
+     "sig_colour_lq": 1.3497356231208222,
+     "top_make": "FORD",
+     "top_colour": "BLUE"
+    },
+    {
+     "code": "S12000033",
+     "name": "Aberdeen City",
+     "nation": "Scotland",
+     "cars": 77699,
+     "dissim": 0.08280228598565505,
+     "sig_make": "LAND ROVER",
+     "sig_lq": 1.3571465694878988,
+     "sig_share": 0.03420375479567855,
+     "sig_nat_share": 0.025202697751787323,
+     "sig_colour": "GREY",
+     "sig_colour_lq": 1.050602853984654,
+     "top_make": "FORD",
+     "top_colour": "WHITE"
+    },
+    {
+     "code": "S12000034",
+     "name": "Aberdeenshire",
+     "nation": "Scotland",
+     "cars": 123489,
+     "dissim": 0.08049488164346975,
+     "sig_make": "LAND ROVER",
+     "sig_lq": 1.34822954485546,
+     "sig_share": 0.033979021719021944,
+     "sig_nat_share": 0.025202697751787323,
+     "sig_colour": "GREY",
+     "sig_colour_lq": 1.048595103384124,
+     "top_make": "FORD",
+     "top_colour": "WHITE"
+    },
+    {
+     "code": "S12000017",
+     "name": "Highland",
+     "nation": "Scotland",
+     "cars": 113601,
+     "dissim": 0.07830245750214926,
+     "sig_make": "VOLVO",
+     "sig_lq": 1.5196690093002951,
+     "sig_share": 0.03565888048337992,
+     "sig_nat_share": 0.023464899438726088,
+     "sig_colour": "GREEN",
+     "sig_colour_lq": 1.270822238782013,
+     "top_make": "FORD",
+     "top_colour": "GREY"
+    }
+   ],
+   "Wales": [
+    {
+     "code": "W06000005",
+     "name": "Flintshire",
+     "nation": "Wales",
+     "cars": 76014,
+     "dissim": 0.08358137603601992,
+     "sig_make": "VAUXHALL",
+     "sig_lq": 1.4585389063237524,
+     "sig_share": 0.12804013074947412,
+     "sig_nat_share": 0.08778657202377912,
+     "sig_colour": "BLACK",
+     "sig_colour_lq": 1.0488698166716905,
+     "top_make": "VAUXHALL",
+     "top_colour": "BLACK"
+    },
+    {
+     "code": "W06000023",
+     "name": "Powys",
+     "nation": "Wales",
+     "cars": 75190,
+     "dissim": 0.07396343108654495,
+     "sig_make": "LAND ROVER",
+     "sig_lq": 1.7920174061706442,
+     "sig_share": 0.0484053127797776,
+     "sig_nat_share": 0.027011630921160944,
+     "sig_colour": "GREEN",
+     "sig_colour_lq": 1.2422151300086721,
+     "top_make": "FORD",
+     "top_colour": "BLACK"
+    },
+    {
+     "code": "W06000006",
+     "name": "Wrexham",
+     "nation": "Wales",
+     "cars": 56593,
+     "dissim": 0.05811229978028208,
+     "sig_make": "PEUGEOT",
+     "sig_lq": 1.3212083073279515,
+     "sig_share": 0.05493035330003068,
+     "sig_nat_share": 0.04157584613672568,
+     "sig_colour": "GREEN",
+     "sig_colour_lq": 1.0545811372080884,
+     "top_make": "FORD",
+     "top_colour": "BLACK"
+    },
+    {
+     "code": "W06000002",
+     "name": "Gwynedd",
+     "nation": "Wales",
+     "cars": 72279,
+     "dissim": 0.058058529285858106,
+     "sig_make": "PEUGEOT",
+     "sig_lq": 1.3237711301823918,
+     "sig_share": 0.055036904828702576,
+     "sig_nat_share": 0.04157584613672568,
+     "sig_colour": "GREEN",
+     "sig_colour_lq": 1.0521331975775061,
+     "top_make": "FORD",
+     "top_colour": "BLACK"
+    },
+    {
+     "code": "W06000003",
+     "name": "Conwy",
+     "nation": "Wales",
+     "cars": 53018,
+     "dissim": 0.057944215937488185,
+     "sig_make": "PEUGEOT",
+     "sig_lq": 1.3292489291004312,
+     "sig_share": 0.05526464895368691,
+     "sig_nat_share": 0.04157584613672568,
+     "sig_colour": "SILVER",
+     "sig_colour_lq": 1.0482578563947218,
+     "top_make": "FORD",
+     "top_colour": "BLACK"
+    },
+    {
+     "code": "W06000001",
+     "name": "Isle of Anglesey",
+     "nation": "Wales",
+     "cars": 37918,
+     "dissim": 0.057944215937488164,
+     "sig_make": "PEUGEOT",
+     "sig_lq": 1.3292489291004312,
+     "sig_share": 0.05526464895368691,
+     "sig_nat_share": 0.04157584613672568,
+     "sig_colour": "SILVER",
+     "sig_colour_lq": 1.0482578563947216,
+     "top_make": "FORD",
+     "top_colour": "BLACK"
+    }
+   ]
+  },
+  "unusual_areas": [
+   {
+    "code": "ZE",
+    "name": "Lerwick",
+    "nation": "Scotland",
+    "cars": 9022,
+    "dissim": 0.2691724134901826,
+    "sig_make": "TOYOTA",
+    "sig_lq": 3.5865910445629128,
+    "sig_share": 0.14431389935712702
+   },
+   {
+    "code": "NW",
+    "name": "London NW",
+    "nation": "England",
+    "cars": 193906,
+    "dissim": 0.22501022815556934,
+    "sig_make": "LEXUS",
+    "sig_lq": 5.422212294327474,
+    "sig_share": 0.03258795498849958
+   },
+   {
+    "code": "W",
+    "name": "London W",
+    "nation": "England",
+    "cars": 79503,
+    "dissim": 0.20929481269516606,
+    "sig_make": "PORSCHE",
+    "sig_lq": 5.651172909674826,
+    "sig_share": 0.03744512785681044
+   },
+   {
+    "code": "IG",
+    "name": "Ilford",
+    "nation": "England",
+    "cars": 129521,
+    "dissim": 0.19760471460993229,
+    "sig_make": "LEXUS",
+    "sig_lq": 5.166795670951159,
+    "sig_share": 0.031052879455841138
+   },
+   {
+    "code": "E",
+    "name": "London E",
+    "nation": "England",
+    "cars": 224962,
+    "dissim": 0.19084230841518993,
+    "sig_make": "LEXUS",
+    "sig_lq": 2.6530267069922977,
+    "sig_share": 0.015944915141223853
+   },
+   {
+    "code": "SW",
+    "name": "London SW",
+    "nation": "England",
+    "cars": 129095,
+    "dissim": 0.19051788154112764,
+    "sig_make": "PORSCHE",
+    "sig_lq": 2.495926173774214,
+    "sig_share": 0.016538208296215964
+   },
+   {
+    "code": "HA",
+    "name": "Harrow",
+    "nation": "England",
+    "cars": 177426,
+    "dissim": 0.18555805125792205,
+    "sig_make": "LEXUS",
+    "sig_lq": 2.9343216037044284,
+    "sig_share": 0.017635521287748132
+   },
+   {
+    "code": "N",
+    "name": "London N",
+    "nation": "England",
+    "cars": 196323,
+    "dissim": 0.17315585675261,
+    "sig_make": "LEXUS",
+    "sig_lq": 2.22812121537423,
+    "sig_share": 0.013391197159782603
+   },
+   {
+    "code": "UB",
+    "name": "Southall",
+    "nation": "England",
+    "cars": 178897,
+    "dissim": 0.16772366190759921,
+    "sig_make": "LEXUS",
+    "sig_lq": 2.4014446974380674,
+    "sig_share": 0.01443288596231351
+   },
+   {
+    "code": "RM",
+    "name": "Romford",
+    "nation": "England",
+    "cars": 237696,
+    "dissim": 0.1584112331264252,
+    "sig_make": "FORD",
+    "sig_lq": 1.6441535180401337,
+    "sig_share": 0.1976810716208939
+   }
+  ],
+  "nonford_areas": [
+   {
+    "code": "CH",
+    "name": "Chester",
+    "nation": "England",
+    "cars": 319717,
+    "top_make": "VAUXHALL",
+    "share": 0.1292236571718113
+   },
+   {
+    "code": "TR",
+    "name": "Truro",
+    "nation": "England",
+    "cars": 162039,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.10739389899962355
+   },
+   {
+    "code": "TW",
+    "name": "Twickenham",
+    "nation": "England",
+    "cars": 219196,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.09357378784284384
+   },
+   {
+    "code": "HA",
+    "name": "Harrow",
+    "nation": "England",
+    "cars": 177426,
+    "top_make": "TOYOTA",
+    "share": 0.10437027267705973
+   },
+   {
+    "code": "FK",
+    "name": "Falkirk",
+    "nation": "Scotland",
+    "cars": 124656,
+    "top_make": "VAUXHALL",
+    "share": 0.09892022846874599
+   },
+   {
+    "code": "HP",
+    "name": "Hemel Hempstead",
+    "nation": "England",
+    "cars": 286841,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.10302920433271394
+   },
+   {
+    "code": "NW",
+    "name": "London NW",
+    "nation": "England",
+    "cars": 193906,
+    "top_make": "MERCEDES-BENZ",
+    "share": 0.11728878941342713
+   },
+   {
+    "code": "E",
+    "name": "London E",
+    "nation": "England",
+    "cars": 224962,
+    "top_make": "TOYOTA",
+    "share": 0.11775766573910261
+   },
+   {
+    "code": "SL",
+    "name": "Slough",
+    "nation": "England",
+    "cars": 212331,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.102811176888914
+   },
+   {
+    "code": "CR",
+    "name": "Croydon",
+    "nation": "England",
+    "cars": 199850,
+    "top_make": "TOYOTA",
+    "share": 0.09190893169877408
+   },
+   {
+    "code": "SE",
+    "name": "London SE",
+    "nation": "England",
+    "cars": 232199,
+    "top_make": "NISSAN",
+    "share": 0.09456113075422375
+   },
+   {
+    "code": "TS",
+    "name": "Cleveland",
+    "nation": "England",
+    "cars": 270195,
+    "top_make": "VAUXHALL",
+    "share": 0.11669720017024741
+   },
+   {
+    "code": "ML",
+    "name": "Motherwell",
+    "nation": "Scotland",
+    "cars": 142394,
+    "top_make": "VAUXHALL",
+    "share": 0.12156411084736717
+   },
+   {
+    "code": "UB",
+    "name": "Southall",
+    "nation": "England",
+    "cars": 178897,
+    "top_make": "MERCEDES-BENZ",
+    "share": 0.10442321559333025
+   },
+   {
+    "code": "KT",
+    "name": "Kingston upon Thames",
+    "nation": "England",
+    "cars": 252162,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.0998524757893735
+   },
+   {
+    "code": "GU",
+    "name": "Guildford",
+    "nation": "England",
+    "cars": 400726,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.1067412646047424
+   },
+   {
+    "code": "G",
+    "name": "Glasgow",
+    "nation": "Scotland",
+    "cars": 467104,
+    "top_make": "VAUXHALL",
+    "share": 0.11143342810166472
+   },
+   {
+    "code": "N",
+    "name": "London N",
+    "nation": "England",
+    "cars": 196323,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.10476612521202304
+   },
+   {
+    "code": "SW",
+    "name": "London SW",
+    "nation": "England",
+    "cars": 129095,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.13144583446299238
+   },
+   {
+    "code": "LU",
+    "name": "Luton",
+    "nation": "England",
+    "cars": 195652,
+    "top_make": "VAUXHALL",
+    "share": 0.1550303600269867
+   },
+   {
+    "code": "BD",
+    "name": "Bradford",
+    "nation": "England",
+    "cars": 262887,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.12284365525872333
+   },
+   {
+    "code": "PA",
+    "name": "Paisley",
+    "nation": "Scotland",
+    "cars": 130778,
+    "top_make": "VAUXHALL",
+    "share": 0.11439232898499747
+   },
+   {
+    "code": "HG",
+    "name": "Harrogate",
+    "nation": "England",
+    "cars": 81480,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.09982817869415808
+   },
+   {
+    "code": "W",
+    "name": "London W",
+    "nation": "England",
+    "cars": 79503,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.09610958077053697
+   },
+   {
+    "code": "WD",
+    "name": "Watford",
+    "nation": "England",
+    "cars": 118476,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.08518180897396942
+   },
+   {
+    "code": "SR",
+    "name": "Sunderland",
+    "nation": "England",
+    "cars": 98495,
+    "top_make": "VAUXHALL",
+    "share": 0.10389359865983044
+   },
+   {
+    "code": "ZE",
+    "name": "Lerwick",
+    "nation": "Scotland",
+    "cars": 9022,
+    "top_make": "TOYOTA",
+    "share": 0.14431389935712702
+   },
+   {
+    "code": "HR",
+    "name": "Hereford",
+    "nation": "England",
+    "cars": 102517,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.11821454002750763
+   },
+   {
+    "code": "DD",
+    "name": "Dundee",
+    "nation": "Scotland",
+    "cars": 116743,
+    "top_make": "VAUXHALL",
+    "share": 0.10793794917039994
+   }
+  ],
+  "nonford_counties": [
+   {
+    "code": "S12000041",
+    "name": "Angus",
+    "nation": "Scotland",
+    "cars": 51824,
+    "top_make": "VAUXHALL",
+    "share": 0.10724252110072167
+   },
+   {
+    "code": "E06000056",
+    "name": "Central Bedfordshire",
+    "nation": "England",
+    "cars": 158337,
+    "top_make": "VAUXHALL",
+    "share": 0.12201404988468216
+   },
+   {
+    "code": "E08000032",
+    "name": "Bradford",
+    "nation": "England",
+    "cars": 226164,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.12047306495406608
+   },
+   {
+    "code": "E09000008",
+    "name": "Croydon",
+    "nation": "England",
+    "cars": 156662,
+    "top_make": "TOYOTA",
+    "share": 0.0897988705963411
+   },
+   {
+    "code": "E09000011",
+    "name": "Greenwich",
+    "nation": "England",
+    "cars": 61225,
+    "top_make": "NISSAN",
+    "share": 0.09427955664068671
+   },
+   {
+    "code": "E09000023",
+    "name": "Lewisham",
+    "nation": "England",
+    "cars": 58990,
+    "top_make": "NISSAN",
+    "share": 0.09186370673165754
+   },
+   {
+    "code": "E08000015",
+    "name": "Wirral",
+    "nation": "England",
+    "cars": 146651,
+    "top_make": "VAUXHALL",
+    "share": 0.12922365717181133
+   },
+   {
+    "code": "W06000005",
+    "name": "Flintshire",
+    "nation": "Wales",
+    "cars": 76014,
+    "top_make": "VAUXHALL",
+    "share": 0.12804013074947412
+   },
+   {
+    "code": "E09000022",
+    "name": "Lambeth",
+    "nation": "England",
+    "cars": 49462,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.11058284116063888
+   },
+   {
+    "code": "E09000024",
+    "name": "Merton",
+    "nation": "England",
+    "cars": 46134,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.09598966542415932
+   },
+   {
+    "code": "E10000030",
+    "name": "Surrey",
+    "nation": "England",
+    "cars": 614618,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.10077082473742119
+   },
+   {
+    "code": "S12000042",
+    "name": "Dundee City",
+    "nation": "Scotland",
+    "cars": 56866,
+    "top_make": "VAUXHALL",
+    "share": 0.10793794917039994
+   },
+   {
+    "code": "E08000024",
+    "name": "Sunderland",
+    "nation": "England",
+    "cars": 106857,
+    "top_make": "VAUXHALL",
+    "share": 0.10224062431065446
+   },
+   {
+    "code": "E06000004",
+    "name": "Stockton-on-Tees",
+    "nation": "England",
+    "cars": 82536,
+    "top_make": "VAUXHALL",
+    "share": 0.1166774146625917
+   },
+   {
+    "code": "E09000001",
+    "name": "City of London",
+    "nation": "England",
+    "cars": 502,
+    "top_make": "TOYOTA",
+    "share": 0.11775766573910261
+   },
+   {
+    "code": "E09000012",
+    "name": "Hackney",
+    "nation": "England",
+    "cars": 54600,
+    "top_make": "TOYOTA",
+    "share": 0.10373132863742261
+   },
+   {
+    "code": "E09000019",
+    "name": "Islington",
+    "nation": "England",
+    "cars": 43604,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.1047302624607297
+   },
+   {
+    "code": "E09000025",
+    "name": "Newham",
+    "nation": "England",
+    "cars": 58803,
+    "top_make": "TOYOTA",
+    "share": 0.11774183356812153
+   },
+   {
+    "code": "E09000030",
+    "name": "Tower Hamlets",
+    "nation": "England",
+    "cars": 76809,
+    "top_make": "TOYOTA",
+    "share": 0.11775766573910261
+   },
+   {
+    "code": "E09000031",
+    "name": "Waltham Forest",
+    "nation": "England",
+    "cars": 51362,
+    "top_make": "TOYOTA",
+    "share": 0.11726299047687207
+   },
+   {
+    "code": "S12000014",
+    "name": "Falkirk",
+    "nation": "Scotland",
+    "cars": 66568,
+    "top_make": "VAUXHALL",
+    "share": 0.09837940447265801
+   },
+   {
+    "code": "S12000029",
+    "name": "South Lanarkshire",
+    "nation": "Scotland",
+    "cars": 126932,
+    "top_make": "VAUXHALL",
+    "share": 0.1163118465162496
+   },
+   {
+    "code": "S12000050",
+    "name": "North Lanarkshire",
+    "nation": "Scotland",
+    "cars": 115856,
+    "top_make": "VAUXHALL",
+    "share": 0.11836682746993064
+   },
+   {
+    "code": "E09000003",
+    "name": "Barnet",
+    "nation": "England",
+    "cars": 134524,
+    "top_make": "MERCEDES-BENZ",
+    "share": 0.10279875142243391
+   },
+   {
+    "code": "S12000005",
+    "name": "Clackmannanshire",
+    "nation": "Scotland",
+    "cars": 21744,
+    "top_make": "VAUXHALL",
+    "share": 0.09898508737920028
+   },
+   {
+    "code": "S12000030",
+    "name": "Stirling",
+    "nation": "Scotland",
+    "cars": 45944,
+    "top_make": "VAUXHALL",
+    "share": 0.10056263317388596
+   },
+   {
+    "code": "S12000035",
+    "name": "Argyll and Bute",
+    "nation": "Scotland",
+    "cars": 47027,
+    "top_make": "VAUXHALL",
+    "share": 0.11346063272280894
+   },
+   {
+    "code": "S12000011",
+    "name": "East Renfrewshire",
+    "nation": "Scotland",
+    "cars": 36677,
+    "top_make": "VAUXHALL",
+    "share": 0.11143342810166472
+   },
+   {
+    "code": "S12000038",
+    "name": "Renfrewshire",
+    "nation": "Scotland",
+    "cars": 65594,
+    "top_make": "VAUXHALL",
+    "share": 0.11435735165547993
+   },
+   {
+    "code": "S12000039",
+    "name": "West Dunbartonshire",
+    "nation": "Scotland",
+    "cars": 35173,
+    "top_make": "VAUXHALL",
+    "share": 0.11143342810166473
+   },
+   {
+    "code": "S12000045",
+    "name": "East Dunbartonshire",
+    "nation": "Scotland",
+    "cars": 47542,
+    "top_make": "VAUXHALL",
+    "share": 0.11143342810166472
+   },
+   {
+    "code": "S12000049",
+    "name": "Glasgow City",
+    "nation": "Scotland",
+    "cars": 225088,
+    "top_make": "VAUXHALL",
+    "share": 0.11143342810166473
+   },
+   {
+    "code": "E06000019",
+    "name": "Herefordshire, County of",
+    "nation": "England",
+    "cars": 107732,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.11647467742498845
+   },
+   {
+    "code": "E09000005",
+    "name": "Brent",
+    "nation": "England",
+    "cars": 94846,
+    "top_make": "MERCEDES-BENZ",
+    "share": 0.10843611958602943
+   },
+   {
+    "code": "E09000009",
+    "name": "Ealing",
+    "nation": "England",
+    "cars": 86260,
+    "top_make": "MERCEDES-BENZ",
+    "share": 0.10218127554296857
+   },
+   {
+    "code": "E09000015",
+    "name": "Harrow",
+    "nation": "England",
+    "cars": 85529,
+    "top_make": "TOYOTA",
+    "share": 0.10428439118035815
+   },
+   {
+    "code": "E09000017",
+    "name": "Hillingdon",
+    "nation": "England",
+    "cars": 137254,
+    "top_make": "MERCEDES-BENZ",
+    "share": 0.10207885438227338
+   },
+   {
+    "code": "E09000021",
+    "name": "Kingston upon Thames",
+    "nation": "England",
+    "cars": 61192,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.10002988773811855
+   },
+   {
+    "code": "E09000027",
+    "name": "Richmond upon Thames",
+    "nation": "England",
+    "cars": 77150,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.09620703065564512
+   },
+   {
+    "code": "E06000032",
+    "name": "Luton",
+    "nation": "England",
+    "cars": 97779,
+    "top_make": "VAUXHALL",
+    "share": 0.1550303600269867
+   },
+   {
+    "code": "E09000007",
+    "name": "Camden",
+    "nation": "England",
+    "cars": 67320,
+    "top_make": "MERCEDES-BENZ",
+    "share": 0.11511646740189231
+   },
+   {
+    "code": "E09000014",
+    "name": "Haringey",
+    "nation": "England",
+    "cars": 52884,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.10476612521202304
+   },
+   {
+    "code": "E09000013",
+    "name": "Hammersmith and Fulham",
+    "nation": "England",
+    "cars": 20169,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.11340119413176236
+   },
+   {
+    "code": "E09000033",
+    "name": "Westminster",
+    "nation": "England",
+    "cars": 70261,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.10190431961150365
+   },
+   {
+    "code": "S12000018",
+    "name": "Inverclyde",
+    "nation": "Scotland",
+    "cars": 32260,
+    "top_make": "VAUXHALL",
+    "share": 0.11439232898499747
+   },
+   {
+    "code": "E06000040",
+    "name": "Windsor and Maidenhead",
+    "nation": "England",
+    "cars": 90456,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.10232173156626745
+   },
+   {
+    "code": "E09000028",
+    "name": "Southwark",
+    "nation": "England",
+    "cars": 72360,
+    "top_make": "NISSAN",
+    "share": 0.09456113075422375
+   },
+   {
+    "code": "E06000039",
+    "name": "Slough",
+    "nation": "England",
+    "cars": 55718,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.102811176888914
+   },
+   {
+    "code": "E09000020",
+    "name": "Kensington and Chelsea",
+    "nation": "England",
+    "cars": 23356,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.11842401274541979
+   },
+   {
+    "code": "E09000032",
+    "name": "Wandsworth",
+    "nation": "England",
+    "cars": 39783,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.13144583446299238
+   },
+   {
+    "code": "E06000053",
+    "name": "Isles of Scilly",
+    "nation": "England",
+    "cars": 1133,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.10739389899962355
+   },
+   {
+    "code": "E06000001",
+    "name": "Hartlepool",
+    "nation": "England",
+    "cars": 40889,
+    "top_make": "VAUXHALL",
+    "share": 0.11669720017024741
+   },
+   {
+    "code": "E06000002",
+    "name": "Middlesbrough",
+    "nation": "England",
+    "cars": 57960,
+    "top_make": "VAUXHALL",
+    "share": 0.11669720017024741
+   },
+   {
+    "code": "E06000003",
+    "name": "Redcar and Cleveland",
+    "nation": "England",
+    "cars": 62202,
+    "top_make": "VAUXHALL",
+    "share": 0.11669720017024741
+   },
+   {
+    "code": "E09000018",
+    "name": "Hounslow",
+    "nation": "England",
+    "cars": 85433,
+    "top_make": "VOLKSWAGEN",
+    "share": 0.09348805670896233
+   },
+   {
+    "code": "S12000027",
+    "name": "Shetland Islands",
+    "nation": "Scotland",
+    "cars": 9022,
+    "top_make": "TOYOTA",
+    "share": 0.14431389935712702
+   }
+  ],
+  "colour_areas": {
+   "BLACK": [
+    {
+     "code": "E",
+     "name": "London E",
+     "nation": "England",
+     "cars": 224962,
+     "share": 0.27763
+    },
+    {
+     "code": "NW",
+     "name": "London NW",
+     "nation": "England",
+     "cars": 193906,
+     "share": 0.27236
+    },
+    {
+     "code": "N",
+     "name": "London N",
+     "nation": "England",
+     "cars": 196323,
+     "share": 0.27048
+    },
+    {
+     "code": "W",
+     "name": "London W",
+     "nation": "England",
+     "cars": 79503,
+     "share": 0.26668
+    },
+    {
+     "code": "IG",
+     "name": "Ilford",
+     "nation": "England",
+     "cars": 129521,
+     "share": 0.26454
+    }
+   ],
+   "GREY": [
+    {
+     "code": "SW",
+     "name": "London SW",
+     "nation": "England",
+     "cars": 129095,
+     "share": 0.2073
+    },
+    {
+     "code": "W",
+     "name": "London W",
+     "nation": "England",
+     "cars": 79503,
+     "share": 0.20662
+    },
+    {
+     "code": "BR",
+     "name": "Bromley",
+     "nation": "England",
+     "cars": 110081,
+     "share": 0.20102
+    },
+    {
+     "code": "NW",
+     "name": "London NW",
+     "nation": "England",
+     "cars": 193906,
+     "share": 0.19881
+    },
+    {
+     "code": "WD",
+     "name": "Watford",
+     "nation": "England",
+     "cars": 118476,
+     "share": 0.19569
+    }
+   ],
+   "WHITE": [
+    {
+     "code": "SR",
+     "name": "Sunderland",
+     "nation": "England",
+     "cars": 98495,
+     "share": 0.21276
+    },
+    {
+     "code": "ML",
+     "name": "Motherwell",
+     "nation": "Scotland",
+     "cars": 142394,
+     "share": 0.21046
+    },
+    {
+     "code": "KA",
+     "name": "Kilmarnock",
+     "nation": "Scotland",
+     "cars": 152272,
+     "share": 0.20692
+    },
+    {
+     "code": "G",
+     "name": "Glasgow",
+     "nation": "Scotland",
+     "cars": 467104,
+     "share": 0.20157
+    },
+    {
+     "code": "TS",
+     "name": "Cleveland",
+     "nation": "England",
+     "cars": 270195,
+     "share": 0.19887
+    }
+   ],
+   "BLUE": [
+    {
+     "code": "ZE",
+     "name": "Lerwick",
+     "nation": "Scotland",
+     "cars": 9022,
+     "share": 0.19042
+    },
+    {
+     "code": "SP",
+     "name": "Salisbury",
+     "nation": "England",
+     "cars": 136039,
+     "share": 0.1871
+    },
+    {
+     "code": "DT",
+     "name": "Dorchester",
+     "nation": "England",
+     "cars": 109116,
+     "share": 0.18688
+    },
+    {
+     "code": "TR",
+     "name": "Truro",
+     "nation": "England",
+     "cars": 162039,
+     "share": 0.1857
+    },
+    {
+     "code": "HS",
+     "name": "Outer Hebrides",
+     "nation": "Scotland",
+     "cars": 10885,
+     "share": 0.18337
+    }
+   ],
+   "SILVER": [
+    {
+     "code": "DT",
+     "name": "Dorchester",
+     "nation": "England",
+     "cars": 109116,
+     "share": 0.16572
+    },
+    {
+     "code": "TQ",
+     "name": "Torquay",
+     "nation": "England",
+     "cars": 140129,
+     "share": 0.16194
+    },
+    {
+     "code": "N",
+     "name": "London N",
+     "nation": "England",
+     "cars": 196323,
+     "share": 0.15863
+    },
+    {
+     "code": "HA",
+     "name": "Harrow",
+     "nation": "England",
+     "cars": 177426,
+     "share": 0.15797
+    },
+    {
+     "code": "UB",
+     "name": "Southall",
+     "nation": "England",
+     "cars": 178897,
+     "share": 0.15631
+    }
+   ],
+   "RED": [
+    {
+     "code": "ZE",
+     "name": "Lerwick",
+     "nation": "Scotland",
+     "cars": 9022,
+     "share": 0.14077
+    },
+    {
+     "code": "DD",
+     "name": "Dundee",
+     "nation": "Scotland",
+     "cars": 116743,
+     "share": 0.13991
+    },
+    {
+     "code": "KY",
+     "name": "Kirkcaldy",
+     "nation": "Scotland",
+     "cars": 160586,
+     "share": 0.13872
+    },
+    {
+     "code": "PH",
+     "name": "Perth",
+     "nation": "Scotland",
+     "cars": 79567,
+     "share": 0.13419
+    },
+    {
+     "code": "TD",
+     "name": "Galashiels",
+     "nation": "Scotland",
+     "cars": 52103,
+     "share": 0.13289
+    }
+   ],
+   "GREEN": [
+    {
+     "code": "DT",
+     "name": "Dorchester",
+     "nation": "England",
+     "cars": 109116,
+     "share": 0.02251
+    },
+    {
+     "code": "TQ",
+     "name": "Torquay",
+     "nation": "England",
+     "cars": 140129,
+     "share": 0.02165
+    },
+    {
+     "code": "HR",
+     "name": "Hereford",
+     "nation": "England",
+     "cars": 102517,
+     "share": 0.02106
+    },
+    {
+     "code": "SP",
+     "name": "Salisbury",
+     "nation": "England",
+     "cars": 136039,
+     "share": 0.02102
+    },
+    {
+     "code": "EX",
+     "name": "Exeter",
+     "nation": "England",
+     "cars": 308251,
+     "share": 0.02099
+    }
+   ],
+   "ORANGE": [
+    {
+     "code": "FK",
+     "name": "Falkirk",
+     "nation": "Scotland",
+     "cars": 124656,
+     "share": 0.01288
+    },
+    {
+     "code": "DG",
+     "name": "Dumfries",
+     "nation": "Scotland",
+     "cars": 63011,
+     "share": 0.01271
+    },
+    {
+     "code": "KY",
+     "name": "Kirkcaldy",
+     "nation": "Scotland",
+     "cars": 160586,
+     "share": 0.01268
+    },
+    {
+     "code": "KA",
+     "name": "Kilmarnock",
+     "nation": "Scotland",
+     "cars": 152272,
+     "share": 0.01254
+    },
+    {
+     "code": "DD",
+     "name": "Dundee",
+     "nation": "Scotland",
+     "cars": 116743,
+     "share": 0.01231
+    }
+   ]
+  },
+  "top_colour_counts": {
+   "BLACK": 88,
+   "BLUE": 13,
+   "WHITE": 17
+  },
+  "top_colour_counts_cty": {
+   "GREY": 1,
+   "WHITE": 40,
+   "BLACK": 156,
+   "BLUE": 10
+  },
+  "top_make_counts": {
+   "FORD": 89,
+   "VAUXHALL": 9,
+   "VOLKSWAGEN": 13,
+   "TOYOTA": 4,
+   "MERCEDES-BENZ": 2,
+   "NISSAN": 1
+  },
+  "top_make_counts_cty": {
+   "FORD": 151,
+   "VAUXHALL": 23,
+   "VOLKSWAGEN": 17,
+   "TOYOTA": 8,
+   "NISSAN": 3,
+   "MERCEDES-BENZ": 5
+  },
+  "top_model_counts": {
+   "FORD|FIESTA": 98,
+   "VAUXHALL|CORSA": 10,
+   "TOYOTA|PRIUS": 2,
+   "VOLKSWAGEN|GOLF": 6,
+   "NISSAN|QASHQAI": 1,
+   "TOYOTA|YARIS": 1
+  },
+  "top_model_counts_cty": {
+   "FORD|FIESTA": 160,
+   "VAUXHALL|CORSA": 22,
+   "VOLKSWAGEN|GOLF": 16,
+   "NISSAN|QASHQAI": 3,
+   "TOYOTA|PRIUS": 5,
+   "TOYOTA|YARIS": 1
+  }
+ },
+ "colour_trend": {
+  "1990": {
+   "BLUE": 0.18680440614120197,
+   "RED": 0.2549512014154443,
+   "GREY": 0.07316933964956338,
+   "CREAM": 0.0086182295531077,
+   "WHITE": 0.2038125677758119,
+   "GREEN": 0.06974487757548085,
+   "YELLOW": 0.008504080817304948,
+   "BEIGE": 0.013127104617316364,
+   "BLACK": 0.1036470521088979,
+   "TURQUOISE": 0.0007990411506192569,
+   "SILVER": 0.05513383939272873,
+   "BROWN": 0.003709833913589407,
+   "ORANGE": 0.0033673877061811542,
+   "PURPLE": 0.003823982649392158,
+   "MAROON": 0.002796644027167399,
+   "BRONZE": 0.002054677244449518,
+   "GOLD": 0.004166428856800411,
+   "PINK": 0.0009131898864220079,
+   "MULTI-COLOUR": 0.0008561155185206324
+  },
+  "1991": {
+   "GREEN": 0.11006289308176101,
+   "RED": 0.23541743741521767,
+   "BLACK": 0.09020841040818843,
+   "GREY": 0.07787643359230485,
+   "BLUE": 0.17412751264027623,
+   "WHITE": 0.19478357380688124,
+   "BEIGE": 0.015353311135775064,
+   "TURQUOISE": 0.0021580959427796274,
+   "YELLOW": 0.010790479713898137,
+   "BRONZE": 0.0016031569860648662,
+   "SILVER": 0.058515229991367615,
+   "CREAM": 0.006474287828338882,
+   "MAROON": 0.002713034899494389,
+   "PINK": 0.0028980145517326426,
+   "PURPLE": 0.005611049451227031,
+   "GOLD": 0.0030213343198914784,
+   "ORANGE": 0.0031446540880503146,
+   "BROWN": 0.0045628314218769265,
+   "MULTI-COLOUR": 0.0006782587248735973
+  },
+  "1992": {
+   "BLACK": 0.09396843698205665,
+   "WHITE": 0.21546443755855013,
+   "BLUE": 0.1854867766808388,
+   "RED": 0.2172659796786049,
+   "PURPLE": 0.005548749729768682,
+   "SILVER": 0.07292642501981696,
+   "GREEN": 0.10304820926713266,
+   "GREY": 0.058225841320170064,
+   "BEIGE": 0.010521005981119838,
+   "CREAM": 0.006485551632197161,
+   "GOLD": 0.003531022555307343,
+   "PINK": 0.0019456654896591481,
+   "YELLOW": 0.01174605462275708,
+   "MULTI-COLOUR": 0.0012250486416372415,
+   "BROWN": 0.002594220652878864,
+   "BRONZE": 0.001297110326439432,
+   "TURQUOISE": 0.003098652446494199,
+   "ORANGE": 0.002450097283274483,
+   "MAROON": 0.00317071413129639
+  },
+  "1993": {
+   "GREY": 0.048443634324172744,
+   "GREEN": 0.12198541783510937,
+   "RED": 0.22462142456533932,
+   "WHITE": 0.19160123387549075,
+   "BLUE": 0.19251261918115536,
+   "SILVER": 0.07795849691531127,
+   "BLACK": 0.09008693213684801,
+   "CREAM": 0.005818844643858665,
+   "BEIGE": 0.007711721817162087,
+   "TURQUOISE": 0.006870443073471677,
+   "PURPLE": 0.006800336511497476,
+   "YELLOW": 0.010305664610207516,
+   "GOLD": 0.0025238362310712283,
+   "ORANGE": 0.0024537296690970273,
+   "MAROON": 0.0037156477846326417,
+   "MULTI-COLOUR": 0.0011217049915872126,
+   "BROWN": 0.00357543466068424,
+   "BRONZE": 0.001332024677509815,
+   "PINK": 0.0005608524957936063
+  },
+  "1994": {
+   "RED": 0.21049340253892815,
+   "BLUE": 0.21318241510849853,
+   "GREEN": 0.1503970983678319,
+   "YELLOW": 0.013632668375961478,
+   "BLACK": 0.08561065599399663,
+   "WHITE": 0.15508723657057094,
+   "SILVER": 0.0788568569820524,
+   "TURQUOISE": 0.004252391970483397,
+   "PURPLE": 0.0115690075667563,
+   "BEIGE": 0.007254080420236383,
+   "GREY": 0.0459633543868426,
+   "CREAM": 0.004252391970483397,
+   "MAROON": 0.004127321618410356,
+   "GOLD": 0.004752673378775561,
+   "BROWN": 0.0031892939778625476,
+   "BRONZE": 0.0008129572884747671,
+   "MULTI-COLOUR": 0.0029391532737164656,
+   "PINK": 0.0009380276405478082,
+   "ORANGE": 0.0026890125695703832
+  },
+  "1995": {
+   "BLUE": 0.2291012260614044,
+   "GREEN": 0.1980443813962914,
+   "BLACK": 0.07979531867463775,
+   "WHITE": 0.09646367413111764,
+   "RED": 0.1861384132130915,
+   "GREY": 0.04802918228797244,
+   "YELLOW": 0.01970817712027561,
+   "PURPLE": 0.013881852264667139,
+   "SILVER": 0.08992805755395683,
+   "PINK": 0.0009119464991387172,
+   "GOLD": 0.006028979633194853,
+   "CREAM": 0.002786503191812747,
+   "MAROON": 0.010183402573715675,
+   "BEIGE": 0.004357077718107205,
+   "TURQUOISE": 0.0072955719931097375,
+   "ORANGE": 0.0031411490525889148,
+   "BRONZE": 0.0008106191103455264,
+   "BROWN": 0.0013679197487080758,
+   "MULTI-COLOUR": 0.002026547775863816
+  },
+  "1996": {
+   "BLACK": 0.07664400984112422,
+   "SILVER": 0.11042074976022685,
+   "PURPLE": 0.020391142988198992,
+   "BLUE": 0.2230932821817272,
+   "WHITE": 0.10658437930027939,
+   "GREEN": 0.19327801175930945,
+   "RED": 0.18231099620532923,
+   "TURQUOISE": 0.00946582711313123,
+   "ORANGE": 0.002752178808223177,
+   "GREY": 0.04270047120637171,
+   "YELLOW": 0.01000792293899337,
+   "MAROON": 0.008006338351194697,
+   "GOLD": 0.005003961469496685,
+   "MULTI-COLOUR": 0.003044076560610483,
+   "BEIGE": 0.002585380092573287,
+   "CREAM": 0.0018347858721487844,
+   "PINK": 0.0006254951836870856,
+   "BROWN": 0.0007505942204245027,
+   "BRONZE": 0.0005003961469496685
+  },
+  "1997": {
+   "SILVER": 0.14644618508848273,
+   "WHITE": 0.08189730200174064,
+   "MULTI-COLOUR": 0.005366985784740354,
+   "BLUE": 0.22970699158688715,
+   "BLACK": 0.08491441833478387,
+   "GREEN": 0.1814621409921671,
+   "GOLD": 0.007571801566579634,
+   "RED": 0.17180156657963447,
+   "ORANGE": 0.00449666376559327,
+   "PINK": 0.0012474615607774877,
+   "PURPLE": 0.020336524514070205,
+   "GREY": 0.035596170583115753,
+   "MAROON": 0.003945459820133449,
+   "TURQUOISE": 0.0042935886277922835,
+   "BEIGE": 0.0024659123875834057,
+   "YELLOW": 0.01508558166521613,
+   "BROWN": 0.0009283434870902234,
+   "BRONZE": 0.0012184508268059183,
+   "CREAM": 0.0012184508268059183
+  },
+  "1998": {
+   "GOLD": 0.011253839083551908,
+   "GREY": 0.024816732799784788,
+   "BLUE": 0.23724975900643397,
+   "PURPLE": 0.015871948348913846,
+   "SILVER": 0.20111193310466968,
+   "GREEN": 0.15412379222991907,
+   "WHITE": 0.07285851996323447,
+   "ORANGE": 0.005088887394355146,
+   "MULTI-COLOUR": 0.00468536328378954,
+   "RED": 0.15658977290559778,
+   "BLACK": 0.08213957450624342,
+   "YELLOW": 0.016701414576187595,
+   "MAROON": 0.004035241105656063,
+   "BRONZE": 0.003250610890667384,
+   "BEIGE": 0.003385118927522586,
+   "TURQUOISE": 0.004640527271504473,
+   "BROWN": 0.0008070482211312126,
+   "CREAM": 0.0008518842334162799,
+   "PINK": 0.0005380321474208084
+  },
+  "1999": {
+   "BLUE": 0.24724871606749815,
+   "YELLOW": 0.018556627239053023,
+   "SILVER": 0.23719199040853212,
+   "WHITE": 0.05896247517134012,
+   "RED": 0.1441225417389904,
+   "GREY": 0.026555481989155916,
+   "BLACK": 0.08530322280478858,
+   "GREEN": 0.13941628044306856,
+   "BRONZE": 0.003203120805969615,
+   "MULTI-COLOUR": 0.0031852262763273267,
+   "MAROON": 0.0025768122684895227,
+   "GOLD": 0.011541971619275988,
+   "TURQUOISE": 0.002737863035270118,
+   "PURPLE": 0.009788307714331729,
+   "BEIGE": 0.003865218402734284,
+   "CREAM": 0.0011810389563910312,
+   "ORANGE": 0.003203120805969615,
+   "BROWN": 0.0008410428931875525,
+   "PINK": 0.0005189413596263622
+  },
+  "2000": {
+   "BLUE": 0.2390112493400658,
+   "GREY": 0.030133611295366246,
+   "BLACK": 0.09133489461358314,
+   "RED": 0.13114754098360656,
+   "MULTI-COLOUR": 0.006051089060659799,
+   "WHITE": 0.04645936835835443,
+   "SILVER": 0.2760623248636136,
+   "PURPLE": 0.00495458298926507,
+   "GREEN": 0.12662614557810237,
+   "ORANGE": 0.003397815110124406,
+   "BEIGE": 0.0055231416929512256,
+   "GOLD": 0.014403487160049275,
+   "YELLOW": 0.018870734117583356,
+   "BRONZE": 0.001732750335043522,
+   "CREAM": 0.0006768555996263758,
+   "TURQUOISE": 0.0005820958156786832,
+   "BROWN": 0.0007851524955665958,
+   "MAROON": 0.0017868987830136319,
+   "PINK": 0.00046026180774593546
+  },
+  "2001": {
+   "BLACK": 0.10136397771529367,
+   "BLUE": 0.2372902076529454,
+   "SILVER": 0.2960757260867287,
+   "RED": 0.10815766953666672,
+   "GREEN": 0.12356136153268482,
+   "ORANGE": 0.003588955448051835,
+   "YELLOW": 0.01436455404390576,
+   "GREY": 0.0478527393073578,
+   "TURQUOISE": 0.001178853979287099,
+   "GOLD": 0.015071866431478021,
+   "WHITE": 0.033994655861960564,
+   "MAROON": 0.000978012190223371,
+   "CREAM": 0.00038421907473061003,
+   "BRONZE": 0.002130669414415201,
+   "BEIGE": 0.008400426133882883,
+   "MULTI-COLOUR": 0.001938559877049896,
+   "PURPLE": 0.0029864300808606506,
+   "PINK": 0.0002706998026511116,
+   "BROWN": 0.0004104158298258789
+  },
+  "2002": {
+   "BLUE": 0.23954815615291097,
+   "RED": 0.09766873789904994,
+   "BLACK": 0.11491962717817102,
+   "GREEN": 0.10084875500923049,
+   "SILVER": 0.3148836057454185,
+   "WHITE": 0.028265568012967715,
+   "GREY": 0.06423634562564726,
+   "YELLOW": 0.012517447881489487,
+   "GOLD": 0.00911229681660588,
+   "PURPLE": 0.0032475572965914717,
+   "BEIGE": 0.008493178441172498,
+   "BRONZE": 0.0011087847269125128,
+   "ORANGE": 0.0023807915709847358,
+   "TURQUOISE": 0.0006922869107118736,
+   "PINK": 0.00038835607186275833,
+   "MULTI-COLOUR": 0.0003039308388491152,
+   "MAROON": 0.0008723940744743122,
+   "BROWN": 0.00024201900130577694,
+   "CREAM": 0.00027016074564365796
+  },
+  "2003": {
+   "PURPLE": 0.003126734360465571,
+   "SILVER": 0.332149082694307,
+   "BLUE": 0.23658044696667682,
+   "GREY": 0.07692157368540362,
+   "BLACK": 0.13199899944500465,
+   "RED": 0.08463679071985242,
+   "WHITE": 0.023739730631834845,
+   "GREEN": 0.0785513839707963,
+   "GOLD": 0.00985312165341713,
+   "YELLOW": 0.008711863611847196,
+   "ORANGE": 0.002438852801163145,
+   "BEIGE": 0.008250670293678524,
+   "PINK": 0.00048464382587216345,
+   "BRONZE": 0.0006839731413518436,
+   "MAROON": 0.0006058047823402044,
+   "TURQUOISE": 0.00040256704890994223,
+   "CREAM": 0.0003400323617006308,
+   "BROWN": 0.0002774976744913194,
+   "MULTI-COLOUR": 0.0002462303308866637
+  },
+  "2004": {
+   "GREY": 0.09892398678133885,
+   "MAROON": 0.0010058963275908488,
+   "SILVER": 0.33058486954412186,
+   "BLACK": 0.1497750046596668,
+   "WHITE": 0.02344921850730902,
+   "GREEN": 0.05619410248900171,
+   "BLUE": 0.23012541160390168,
+   "GOLD": 0.009307499548825912,
+   "RED": 0.07349847784217486,
+   "BEIGE": 0.008269059516518889,
+   "YELLOW": 0.007996875804347247,
+   "PINK": 0.0003727733449307263,
+   "TURQUOISE": 0.001174531888392844,
+   "ORANGE": 0.0038667838240036448,
+   "PURPLE": 0.00403541938480564,
+   "CREAM": 0.00022188889579209897,
+   "BRONZE": 0.0007899244690198723,
+   "MULTI-COLOUR": 0.00022188889579209897,
+   "BROWN": 0.00018638667246536315
+  },
+  "2005": {
+   "BLUE": 0.23176384538756314,
+   "BLACK": 0.17888617659992642,
+   "SILVER": 0.3229154513717501,
+   "WHITE": 0.020367594927620775,
+   "GREY": 0.11558464286034803,
+   "GREEN": 0.02826738582210775,
+   "RED": 0.06879391888859972,
+   "TURQUOISE": 0.0006955226291652831,
+   "BEIGE": 0.008485376075816453,
+   "YELLOW": 0.006261947283871952,
+   "GOLD": 0.006365153867554542,
+   "PURPLE": 0.0052007143690487945,
+   "ORANGE": 0.003744604090570508,
+   "BROWN": 0.000516032918412952,
+   "MAROON": 0.0008413580191515521,
+   "BRONZE": 0.0006506502014772003,
+   "PINK": 0.0002467983522844553,
+   "CREAM": 0.00019743868182756425,
+   "MULTI-COLOUR": 0.00021538765290279735
+  },
+  "2006": {
+   "GREY": 0.13281674410443808,
+   "BLACK": 0.1991297951526317,
+   "SILVER": 0.28965775541811334,
+   "BLUE": 0.22669527983884846,
+   "RED": 0.08157622137417458,
+   "WHITE": 0.018380926351449386,
+   "GREEN": 0.016957016132025497,
+   "YELLOW": 0.005727695728606761,
+   "GOLD": 0.0046985663046155614,
+   "PURPLE": 0.00622707656385495,
+   "PINK": 0.00042008725667837515,
+   "CREAM": 0.00017039683905428068,
+   "BEIGE": 0.009388697122149228,
+   "ORANGE": 0.005326166543508555,
+   "BRONZE": 0.0007288260838757352,
+   "TURQUOISE": 0.0007052067200464289,
+   "MAROON": 0.00061747765439472,
+   "BROWN": 0.0006276002388929941,
+   "MULTI-COLOUR": 0.00014846457264135345
+  },
+  "2007": {
+   "BLUE": 0.2100203543955802,
+   "SILVER": 0.26103347964497503,
+   "BLACK": 0.22156709964338897,
+   "GREY": 0.14628604660237682,
+   "RED": 0.08300238034397292,
+   "GREEN": 0.013106367766290754,
+   "YELLOW": 0.006081143169319116,
+   "BEIGE": 0.01211948798058465,
+   "GOLD": 0.005561268996491793,
+   "WHITE": 0.021041686859519425,
+   "ORANGE": 0.007548875095509571,
+   "PURPLE": 0.005295667421512217,
+   "MAROON": 0.0007552651421220181,
+   "BRONZE": 0.002877560191484889,
+   "TURQUOISE": 0.0023425807158151263,
+   "BROWN": 0.0009453402028893927,
+   "CREAM": 0.00017371098268806416,
+   "MULTI-COLOUR": 8.559671610716205e-05,
+   "PINK": 0.00015608812937188376
+  },
+  "2008": {
+   "GREY": 0.14444793401971762,
+   "BLUE": 0.19188491684190404,
+   "BLACK": 0.23343779301053244,
+   "WHITE": 0.035529945107463747,
+   "GREEN": 0.010196766529207745,
+   "SILVER": 0.2545504820165497,
+   "RED": 0.09240698764690353,
+   "BEIGE": 0.01118446805217977,
+   "PURPLE": 0.004163594323219634,
+   "ORANGE": 0.006382509034965544,
+   "YELLOW": 0.00544032371120882,
+   "GOLD": 0.004309246160708596,
+   "BRONZE": 0.0023554633093918124,
+   "BROWN": 0.001766028529553668,
+   "TURQUOISE": 0.0009364957988548125,
+   "PINK": 0.00021165032635114838,
+   "MAROON": 0.0005461943905836087,
+   "CREAM": 0.0001695478420769952,
+   "MULTI-COLOUR": 7.965334862677627e-05
+  },
+  "2009": {
+   "BLUE": 0.1858981259390316,
+   "SILVER": 0.225648202073621,
+   "RED": 0.11270863407646213,
+   "WHITE": 0.06627803523996427,
+   "GREEN": 0.015287641539031973,
+   "GREY": 0.13374938241277184,
+   "PINK": 0.000980779121365436,
+   "BLACK": 0.22584233377588,
+   "BEIGE": 0.00962009989962195,
+   "BRONZE": 0.0021474094458413953,
+   "YELLOW": 0.005656500973878705,
+   "PURPLE": 0.0035937366304440834,
+   "BROWN": 0.0026736811695008975,
+   "ORANGE": 0.004172451515377347,
+   "GOLD": 0.002566034680570545,
+   "MAROON": 0.001650579496932075,
+   "TURQUOISE": 0.0009356964037792198,
+   "CREAM": 0.0005290318900423317,
+   "MULTI-COLOUR": 6.164371588319344e-05
+  },
+  "2010": {
+   "GREY": 0.13846624445375103,
+   "BLUE": 0.16709814168128717,
+   "RED": 0.10635825745485528,
+   "BRONZE": 0.0032598851553109864,
+   "BLACK": 0.23096578601988924,
+   "WHITE": 0.10575768907694241,
+   "SILVER": 0.20616151125425103,
+   "GREEN": 0.012520649542727236,
+   "YELLOW": 0.004590744680765877,
+   "BEIGE": 0.009665947853048125,
+   "BROWN": 0.003858051259712192,
+   "CREAM": 0.0003227054083985083,
+   "PINK": 0.0009248753019857993,
+   "ORANGE": 0.003479292802708483,
+   "MAROON": 0.001817720290482913,
+   "GOLD": 0.0024823492953731413,
+   "PURPLE": 0.0017928967975291816,
+   "TURQUOISE": 0.0004236008958878683,
+   "MULTI-COLOUR": 5.365077509354854e-05
+  },
+  "2011": {
+   "BLUE": 0.1383705567219286,
+   "SILVER": 0.1869268684089867,
+   "BLACK": 0.2263937655348826,
+   "RED": 0.10176479282801226,
+   "WHITE": 0.1572318649098675,
+   "GREY": 0.14128070778735008,
+   "BEIGE": 0.006710918458457009,
+   "BROWN": 0.011280888776273559,
+   "YELLOW": 0.0035964007336084366,
+   "GREEN": 0.0113201030430271,
+   "ORANGE": 0.0037178141364415163,
+   "PURPLE": 0.001837791693815005,
+   "GOLD": 0.002311379376915466,
+   "BRONZE": 0.004094120273172615,
+   "MAROON": 0.0017518219551630107,
+   "TURQUOISE": 0.0006817249451000265,
+   "PINK": 0.0003913885470209223,
+   "MULTI-COLOUR": 0.00012442988489104467,
+   "CREAM": 0.00021266198508651272
+  },
+  "2012": {
+   "GREY": 0.13284594844200426,
+   "BLUE": 0.11701278293644508,
+   "SILVER": 0.16473061849911785,
+   "BLACK": 0.21325728616949235,
+   "WHITE": 0.21218905423998133,
+   "RED": 0.1083372275894522,
+   "PINK": 0.0013426221932841516,
+   "GREEN": 0.0077233364031151445,
+   "PURPLE": 0.003335699216130237,
+   "BEIGE": 0.006393749376756081,
+   "ORANGE": 0.005560150451896649,
+   "BROWN": 0.0154922958904681,
+   "YELLOW": 0.0036609266309112036,
+   "TURQUOISE": 0.0020817161579366893,
+   "GOLD": 0.001837958536437528,
+   "MAROON": 0.0013426221932841516,
+   "BRONZE": 0.0024825475408831715,
+   "MULTI-COLOUR": 0.00019226871214506056,
+   "CREAM": 0.00018118882025873503
+  },
+  "2013": {
+   "RED": 0.1245362293981613,
+   "GREY": 0.13164494268741242,
+   "WHITE": 0.22444594338951435,
+   "BLUE": 0.12035615817314507,
+   "BLACK": 0.19983928318314162,
+   "SILVER": 0.14437543536663455,
+   "YELLOW": 0.00553298252135675,
+   "GREEN": 0.0067071970137778545,
+   "ORANGE": 0.005938911063593449,
+   "BRONZE": 0.003949530286626365,
+   "TURQUOISE": 0.0013297468958324485,
+   "BROWN": 0.01578653894625142,
+   "BEIGE": 0.005263282715441334,
+   "PURPLE": 0.0037741426827795294,
+   "MULTI-COLOUR": 0.00034581140758479687,
+   "PINK": 0.0020417764447829634,
+   "GOLD": 0.0025155435885075893,
+   "CREAM": 0.000623784213681667,
+   "MAROON": 0.0009927600217745365
+  },
+  "2014": {
+   "WHITE": 0.2247395252817973,
+   "GREY": 0.13705913139556297,
+   "PURPLE": 0.004545102106089535,
+   "RED": 0.12892117429272026,
+   "BLACK": 0.19245810597323046,
+   "SILVER": 0.12478992411099372,
+   "BLUE": 0.13758105004022214,
+   "BRONZE": 0.003259931961580585,
+   "BROWN": 0.013409480795138451,
+   "GREEN": 0.009581592796844257,
+   "PINK": 0.0012153871502369714,
+   "ORANGE": 0.006979268635451699,
+   "YELLOW": 0.004734582319703034,
+   "BEIGE": 0.005262800818011767,
+   "GOLD": 0.0019025558021652112,
+   "CREAM": 0.0018502185564612268,
+   "TURQUOISE": 0.0007365982728708918,
+   "MULTI-COLOUR": 0.00023018696027215369,
+   "MAROON": 0.0007433827306473342
+  },
+  "2015": {
+   "GREY": 0.15642269187592267,
+   "BLACK": 0.19056563050248473,
+   "WHITE": 0.21528324071394414,
+   "GREEN": 0.011438742013156547,
+   "RED": 0.12424929100629463,
+   "SILVER": 0.11196494187337432,
+   "BLUE": 0.1488100118464771,
+   "BEIGE": 0.004684964812904993,
+   "PURPLE": 0.005290805972609952,
+   "BROWN": 0.009700549600308816,
+   "BRONZE": 0.0024016483134170993,
+   "ORANGE": 0.008207441431291984,
+   "GOLD": 0.0016539862531228299,
+   "TURQUOISE": 0.0006151481563061328,
+   "CREAM": 0.0021264271282109694,
+   "PINK": 0.0007809013338698891,
+   "YELLOW": 0.005077188241097303,
+   "MAROON": 0.0006417395751666285,
+   "MULTI-COLOUR": 8.46493500392445e-05
+  },
+  "2016": {
+   "WHITE": 0.20761859211529077,
+   "BLACK": 0.19923168997992846,
+   "SILVER": 0.10188447861425058,
+   "BLUE": 0.15537768079816416,
+   "GREY": 0.17253529966686426,
+   "GREEN": 0.010923823014663676,
+   "CREAM": 0.0020092821858539215,
+   "BROWN": 0.0057082847359657685,
+   "RED": 0.11647453951822333,
+   "YELLOW": 0.004930017663130778,
+   "PURPLE": 0.0042317474244636276,
+   "PINK": 0.0013510103642706906,
+   "BRONZE": 0.0032641261430930604,
+   "ORANGE": 0.007780543152973095,
+   "GOLD": 0.001382923994922754,
+   "TURQUOISE": 0.0014522829522065723,
+   "MAROON": 0.0005838066833950827,
+   "BEIGE": 0.0032139153642004805,
+   "MULTI-COLOUR": 4.5955628138971524e-05
+  },
+  "2017": {
+   "WHITE": 0.19207215063714672,
+   "BLACK": 0.20058820388695095,
+   "GREY": 0.1980102512992098,
+   "BLUE": 0.16140279063145155,
+   "SILVER": 0.10078086068199615,
+   "ORANGE": 0.008610824375311455,
+   "RED": 0.10268295721506371,
+   "GREEN": 0.011141613867729765,
+   "BEIGE": 0.002960596568662348,
+   "BROWN": 0.004084946963764505,
+   "PURPLE": 0.003042464583185022,
+   "CREAM": 0.001472289456823521,
+   "YELLOW": 0.004266035452409767,
+   "MAROON": 0.0004097850074749057,
+   "GOLD": 0.0018322417598063644,
+   "BRONZE": 0.004921869438314231,
+   "TURQUOISE": 0.0011221257207944756,
+   "PINK": 0.0005477148145511498,
+   "MULTI-COLOUR": 5.0277639353598635e-05
+  },
+  "2018": {
+   "BLACK": 0.19984961773950244,
+   "BLUE": 0.16311571494622198,
+   "GREY": 0.21050480802910504,
+   "BRONZE": 0.004227983243119545,
+   "SILVER": 0.09387495855147324,
+   "WHITE": 0.18603219674856739,
+   "BEIGE": 0.003924416568202091,
+   "RED": 0.10351623614685154,
+   "GREEN": 0.009351254664418716,
+   "ORANGE": 0.01233601561733786,
+   "GOLD": 0.001435169833878975,
+   "YELLOW": 0.002960942644579467,
+   "BROWN": 0.003329425885363883,
+   "TURQUOISE": 0.0009686112058135353,
+   "PURPLE": 0.002337930422518109,
+   "PINK": 0.0005277389887026494,
+   "CREAM": 0.0013198144974103428,
+   "MAROON": 0.00033485739371663686,
+   "MULTI-COLOUR": 5.230687321654579e-05
+  },
+  "2019": {
+   "GREY": 0.2269294789296658,
+   "WHITE": 0.1835499760020048,
+   "BLUE": 0.16444879884960642,
+   "BLACK": 0.20035282008299485,
+   "SILVER": 0.08846977739204796,
+   "RED": 0.10104029067542204,
+   "ORANGE": 0.012172670412902379,
+   "MULTI-COLOUR": 4.8137571516149446e-05,
+   "GREEN": 0.007324461862065092,
+   "GOLD": 0.0009471775101265877,
+   "YELLOW": 0.002847667711063194,
+   "PURPLE": 0.0016975573014077407,
+   "BEIGE": 0.0026683316603167547,
+   "BROWN": 0.0022450041931600284,
+   "CREAM": 0.0004974215723335443,
+   "TURQUOISE": 0.0010741285565760406,
+   "PINK": 0.0005096919337004059,
+   "BRONZE": 0.0030095420937106374,
+   "MAROON": 0.0001670656893795775
+  },
+  "2020": {
+   "BLUE": 0.17242279576309116,
+   "GREY": 0.24585540056691033,
+   "BLACK": 0.19683816947635388,
+   "RED": 0.09329777711472476,
+   "GREEN": 0.00857824854542742,
+   "SILVER": 0.07599808721041751,
+   "WHITE": 0.1789936808678417,
+   "TURQUOISE": 0.0018728287973402101,
+   "BRONZE": 0.002608107244091132,
+   "ORANGE": 0.014066862385712154,
+   "PURPLE": 0.0006027418426717248,
+   "GOLD": 0.00048818759190980584,
+   "YELLOW": 0.004154589629377038,
+   "PINK": 0.0008418405404829394,
+   "BEIGE": 0.0011355523113318132,
+   "BROWN": 0.0019367660535794208,
+   "CREAM": 0.0001798235331727798,
+   "MULTI-COLOUR": 6.859934783998636e-05,
+   "MAROON": 5.9941177724259924e-05
+  },
+  "2021": {
+   "GREY": 0.24956712244399992,
+   "WHITE": 0.1766727602256313,
+   "BLUE": 0.17414530332744854,
+   "BLACK": 0.20262584112643417,
+   "RED": 0.09111697415000072,
+   "ORANGE": 0.010994502748625687,
+   "SILVER": 0.06844162775009362,
+   "BRONZE": 0.0028301776004947916,
+   "GREEN": 0.010814436123974567,
+   "BEIGE": 0.0009773181294470258,
+   "GOLD": 0.0011580371694048536,
+   "BROWN": 0.0017497778525880662,
+   "YELLOW": 0.005557273582529884,
+   "PURPLE": 0.0004821349116564433,
+   "PINK": 0.0004097168126119708,
+   "TURQUOISE": 0.00219537750706892,
+   "MAROON": 4.7626317389608066e-05,
+   "CREAM": 0.00012004441643408061,
+   "MULTI-COLOUR": 9.394780416580221e-05
+  },
+  "2022": {
+   "BLACK": 0.19851447083858775,
+   "WHITE": 0.1707011449564631,
+   "GREY": 0.26094857532311727,
+   "BLUE": 0.16661787369801132,
+   "SILVER": 0.061356435636961644,
+   "RED": 0.08738053780743739,
+   "BROWN": 0.001342417939451816,
+   "GREEN": 0.019362694919018122,
+   "MULTI-COLOUR": 7.73574172759119e-05,
+   "ORANGE": 0.012393858621317437,
+   "YELLOW": 0.006987508777732801,
+   "BEIGE": 0.0027915357648014417,
+   "PURPLE": 0.002372738712652539,
+   "BRONZE": 0.004921532237036464,
+   "TURQUOISE": 0.0025087810671722464,
+   "GOLD": 0.0014637890596605743,
+   "MAROON": 5.268306866204345e-05,
+   "CREAM": 0.00011470237734014523,
+   "PINK": 9.13617772999994e-05
+  }
+ },
+ "fuel_trend": {
+  "1990": {
+   "Petrol": 0.909873937596258,
+   "Diesel": 0.08755918087958474,
+   "Other": 0.0022816724659175175,
+   "Electric": 0.0002852090582396897
+  },
+  "1991": {
+   "Petrol": 0.89397115028973,
+   "Diesel": 0.10393293058809025,
+   "Electric": 0.0004931574405128837,
+   "Other": 0.0016027616816668721
+  },
+  "1992": {
+   "Petrol": 0.8531191470969601,
+   "Diesel": 0.14392738798444027,
+   "Other": 0.002737357729433799,
+   "Electric": 0.00021610718916582626
+  },
+  "1993": {
+   "Petrol": 0.8138230758446656,
+   "Diesel": 0.18379363521659892,
+   "Other": 0.002172998738258797,
+   "Electric": 0.00021029020047665778
+  },
+  "1994": {
+   "Petrol": 0.791434823382307,
+   "Diesel": 0.2041888090028134,
+   "Other": 0.0042513285401688024,
+   "Electric": 0.00012503907471084715
+  },
+  "1995": {
+   "Petrol": 0.805459886547812,
+   "Diesel": 0.19038695299837927,
+   "Other": 0.004153160453808752
+  },
+  "1996": {
+   "Petrol": 0.8109031800941942,
+   "Diesel": 0.18488725878381196,
+   "Electric": 0.00033343058392031006,
+   "Other": 0.003876130538073605
+  },
+  "1997": {
+   "Petrol": 0.8404502204687863,
+   "Diesel": 0.15609770248317476,
+   "Other": 0.0033070317939197028,
+   "Electric": 0.00014504525411928522
+  },
+  "1998": {
+   "Petrol": 0.8575975612489634,
+   "Diesel": 0.13877121018537197,
+   "Other": 0.003608813574518638,
+   "Electric": 2.2414991146078496e-05
+  },
+  "1999": {
+   "Petrol": 0.8609997853002218,
+   "Diesel": 0.1354218850640521,
+   "Other": 0.0033636298575824806,
+   "Electric": 0.00019680812996493237,
+   "Hybrid": 1.7891648178630217e-05
+  },
+  "2000": {
+   "Petrol": 0.868693568692215,
+   "Diesel": 0.12775980398792522,
+   "Other": 0.0031675984459816173,
+   "Hybrid": 0.0002571981644173108,
+   "Electric": 0.00012183070946083142
+  },
+  "2001": {
+   "Petrol": 0.85027681237884,
+   "Diesel": 0.14655338025463246,
+   "Other": 0.0024275659721615817,
+   "Electric": 0.00010478702038107546,
+   "Hybrid": 0.0006374543739848757
+  },
+  "2002": {
+   "Petrol": 0.8161193189812861,
+   "Diesel": 0.18112283663993245,
+   "Other": 0.0015533980582524273,
+   "Hybrid": 0.0011537920360208246,
+   "Electric": 5.065428450823132e-05
+  },
+  "2003": {
+   "Petrol": 0.8003814615919768,
+   "Diesel": 0.1960423359832407,
+   "Other": 0.0013015031775437938,
+   "Hybrid": 0.002243431903634047,
+   "Electric": 3.1267343604655705e-05
+  },
+  "2004": {
+   "Petrol": 0.7762225969645868,
+   "Diesel": 0.21801425993313808,
+   "Hybrid": 0.0045738291766515785,
+   "Other": 0.0011449365403390433,
+   "Electric": 4.437738528445904e-05
+  },
+  "2005": {
+   "Diesel": 0.25734055179500526,
+   "Petrol": 0.7336356232429679,
+   "Hybrid": 0.00809048056018613,
+   "Electric": 6.282125781619846e-05,
+   "Other": 0.0008705231440244644
+  },
+  "2006": {
+   "Petrol": 0.7147019425108564,
+   "Diesel": 0.27381068870225966,
+   "Other": 0.0006427797779119948,
+   "Hybrid": 0.010712996298533247,
+   "Electric": 0.0001315927104386761
+  },
+  "2007": {
+   "Petrol": 0.677222702652352,
+   "Diesel": 0.3081592141254011,
+   "Hybrid": 0.013606033027578368,
+   "Other": 0.0006319019872184606,
+   "Electric": 0.0003801482074501496
+  },
+  "2008": {
+   "Petrol": 0.647641697295206,
+   "Diesel": 0.33954779758992276,
+   "Hybrid": 0.01207997178002071,
+   "Electric": 0.00025147642835197595,
+   "Other": 0.00047905690649856057
+  },
+  "2009": {
+   "Diesel": 0.3346214109786538,
+   "Petrol": 0.654596459074553,
+   "Electric": 0.00039470379274462666,
+   "Hybrid": 0.009817911823724735,
+   "Other": 0.0005695143303238319
+  },
+  "2010": {
+   "Petrol": 0.59540894236875,
+   "Diesel": 0.390334387929716,
+   "Hybrid": 0.012188315520503772,
+   "Electric": 0.0009729192140734566,
+   "Other": 0.0010954349669567809
+  },
+  "2011": {
+   "Petrol": 0.5436205929197133,
+   "Diesel": 0.440532318588769,
+   "Electric": 0.0019969111223726442,
+   "Hybrid": 0.011986745577837302,
+   "Other": 0.0018634317913077054
+  },
+  "2012": {
+   "Diesel": 0.45490107644057676,
+   "Petrol": 0.5274311158848634,
+   "Hybrid": 0.014645614071677542,
+   "Other": 0.0013106817630787922,
+   "Electric": 0.0017115118398035346
+  },
+  "2013": {
+   "Petrol": 0.5232388190587548,
+   "Diesel": 0.4582881536348745,
+   "Electric": 0.0009684909521104389,
+   "Hybrid": 0.017328045975743604,
+   "Other": 0.00017649037851670869
+  },
+  "2014": {
+   "Petrol": 0.5073451376322847,
+   "Diesel": 0.4675742000889732,
+   "Hybrid": 0.021062328753182636,
+   "Electric": 0.0038458146235938015,
+   "Other": 0.00017251890196564936
+  },
+  "2015": {
+   "Diesel": 0.45810193279556666,
+   "Petrol": 0.5124334716529079,
+   "Hybrid": 0.026014362012596343,
+   "Electric": 0.0033669138336858907,
+   "Other": 8.3319705243247e-05
+  },
+  "2016": {
+   "Petrol": 0.5112084687532179,
+   "Diesel": 0.4547431639021011,
+   "Hybrid": 0.030380860713042607,
+   "Electric": 0.0036019774494510442,
+   "Other": 6.552918218729601e-05
+  },
+  "2017": {
+   "Petrol": 0.5532768978457163,
+   "Diesel": 0.39843925888155934,
+   "Hybrid": 0.04307766509070879,
+   "Electric": 0.005151451242746456,
+   "Other": 5.472693926911505e-05
+  },
+  "2018": {
+   "Petrol": 0.6371114289997576,
+   "Diesel": 0.3006298772050022,
+   "Hybrid": 0.05582541841976339,
+   "Electric": 0.006371160992541137,
+   "Other": 6.211438293563783e-05
+  },
+  "2019": {
+   "Petrol": 0.6688083136299925,
+   "Hybrid": 0.0629133572133105,
+   "Diesel": 0.2522301350209776,
+   "Electric": 0.016001472441279325,
+   "Other": 4.672169444011836e-05
+  },
+  "2020": {
+   "Petrol": 0.6147255199054263,
+   "Diesel": 0.17484207196257015,
+   "Electric": 0.0648329143009374,
+   "Hybrid": 0.14509332489718443,
+   "Other": 0.000506168933881683
+  },
+  "2021": {
+   "Diesel": 0.11275541193748047,
+   "Petrol": 0.5372870928365592,
+   "Hybrid": 0.2333795894880442,
+   "Electric": 0.11511976038137514,
+   "Other": 0.0014581453565410052
+  },
+  "2022": {
+   "Petrol": 0.49529920628675306,
+   "Hybrid": 0.26380528884306725,
+   "Electric": 0.16463114540917378,
+   "Diesel": 0.07398098342551752,
+   "Other": 0.0022833760354883585
+  }
+ },
+ "make_colour": {
+  "FORD": {
+   "BLUE": 0.21608498250751643,
+   "BLACK": 0.1818989689707359,
+   "SILVER": 0.17024975620484,
+   "WHITE": 0.14199758664494455,
+   "GREY": 0.13181143421003133,
+   "RED": 0.11860714110024684
+  },
+  "VOLKSWAGEN": {
+   "BLACK": 0.21618113625602803,
+   "GREY": 0.20160101563353625,
+   "BLUE": 0.16029047375286118,
+   "SILVER": 0.15945878771554095,
+   "WHITE": 0.1577377819597773,
+   "RED": 0.07515031784574906
+  },
+  "VAUXHALL": {
+   "BLACK": 0.1943486159917936,
+   "SILVER": 0.183046671912399,
+   "WHITE": 0.15534220164210646,
+   "GREY": 0.1457194412059142,
+   "BLUE": 0.1456856597881658,
+   "RED": 0.11804216085722408
+  },
+  "BMW": {
+   "BLACK": 0.2704867851609111,
+   "GREY": 0.20789328394094284,
+   "WHITE": 0.19084099894922438,
+   "BLUE": 0.18429146111239736,
+   "SILVER": 0.08983074052966215,
+   "RED": 0.029541376516055495
+  },
+  "AUDI": {
+   "BLACK": 0.2907152055876969,
+   "GREY": 0.2380533604254839,
+   "WHITE": 0.1879990756517571,
+   "BLUE": 0.13436028186711252,
+   "SILVER": 0.08020966865897992,
+   "RED": 0.05576290349366993
+  },
+  "TOYOTA": {
+   "SILVER": 0.19128634783992013,
+   "WHITE": 0.18344609144723995,
+   "BLUE": 0.1520203986347452,
+   "GREY": 0.1520106985484791,
+   "RED": 0.13969870238712656,
+   "BLACK": 0.12838064173184047
+  },
+  "MERCEDES-BENZ": {
+   "BLACK": 0.2880213034072436,
+   "SILVER": 0.2087067356709147,
+   "GREY": 0.1795065797474329,
+   "WHITE": 0.15744787705446608,
+   "BLUE": 0.10652229502011164,
+   "RED": 0.04645494291241662
+  },
+  "NISSAN": {
+   "BLACK": 0.22275344158408406,
+   "GREY": 0.176735810107292,
+   "WHITE": 0.15604507296835413,
+   "BLUE": 0.14723737996442596,
+   "RED": 0.13386325649313427,
+   "SILVER": 0.11281315850696295
+  },
+  "PEUGEOT": {
+   "GREY": 0.21001565561030178,
+   "BLACK": 0.17930124073756568,
+   "BLUE": 0.1532310425174896,
+   "WHITE": 0.14679078726826933,
+   "RED": 0.12535168909138436,
+   "SILVER": 0.11268479194715131
+  },
+  "KIA": {
+   "WHITE": 0.216763877405735,
+   "BLACK": 0.19383233250381082,
+   "SILVER": 0.19156533566940007,
+   "RED": 0.12600194079547997,
+   "BLUE": 0.12355030168496335,
+   "GREY": 0.10239029684323256
+  },
+  "HYUNDAI": {
+   "WHITE": 0.20637736101558635,
+   "GREY": 0.18869476794887405,
+   "BLUE": 0.17260163377506907,
+   "BLACK": 0.15236318203308136,
+   "SILVER": 0.1350601284949722,
+   "RED": 0.11231627709018233
+  },
+  "HONDA": {
+   "SILVER": 0.21712490397486556,
+   "BLUE": 0.20361353505894908,
+   "BLACK": 0.1504121605770248,
+   "GREY": 0.14111209755693657,
+   "RED": 0.1282619795667714,
+   "WHITE": 0.0941805318527446
+  },
+  "MINI": {
+   "WHITE": 0.17249467439940475,
+   "BLACK": 0.16776533722008746,
+   "BLUE": 0.16291114146222135,
+   "GREY": 0.15094255486133054,
+   "SILVER": 0.12346729724495724,
+   "RED": 0.11470808573962145
+  },
+  "SKODA": {
+   "BLUE": 0.22481474371280477,
+   "GREY": 0.19799321686824087,
+   "SILVER": 0.1408997248352211,
+   "WHITE": 0.13364561336148972,
+   "BLACK": 0.11935880207333462,
+   "RED": 0.08751391821846803
+  },
+  "LAND ROVER": {
+   "BLACK": 0.2912377141773974,
+   "GREY": 0.24780539410690364,
+   "WHITE": 0.12070396450719667,
+   "BLUE": 0.10792312283389133,
+   "SILVER": 0.09363352963326323,
+   "RED": 0.06946917049404568
+  },
+  "RENAULT": {
+   "BLUE": 0.18750242889209018,
+   "BLACK": 0.1840731682803444,
+   "RED": 0.15640590974572013,
+   "GREY": 0.13782036249120574,
+   "WHITE": 0.123292572615498,
+   "SILVER": 0.1124419578545345
+  },
+  "CITROEN": {
+   "GREY": 0.19728029867892016,
+   "WHITE": 0.17939115450890292,
+   "RED": 0.16455628948879955,
+   "BLUE": 0.16244974152785754,
+   "BLACK": 0.13173176335439402,
+   "SILVER": 0.08180356117174038
+  },
+  "FIAT": {
+   "WHITE": 0.317282721152558,
+   "GREY": 0.15347641313768942,
+   "RED": 0.13937610663033986,
+   "BLUE": 0.12833603148035463,
+   "BLACK": 0.10818466623948247,
+   "GREEN": 0.05474198666475133
+  },
+  "VOLVO": {
+   "BLACK": 0.22607663515762821,
+   "GREY": 0.20986977829157227,
+   "BLUE": 0.18328091369913135,
+   "SILVER": 0.14706069283239517,
+   "WHITE": 0.10088789870843289,
+   "RED": 0.07655614168589102
+  },
+  "SEAT": {
+   "WHITE": 0.20950982376082117,
+   "GREY": 0.20496878266309967,
+   "BLACK": 0.1752942115649883,
+   "BLUE": 0.14876458062204465,
+   "RED": 0.14683751575718984,
+   "SILVER": 0.0762675835386332
+  }
+ },
+ "gb_models": [
+  [
+   "FORD|FIESTA",
+   0.0455248462626348,
+   "Ford Fiesta"
+  ],
+  [
+   "FORD|FOCUS",
+   0.029999645347504825,
+   "Ford Focus"
+  ],
+  [
+   "VAUXHALL|CORSA",
+   0.02990963221151323,
+   "Vauxhall Corsa"
+  ],
+  [
+   "VOLKSWAGEN|GOLF",
+   0.029314707494217437,
+   "Volkswagen Golf"
+  ],
+  [
+   "MINI|HATCH",
+   0.022450340007973857,
+   "Mini hatch"
+  ],
+  [
+   "VOLKSWAGEN|POLO",
+   0.02105472570861119,
+   "Volkswagen Polo"
+  ],
+  [
+   "NISSAN|QASHQAI",
+   0.019886700090375173,
+   "Nissan Qashqai"
+  ],
+  [
+   "VAUXHALL|ASTRA",
+   0.019543344863363697,
+   "Vauxhall Astra"
+  ],
+  [
+   "TOYOTA|YARIS",
+   0.016103220322104442,
+   "Toyota Yaris"
+  ],
+  [
+   "BMW|3 SERIES",
+   0.015628463368244788,
+   "BMW 3 Series"
+  ],
+  [
+   "AUDI|A3",
+   0.014055455238266519,
+   "Audi A3"
+  ],
+  [
+   "BMW|1 SERIES",
+   0.012749232313826688,
+   "BMW 1 Series"
+  ],
+  [
+   "MERCEDES-BENZ|A-CLASS",
+   0.012025465386337645,
+   "Mercedes-Benz A-Class"
+  ],
+  [
+   "MERCEDES-BENZ|C-CLASS",
+   0.011851709496508706,
+   "Mercedes-Benz C-Class"
+  ],
+  [
+   "HONDA|JAZZ",
+   0.011443781077808522,
+   "Honda Jazz"
+  ]
+ ],
+ "gb_makes": [
+  [
+   "FORD",
+   0.11977743755320822,
+   "Ford"
+  ],
+  [
+   "VOLKSWAGEN",
+   0.08659502099073929,
+   "Volkswagen"
+  ],
+  [
+   "VAUXHALL",
+   0.08413425137520825,
+   "Vauxhall"
+  ],
+  [
+   "BMW",
+   0.06227201898487837,
+   "BMW"
+  ],
+  [
+   "AUDI",
+   0.05864198999728258,
+   "Audi"
+  ],
+  [
+   "TOYOTA",
+   0.053596100757288385,
+   "Toyota"
+  ],
+  [
+   "MERCEDES-BENZ",
+   0.052723566190632,
+   "Mercedes-Benz"
+  ],
+  [
+   "NISSAN",
+   0.05169678876905425,
+   "Nissan"
+  ],
+  [
+   "PEUGEOT",
+   0.036994518292096365,
+   "Peugeot"
+  ],
+  [
+   "KIA",
+   0.03378904846266009,
+   "Kia"
+  ],
+  [
+   "HYUNDAI",
+   0.03159767529123844,
+   "Hyundai"
+  ],
+  [
+   "HONDA",
+   0.030139168638021893,
+   "Honda"
+  ],
+  [
+   "MINI",
+   0.02720156860592625,
+   "Mini"
+  ],
+  [
+   "SKODA",
+   0.02708129258833274,
+   "Skoda"
+  ],
+  [
+   "LAND ROVER",
+   0.027060908571541593,
+   "Land Rover"
+  ]
+ ],
+ "gb_colours": [
+  [
+   "BLACK",
+   0.2004857965939918
+  ],
+  [
+   "GREY",
+   0.17318718686481926
+  ],
+  [
+   "WHITE",
+   0.16484455016738817
+  ],
+  [
+   "BLUE",
+   0.16296408440861831
+  ],
+  [
+   "SILVER",
+   0.140183041946981
+  ],
+  [
+   "RED",
+   0.10627512518151189
+  ],
+  [
+   "GREEN",
+   0.015062095399433989
+  ],
+  [
+   "ORANGE",
+   0.008139874949838428
+  ],
+  [
+   "BROWN",
+   0.005952596142408788
+  ],
+  [
+   "BEIGE",
+   0.005121170094964155
+  ],
+  [
+   "YELLOW",
+   0.005054341933802471
+  ],
+  [
+   "PURPLE",
+   0.003252775592228092
+  ]
+ ],
+ "van_colours": [
+  [
+   "WHITE",
+   0.43859282824985485
+  ],
+  [
+   "GREY",
+   0.13534605483656809
+  ],
+  [
+   "SILVER",
+   0.12881759118725897
+  ],
+  [
+   "BLACK",
+   0.10109709803299387
+  ],
+  [
+   "BLUE",
+   0.09592489980103394
+  ]
+ ],
+ "first_use": {
+  "pre1960": 3232,
+  "pre1980": 34305,
+  "y2005_or_older": 1756955,
+  "total": 28852409,
+  "modal_year": 2016
+ },
+ "unplaced_dft": {
+  "cars": 701823.0,
+  "cars26": 713863.0,
+  "pcars": 35163.0,
+  "piv": 62523.0,
+  "bev": 46175.0,
+  "phev": 52423.0,
+  "pbev": 18272.0,
+  "ppiv": 9812.0
+ },
+ "colour_hex": {
+  "BLACK": "#1d1d1f",
+  "WHITE": "#f4f4f2",
+  "GREY": "#8a8d91",
+  "BLUE": "#2f5fa8",
+  "SILVER": "#c3c7cc",
+  "RED": "#c7322b",
+  "GREEN": "#3f7d3b",
+  "ORANGE": "#e3801f",
+  "BROWN": "#6e4a2e",
+  "YELLOW": "#efc61f",
+  "BEIGE": "#d8c7a4",
+  "PURPLE": "#6d3f8f",
+  "BRONZE": "#9c6b30",
+  "GOLD": "#c9a43a",
+  "TURQUOISE": "#2aa3a3",
+  "CREAM": "#efe6cc",
+  "PINK": "#e58fb1",
+  "MAROON": "#6e1f2b",
+  "MULTI-COLOUR": "#999999"
+ },
+ "facts": {
+  "areas_ford": 89,
+  "areas_n": 118,
+  "counties_n_gb": 207,
+  "counties_ford": 151,
+  "areas_vauxhall": 9,
+  "areas_volkswagen": 13,
+  "areas_toyota": 4,
+  "areas_mercedesbenz": 2,
+  "areas_nissan": 1,
+  "areas_col_black": 88,
+  "cty_col_black": 156,
+  "areas_col_white": 17,
+  "cty_col_white": 40,
+  "areas_col_blue": 13,
+  "cty_col_blue": 10,
+  "areas_col_grey": 0,
+  "cty_col_grey": 1,
+  "areas_mod_fiesta": 98,
+  "areas_mod_corsa": 10,
+  "areas_mod_golf": 6,
+  "areas_mod_prius": 2,
+  "a_SR": {
+   "name": "Sunderland",
+   "cars": 98495,
+   "top_make": "Vauxhall",
+   "top_make_share": 0.10389359865983044,
+   "nissan": 0.08594,
+   "vauxhall": 0.10389,
+   "toyota": 0.04871,
+   "lexus": 0.00157,
+   "top_model": "Vauxhall Corsa",
+   "top_model_share": 0.034793644347428807,
+   "age": 9.761393934219972
+  },
+  "a_LU": {
+   "name": "Luton",
+   "cars": 195652,
+   "top_make": "Vauxhall",
+   "top_make_share": 0.1550303600269867,
+   "nissan": 0.04822,
+   "vauxhall": 0.15503,
+   "toyota": 0.0705,
+   "lexus": 0.00583,
+   "top_model": "Vauxhall Corsa",
+   "top_model_share": 0.056375605667205037,
+   "age": 11.356244551204396
+  },
+  "a_CH": {
+   "name": "Chester",
+   "cars": 319717,
+   "top_make": "Vauxhall",
+   "top_make_share": 0.1292236571718113,
+   "nissan": 0.04768,
+   "vauxhall": 0.12922,
+   "toyota": 0.04281,
+   "lexus": 0.00642,
+   "top_model": "Vauxhall Corsa",
+   "top_model_share": 0.04551212478535705,
+   "age": 10.47865811100611
+  },
+  "a_ZE": {
+   "name": "Lerwick",
+   "cars": 9022,
+   "top_make": "Toyota",
+   "top_make_share": 0.14431389935712702,
+   "nissan": 0.01275,
+   "vauxhall": 0.091,
+   "toyota": 0.14431,
+   "lexus": 0.00122,
+   "top_model": "Toyota Yaris",
+   "top_model_share": 0.05176235867878519,
+   "age": 9.050506549432512
+  },
+  "a_NW": {
+   "name": "London NW",
+   "cars": 193906,
+   "top_make": "Mercedes-Benz",
+   "top_make_share": 0.11728878941342713,
+   "nissan": 0.05327,
+   "vauxhall": 0.04292,
+   "toyota": 0.10558,
+   "lexus": 0.03259,
+   "top_model": "Volkswagen Golf",
+   "top_model_share": 0.031515270285602304,
+   "age": 9.975715323102373
+  },
+  "a_E": {
+   "name": "London E",
+   "cars": 224962,
+   "top_make": "Toyota",
+   "top_make_share": 0.11775766573910261,
+   "nissan": 0.06656,
+   "vauxhall": 0.06735,
+   "toyota": 0.11776,
+   "lexus": 0.01594,
+   "top_model": "Toyota Prius",
+   "top_model_share": 0.044656430863879236,
+   "age": 10.930005910127711
+  },
+  "England": {
+   "cars": 25147238,
+   "top_make": "Ford",
+   "top_make_share": 0.12023273341076689,
+   "make2": "Volkswagen",
+   "make2_share": 0.08642137754501476,
+   "top_colour": "black",
+   "top_colour_share": 0.20303373279879888,
+   "colour2": "grey",
+   "colour2_share": 0.17398090551894702,
+   "top_model": "Ford Fiesta",
+   "top_model_share": 0.045410642423457735,
+   "age": 10.852865408342772,
+   "cc": 1673.0982167685263,
+   "bev": 2.6505314786091283,
+   "sig_make": "Lexus",
+   "sig_lq": 1.064325856359618,
+   "diesel": 0.33244840351510807,
+   "electric": 0.022484828152230487,
+   "hybrid": 0.05901349696824335,
+   "top_model_colour": "blue",
+   "black": 0.20303,
+   "white": 0.16201
+  },
+  "Scotland": {
+   "cars": 2220398,
+   "top_make": "Ford",
+   "top_make_share": 0.10719945395085662,
+   "make2": "Vauxhall",
+   "make2_share": 0.1042177024888336,
+   "top_colour": "white",
+   "top_colour_share": 0.18950707062110264,
+   "colour2": "black",
+   "colour2_share": 0.18125894100095222,
+   "top_model": "Vauxhall Corsa",
+   "top_model_share": 0.043002039060697585,
+   "age": 9.190950960371524,
+   "cc": 1611.5999471127916,
+   "bev": 2.459210812265215,
+   "sig_make": "Dacia",
+   "sig_lq": 2.1488558461759437,
+   "diesel": 0.33836975463174995,
+   "electric": 0.02108499001220348,
+   "hybrid": 0.052177342202925685,
+   "top_model_colour": "white",
+   "black": 0.18126,
+   "white": 0.18951
+  },
+  "Wales": {
+   "cars": 1482804,
+   "top_make": "Ford",
+   "top_make_share": 0.13089063610755536,
+   "make2": "Vauxhall",
+   "make2_share": 0.08778657202377912,
+   "top_colour": "black",
+   "top_colour_share": 0.18606562149329123,
+   "colour2": "white",
+   "colour2_share": 0.17590572638466753,
+   "top_model": "Ford Fiesta",
+   "top_model_share": 0.053591408672487656,
+   "age": 10.696751926109117,
+   "cc": 1620.8541785942343,
+   "bev": 1.8503307166716012,
+   "sig_make": "Dacia",
+   "sig_lq": 1.774627804485445,
+   "diesel": 0.39992758329690253,
+   "electric": 0.014245905211525791,
+   "hybrid": 0.039600903369458415,
+   "top_model_colour": "blue",
+   "black": 0.18607,
+   "white": 0.17591
+  },
+  "GB": {
+   "cars": 28850439,
+   "top_make": "Ford",
+   "top_make_share": 0.11977743755320822,
+   "make2": "Volkswagen",
+   "make2_share": 0.08659502099073929,
+   "top_colour": "black",
+   "top_colour_share": 0.2004857965939918,
+   "colour2": "grey",
+   "colour2_share": 0.17318718686481926,
+   "top_model": "Ford Fiesta",
+   "top_model_share": 0.0455248462626348,
+   "age": 10.716936813281652,
+   "cc": 1665.6539557913725,
+   "bev": 2.5926260022894945,
+   "old20": 0.06089032119439096,
+   "diesel": 0.33637230009432245,
+   "petrol": 0.5835393345248634,
+   "electric": 0.021953643733105085,
+   "hybrid": 0.057489636271755885,
+   "top_model_colour": "blue",
+   "fiesta_n": 1313412,
+   "dft_diesel": 0.2871502867234149,
+   "dft_bev": 0.05114017972977495
+  },
+  "NI": {
+   "cars": 1055481,
+   "bev": 1.0626662046681334,
+   "diesel": 0.5055588095783993,
+   "bev_share": 0.02652466956713039,
+   "m1": "Volkswagen",
+   "m1s": 0.1306508221023133,
+   "m2": "Audi",
+   "m2s": 0.09087077960714714,
+   "m3": "Ford",
+   "m3s": 0.08287114348012947,
+   "mod1": "Volkswagen Golf",
+   "mod1s": 0.04859746458504092,
+   "mod2": "Ford Fiesta",
+   "mod2s": 0.02386524075488792,
+   "gb_dft_m1": "Ford",
+   "gb_dft_m1s": 0.1097554207873922,
+   "gb_vw": 0.08717470591161666,
+   "gb_audi": 0.05916723204760131
+  },
+  "uk_bev": 2.5444949170218725,
+  "grey2000": 0.030133611295366246,
+  "grey2022": 0.26094857532311727,
+  "silver2000": 0.2760623248636136,
+  "silver2022": 0.061356435636961644,
+  "diesel_peak_year": 2014,
+  "diesel_peak_share": 0.4675742000889732,
+  "diesel2022": 0.07398098342551752,
+  "ev2022": 0.16463114540917378,
+  "hy2022": 0.26380528884306725,
+  "van_white": 0.43859282824985485,
+  "bev_top": [
+   {
+    "code": "E09000001",
+    "name": "City of London",
+    "nation": "England",
+    "dft_cars": 1433,
+    "bev": 7.6923076923076925
+   },
+   {
+    "code": "E09000007",
+    "name": "Camden",
+    "nation": "England",
+    "dft_cars": 36143,
+    "bev": 7.649599012954966
+   },
+   {
+    "code": "E09000033",
+    "name": "Westminster",
+    "nation": "England",
+    "dft_cars": 86392,
+    "bev": 7.622957417692989
+   },
+   {
+    "code": "E09000020",
+    "name": "Kensington and Chelsea",
+    "nation": "England",
+    "dft_cars": 37330,
+    "bev": 6.829608532651341
+   },
+   {
+    "code": "E06000053",
+    "name": "Isles of Scilly",
+    "nation": "England",
+    "dft_cars": 573,
+    "bev": 5.194805194805195
+   }
+  ],
+  "bev_low": [
+   {
+    "code": "N09000006",
+    "name": "Fermanagh and Omagh",
+    "nation": "Northern Ireland",
+    "dft_cars": 70280,
+    "bev": 0.41079278459906016
+   },
+   {
+    "code": "N09000005",
+    "name": "Derry City and Strabane",
+    "nation": "Northern Ireland",
+    "dft_cars": 81073,
+    "bev": 0.575118007704411
+   },
+   {
+    "code": "N09000009",
+    "name": "Mid Ulster",
+    "nation": "Northern Ireland",
+    "dft_cars": 86804,
+    "bev": 0.6145361921012934
+   },
+   {
+    "code": "S12000013",
+    "name": "Na h-Eileanan Siar",
+    "nation": "Scotland",
+    "dft_cars": 13588,
+    "bev": 0.6748466257668712
+   },
+   {
+    "code": "N09000004",
+    "name": "Causeway Coast and Glens",
+    "nation": "Northern Ireland",
+    "dft_cars": 80583,
+    "bev": 0.7535496152930912
+   }
+  ],
+  "bev_low_gb": [
+   {
+    "name": "Na h-Eileanan Siar",
+    "nation": "Scotland",
+    "bev": 0.6748466257668712
+   },
+   {
+    "name": "Blaenau Gwent",
+    "nation": "Wales",
+    "bev": 1.0293421675343115
+   },
+   {
+    "name": "Shetland Islands",
+    "nation": "Scotland",
+    "bev": 1.1557512383048982
+   },
+   {
+    "name": "Leicester",
+    "nation": "England",
+    "bev": 1.210944648213419
+   },
+   {
+    "name": "Merthyr Tydfil",
+    "nation": "Wales",
+    "bev": 1.2558157128267202
+   }
+  ],
+  "old_cty": [
+   {
+    "code": "E06000027",
+    "name": "Torbay",
+    "nation": "England",
+    "cars": 51818,
+    "age": 12.39301661654726,
+    "old20": 0.10544644896094998
+   },
+   {
+    "code": "E06000059",
+    "name": "Dorset",
+    "nation": "England",
+    "cars": 211071,
+    "age": 12.176197568883206,
+    "old20": 0.10113793496682066
+   },
+   {
+    "code": "E10000008",
+    "name": "Devon",
+    "nation": "England",
+    "cars": 432035,
+    "age": 11.960164172924642,
+    "old20": 0.09381832578611252
+   },
+   {
+    "code": "E06000066",
+    "name": "Somerset",
+    "nation": "England",
+    "cars": 313141,
+    "age": 11.862671191303308,
+    "old20": 0.089891284724942
+   },
+   {
+    "code": "E06000052",
+    "name": "Cornwall",
+    "nation": "England",
+    "cars": 309492,
+    "age": 11.826633989861943,
+    "old20": 0.08380468985993406
+   }
+  ],
+  "young_cty": [
+   {
+    "code": "S12000050",
+    "name": "North Lanarkshire",
+    "nation": "Scotland",
+    "cars": 115856,
+    "age": 8.728015640548907
+   },
+   {
+    "code": "S12000029",
+    "name": "South Lanarkshire",
+    "nation": "Scotland",
+    "cars": 126932,
+    "age": 8.764048420970203
+   },
+   {
+    "code": "S12000011",
+    "name": "East Renfrewshire",
+    "nation": "Scotland",
+    "cars": 36677,
+    "age": 8.847524294372374
+   },
+   {
+    "code": "S12000039",
+    "name": "West Dunbartonshire",
+    "nation": "Scotland",
+    "cars": 35173,
+    "age": 8.847524294372374
+   },
+   {
+    "code": "S12000045",
+    "name": "East Dunbartonshire",
+    "nation": "Scotland",
+    "cars": 47542,
+    "age": 8.847524294372374
+   }
+  ],
+  "old_area": [
+   {
+    "code": "DT",
+    "name": "Dorchester",
+    "nation": "England",
+    "cars": 109116,
+    "age": 12.61364016883619,
+    "old20": 0.11020482976675984
+   },
+   {
+    "code": "TQ",
+    "name": "Torquay",
+    "nation": "England",
+    "cars": 140129,
+    "age": 12.39301661654726,
+    "old20": 0.10544644896094998
+   },
+   {
+    "code": "TA",
+    "name": "Taunton",
+    "nation": "England",
+    "cars": 181095,
+    "age": 12.103778142317788,
+    "old20": 0.09543110207958298
+   },
+   {
+    "code": "TR",
+    "name": "Truro",
+    "nation": "England",
+    "cars": 162039,
+    "age": 11.880810746693815,
+    "old20": 0.08900381392019156
+   },
+   {
+    "code": "EX",
+    "name": "Exeter",
+    "nation": "England",
+    "cars": 308251,
+    "age": 11.857505680672261,
+    "old20": 0.09274260261929401
+   }
+  ],
+  "young_area": [
+   {
+    "code": "ML",
+    "name": "Motherwell",
+    "nation": "Scotland",
+    "cars": 142394,
+    "age": 8.673308291902853
+   },
+   {
+    "code": "G",
+    "name": "Glasgow",
+    "nation": "Scotland",
+    "cars": 467104,
+    "age": 8.847524294372374
+   },
+   {
+    "code": "FK",
+    "name": "Falkirk",
+    "nation": "Scotland",
+    "cars": 124656,
+    "age": 8.847886314005452
+   },
+   {
+    "code": "PA",
+    "name": "Paisley",
+    "nation": "Scotland",
+    "cars": 130778,
+    "age": 8.963332220946638
+   },
+   {
+    "code": "ZE",
+    "name": "Lerwick",
+    "nation": "Scotland",
+    "cars": 9022,
+    "age": 9.050506549432512
+   }
+  ],
+  "unusual": {
+   "England": [
+    {
+     "name": "Camden",
+     "dissim": 0.21976758535172214,
+     "sig": "Lexus",
+     "lq": 5.123217490429373,
+     "share": 0.030790970901133616,
+     "nshare": 0.00601008467016165
+    },
+    {
+     "name": "Westminster",
+     "dissim": 0.2039930300966555,
+     "sig": "Porsche",
+     "lq": 4.154056104790716,
+     "share": 0.027525111061803057,
+     "nshare": 0.00662608071904936
+    },
+    {
+     "name": "Brent",
+     "dissim": 0.20079501500022556,
+     "sig": "Lexus",
+     "lq": 4.396734023788369,
+     "share": 0.02642474375514862,
+     "nshare": 0.00601008467016165
+    }
+   ],
+   "Scotland": [
+    {
+     "name": "Scottish Borders",
+     "dissim": 0.0985103277172533,
+     "sig": "Mitsubishi",
+     "lq": 2.168938785425122,
+     "share": 0.01511220957077252,
+     "nshare": 0.006967559283979726
+    },
+    {
+     "name": "Dumfries and Galloway",
+     "dissim": 0.08664968199232935,
+     "sig": "Skoda",
+     "lq": 1.5888266752090525,
+     "share": 0.04987309404042583,
+     "nshare": 0.03138988967054175
+    },
+    {
+     "name": "Perth and Kinross",
+     "dissim": 0.08335969600951025,
+     "sig": "Volvo",
+     "lq": 1.670889150836356,
+     "share": 0.03920724589763352,
+     "nshare": 0.023464899438726088
+    }
+   ],
+   "Wales": [
+    {
+     "name": "Flintshire",
+     "dissim": 0.08358137603601992,
+     "sig": "Vauxhall",
+     "lq": 1.4585389063237524,
+     "share": 0.12804013074947412,
+     "nshare": 0.08778657202377912
+    },
+    {
+     "name": "Powys",
+     "dissim": 0.07396343108654495,
+     "sig": "Land Rover",
+     "lq": 1.7920174061706442,
+     "share": 0.0484053127797776,
+     "nshare": 0.027011630921160944
+    },
+    {
+     "name": "Wrexham",
+     "dissim": 0.05811229978028208,
+     "sig": "Peugeot",
+     "lq": 1.3212083073279515,
+     "share": 0.05493035330003068,
+     "nshare": 0.04157584613672568
+    }
+   ]
+  },
+  "unusual_area": [
+   {
+    "code": "ZE",
+    "name": "Lerwick",
+    "dissim": 0.2691724134901826,
+    "sig": "Toyota",
+    "lq": 3.5865910445629128,
+    "share": 0.14431389935712702
+   },
+   {
+    "code": "NW",
+    "name": "London NW",
+    "dissim": 0.22501022815556934,
+    "sig": "Lexus",
+    "lq": 5.422212294327474,
+    "share": 0.03258795498849958
+   },
+   {
+    "code": "W",
+    "name": "London W",
+    "dissim": 0.20929481269516606,
+    "sig": "Porsche",
+    "lq": 5.651172909674826,
+    "share": 0.03744512785681044
+   },
+   {
+    "code": "IG",
+    "name": "Ilford",
+    "dissim": 0.19760471460993229,
+    "sig": "Lexus",
+    "lq": 5.166795670951159,
+    "share": 0.031052879455841138
+   },
+   {
+    "code": "E",
+    "name": "London E",
+    "dissim": 0.19084230841518993,
+    "sig": "Lexus",
+    "lq": 2.6530267069922977,
+    "share": 0.015944915141223853
+   }
+  ],
+  "pre1980": 34305,
+  "pre1960": 3232,
+  "modal_year": 2016,
+  "cc_top": [
+   {
+    "code": "W",
+    "name": "London W",
+    "nation": "England",
+    "cars": 79503,
+    "cc": 1828.7135112593828
+   },
+   {
+    "code": "NW",
+    "name": "London NW",
+    "nation": "England",
+    "cars": 193906,
+    "cc": 1782.5893684076898
+   },
+   {
+    "code": "SW",
+    "name": "London SW",
+    "nation": "England",
+    "cars": 129095,
+    "cc": 1776.1136589103521
+   }
+  ],
+  "cc_low": [
+   {
+    "code": "PA",
+    "name": "Paisley",
+    "nation": "Scotland",
+    "cars": 130778,
+    "cc": 1571.9644487881158
+   },
+   {
+    "code": "G",
+    "name": "Glasgow",
+    "nation": "Scotland",
+    "cars": 467104,
+    "cc": 1581.5916707732404
+   },
+   {
+    "code": "SR",
+    "name": "Sunderland",
+    "nation": "England",
+    "cars": 98495,
+    "cc": 1584.4236687734954
+   }
+  ],
+  "diesel_top": [
+   {
+    "code": "LD",
+    "name": "Llandrindod Wells",
+    "nation": "Wales",
+    "cars": 22243,
+    "diesel": 0.48163467158207074
+   },
+   {
+    "code": "LL",
+    "name": "Llandudno",
+    "nation": "Wales",
+    "cars": 262971,
+    "diesel": 0.4544493499283191
+   },
+   {
+    "code": "KW",
+    "name": "Kirkwall",
+    "nation": "Scotland",
+    "cars": 21114,
+    "diesel": 0.45225916453537934
+   }
+  ],
+  "ev_mot_top": [
+   {
+    "code": "NW",
+    "name": "London NW",
+    "nation": "England",
+    "cars": 193906,
+    "ev": 0.06525326704691964
+   },
+   {
+    "code": "W",
+    "name": "London W",
+    "nation": "England",
+    "cars": 79503,
+    "ev": 0.06452586694841704
+   },
+   {
+    "code": "SW",
+    "name": "London SW",
+    "nation": "England",
+    "cars": 129095,
+    "ev": 0.03916495604012549
+   }
+  ],
+  "bev_scot": [
+   {
+    "name": "East Renfrewshire",
+    "bev": 4.039616478769361
+   },
+   {
+    "name": "Orkney Islands",
+    "bev": 3.79041248606466
+   },
+   {
+    "name": "East Dunbartonshire",
+    "bev": 3.742921857304643
+   }
+  ],
+  "bev_wales": [
+   {
+    "name": "Monmouthshire",
+    "bev": 2.9249602840855995
+   },
+   {
+    "name": "Vale of Glamorgan",
+    "bev": 2.6857512767028697
+   },
+   {
+    "name": "Bridgend",
+    "bev": 2.386634844868735
+   }
+  ],
+  "bev_ni": [
+   {
+    "name": "Lisburn and Castlereagh",
+    "bev": 1.7412512740862982
+   },
+   {
+    "name": "Ards and North Down",
+    "bev": 1.6940980516776611
+   },
+   {
+    "name": "Antrim and Newtownabbey",
+    "bev": 1.5207937293299654
+   }
+  ],
+  "dissim_median": 0.06607861619733593,
+  "dissim_lt10": 0.782608695652174,
+  "dissim_n": 207,
+  "six_colours": 0.9479397851633105,
+  "bev_low_gb2": {
+   "name": "Blaenau Gwent",
+   "nation": "Wales",
+   "bev": 1.0293421675343115
+  },
+  "bev_scot_shet": 1.1557512383048982
+ }
+}
