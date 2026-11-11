@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this data or code, please cite it as below."
+title: "What Britain Drives: Car Makes, Models, Colours and Ages by County and Postcode Area from the 2025 MOT Record"
+type: dataset
+authors:
+  - family-names: Hotham
+    given-names: Tristan
+    orcid: "https://orcid.org/0000-0003-4931-9349"
+    affiliation: "Independent researcher"
+doi: "10.5281/zenodo.23748250"
+url: "https://maps.tristanhotham.com/cars/"
+repository-code: "https://github.com/Tristan-Hotham/cars"
+license: CC-BY-4.0
+keywords:
+  - "cars"
+  - "MOT test"
+  - "vehicle licensing"
+  - "car colour"
+  - "electric vehicles"
+  - "postcode areas"
+  - "counties"
+  - "Great Britain"
+  - "Northern Ireland"
+  - "open data"
